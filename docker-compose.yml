@@ -1,0 +1,50 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:1.20.1-alpine
+        container_name: ${APP_NAME}_nginx
+        volumes:
+            - "./docker/etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+            - "./docker/etc/ssl:/etc/ssl"
+            - "./:/var/www/html"
+            - "./docker/etc/nginx/default.template.conf:/etc/nginx/conf.d/default.template"
+        ports:
+            - "3001:80"
+            - "453:443"
+        environment:
+            - NGINX_HOST=localhost
+        command: /bin/sh -c "envsubst '$$NGINX_HOST' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+        restart: "no"
+        depends_on:
+            - php
+            - postgres
+    php:
+        build:
+            context: docker/etc/php/
+        container_name: ${APP_NAME}_php
+        restart: "no"
+        volumes:
+            - "./docker/etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
+            - "./:/var/www/html"
+    adminer:
+        image: adminer
+        ports:
+            - '8080:8080'
+        container_name: '${APP_NAME}-adminer'
+        depends_on:
+            - postgres
+    postgres:
+        image: postgres:latest
+        container_name: ${APP_NAME}_postgres
+        restart: "no"
+        env_file:
+            - ".env"
+        environment:
+            - POSTGRES_DB=${DB_DATABASE}
+            - POSTGRES_USER=${DB_USERNAME}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+        ports:
+            - "5433:5432"
+        volumes:
+            - "./docker/data/db/postgres:/var/lib/postgresql"
+            - "./docker/data/dump/postgres:/var/lib/dump"
