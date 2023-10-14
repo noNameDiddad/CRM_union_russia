@@ -48,3 +48,13 @@ services:
         volumes:
             - "./docker/data/db/postgres:/var/lib/postgresql"
             - "./docker/data/dump/postgres:/var/lib/dump"
+    mongodb:
+        image: mongo:latest
+        container_name: my-mongodb-container
+        ports:
+            - "27017:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: ${MONGODB_INITDB_ROOT_USERNAME}
+            MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_INITDB_ROOT_PASSWORD}
+        volumes:
+            - "./docker/data/db/mongo:/data/db"
