@@ -50,7 +50,7 @@ services:
             - "./docker/data/dump/postgres:/var/lib/dump"
     mongodb:
         image: mongo:latest
-        container_name: my-mongodb-container
+        container_name: ${APP_NAME}_mongodb
         ports:
             - "27017:27017"
         environment:
