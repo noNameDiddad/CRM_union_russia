@@ -1,0 +1,37 @@
+{
+    "contacts" : [
+      {
+        "honorific": "Mr",
+        "name" : "Ivan",
+        "surname" : "Sidorov",
+        "patronymic" : "Petrovich",
+           "phones" : [
+               { "number" : "+7(908)25-96325", "type" : "private" },
+               { "number" : "+7(938)23-96346", "type" : "common" },
+               { "number" : "+7(922)15-98534", "type" : "domestic" }
+            ]
+      },
+      {
+        "honorific": "Ms",
+        "name" : "Elvira",
+        "surname" : "Lopyreva",
+        "patronymic" : "Batkovna",
+           "phones" : [
+               { "number" : "+7(908)25-96325", "type" : "private" }
+            ]
+      },
+      {
+        "honorific": "Mr",
+        "name" : "Petr",
+        "surname" : "Nikodimov",
+        "patronymic" : "Petrovich",
+           "phones" : [
+               { "number" : "+7(908)25-96325", "type" : "private" },
+               { "number" : "+7(938)23-96346", "type" : "common" },
+               { "number" : "+7(922)15-98534", "type" : "domestic" },
+               { "number" : "+7(922)15-98534", "type" : "domestic" },
+               { "number" : "+7(922)15-98534", "type" : "domestic" }
+            ]
+      }
+    ]
+}
