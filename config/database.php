@@ -93,6 +93,16 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('DB_URI', ''),
+            'database' => env('MONGODB_DATABASE', 'crm_union_russia_mongodb'),
+            'host' => env('MONGODB_HOST', 'localhost'),
+            'port' => env('MONGODB_PORT', 27017),
+            'username' => env('MONGODB_USERNAME', ''),
+            'password' => env('MONGODB_PASSWORD', ''),
+        ],
+
     ],
 
     /*
@@ -125,7 +135,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
