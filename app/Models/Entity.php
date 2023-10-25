@@ -9,6 +9,5 @@ class Entity extends Model
 {
     use HasFactory;
 
-    protected $table = 'entities';
-    protected $guarded = false;
+    protected $keyType = 'string';
 }

@@ -13,11 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('entity_values', function (Blueprint $table) {
-            $table->id();
-            $table->integer('unique_id');
-            $table->foreignId('entity_id')->index()->constrained('entities');
-            $table->foreignId('instance_id')->index()->constrained('entity_fields');
-            $table->json('value');
+            $table->uuid();
             $table->timestamps();
         });
     }

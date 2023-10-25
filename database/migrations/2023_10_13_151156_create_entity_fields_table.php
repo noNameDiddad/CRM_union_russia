@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('entity_fields', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('entity_id')->index()->constrained('entities');
+            $table->uuid('id')->primary();
+            $table->foreignUuid('entity_id')->references('id')->on('entities');
             $table->string('name');
             $table->string('type');
             $table->integer('max_length');
