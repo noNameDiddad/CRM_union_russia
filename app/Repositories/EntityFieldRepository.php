@@ -6,20 +6,20 @@ namespace App\Repositories;
 use App\Models\Entity;
 use App\Models\EntityField;
 use Illuminate\Database\Eloquent\Collection;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class EntityFieldRepository.
  *
  * @package namespace App\Repositories;
  */
-class EntityFieldRepository
+class EntityFieldRepository extends BaseRepository
 {
 
-    private EntityField $model;
 
-    public function __construct()
+    public function model()
     {
-        $this->model = new EntityField();
+        return EntityField::class;
     }
 
     public function allByEntity(Entity $entity): Collection
@@ -30,27 +30,5 @@ class EntityFieldRepository
     public function getFields(string $entity_id): array
     {
         return $this->model->where('entity_id', $entity_id)->pluck('name')->toArray();
-    }
-
-    public function create(array $data): EntityField
-    {
-        return $this->model->create($data);
-    }
-
-    public function update(int $id, array $data): bool
-    {
-        $EntityField = $this->findOrFail($id);
-        return $EntityField->update($data);
-    }
-
-    public function delete(int $id): bool
-    {
-        $EntityField = $this->findOrFail($id);
-        return $EntityField->delete();
-    }
-
-    public function findOrFail(int $id): ?EntityField
-    {
-        return $this->model->findOrFail($id);
     }
 }
