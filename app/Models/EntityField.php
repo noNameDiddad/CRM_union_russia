@@ -9,10 +9,6 @@ class EntityField extends Model
 {
     use HasFactory;
 
-    protected $table = 'entity_fields';
-    protected $guarded = false;
+    protected $keyType = 'string';
 
-    public function entityValue() {
-        return $this->hasOne(EntityValue::class, 'instance_id', 'id');
-    }
 }

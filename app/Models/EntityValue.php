@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
+
 
 class EntityValue extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
 
-    protected $table = 'entity_values';
+    protected $keyType = 'string';
+
+    protected $connection = 'mongodb';
+
     protected $guarded = false;
-
-    public function entityField() {
-        return $this->belongsTo(EntityField::class, 'instance_id', 'id');
-    }
 }
