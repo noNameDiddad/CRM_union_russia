@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EntityValueRequest;
 use App\Http\Resources\EntityValueResource;
 use App\Models\Entity;
-use App\Models\EntityValue;
 use App\Services\EntityValueService;
-use MongoDB\Model\BSONDocument;
 
 class EntityValueController extends Controller
 {
