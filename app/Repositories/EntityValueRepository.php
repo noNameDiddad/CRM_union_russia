@@ -30,7 +30,7 @@ class EntityValueRepository
         return $this->model->create($data);
     }
 
-    public function update(string $id, array $data): EntityValue
+    public function update( array $data, string $id): EntityValue
     {
         $entityValue = $this->model->findOrFail($id);
         $entityValue->update($data);
