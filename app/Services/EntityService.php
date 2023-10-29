@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Database\Eloquent\Model as StandardModel;
-use MongoDB\Laravel\Eloquent\Model as MongoModel;
 use App\Repositories\EntityRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class EntityService
 {
@@ -19,13 +18,13 @@ class EntityService
         $this->repository = app(EntityRepository::class);
     }
 
-    public function create(array $data): MongoModel|StandardModel
+    public function create(array $data): Model
     {
         return $this->repository->create($data);
     }
 
-    public function update(string $id, array $data):  MongoModel|StandardModel
+    public function update(string $id, array $data): Model
     {
-        return $this->repository->update($id, $data);
+        return $this->repository->update($data, $id);
     }
 }
