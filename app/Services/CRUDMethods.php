@@ -29,7 +29,7 @@ trait CRUDMethods
     public function updateWithEntity(Entity $entity, string $id, array $data):  MongoModel|StandardModel
     {
         $data['entity_id'] = $entity->id;
-        return $this->repository->update($id, $data);
+        return $this->repository->update($data, $id);
     }
 
     public function delete(string $id): bool
