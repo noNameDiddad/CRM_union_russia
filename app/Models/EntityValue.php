@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use MongoDB\Laravel\Eloquent\Model;
 use MongoDB\Laravel\Eloquent\SoftDeletes;
 
 
 class EntityValue extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasUuids;
 
     protected $keyType = 'string';
 
