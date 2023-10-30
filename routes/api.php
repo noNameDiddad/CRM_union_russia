@@ -29,3 +29,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('entity', \App\Http\Controllers\EntityController::class);
 Route::resource('{entity}/entity_field', \App\Http\Controllers\EntityFieldController::class);
 Route::resource('{entity}/entity_value', \App\Http\Controllers\EntityValueController::class);
+Route::resource('{entity_field}/entity_field_fixed_value', \App\Http\Controllers\EntityFieldFixedValueController::class);
