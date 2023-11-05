@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -13,23 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Чтение структуры из файла
-        $json = File::json(base_path('./contact.json'));
+        $this->seedEntity('./__import/contact.json');
+        $this->seedEntity('./__import/vacation.json');
+        $this->seedEntity('./__import/document.json');
+    }
 
-        // Чтение имен главных сущностей (в данном примере пока одной)
+    private function seedEntity(String $path): void {
+        $json = File::json(base_path($path));
+
         $entityName = null;
         foreach($json as $name => $value) {
             $entityName = $name;
-            //dump($name);
-            //dump($value);
         }
 
-        // Вызыв сидеров с передачей данных
         $this->call(
             [
                 EntitySeeder::class,
                 EntityFieldSeeder::class,
-                EntityValueSeeder::class
             ],
             false,
             [
@@ -37,7 +37,5 @@ class DatabaseSeeder extends Seeder
                 'json' => $json
             ],
         );
-
-        dump('Структура засеяна');
     }
 }

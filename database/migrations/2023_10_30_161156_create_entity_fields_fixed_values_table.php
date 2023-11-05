@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('entity_field_fixed_values', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('entity_field_id')->references('id')->on('entity_fields');
-            $table->integer('value');
+            $table->json('value');
             $table->timestamps();
         });
     }
