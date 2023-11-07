@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->seedEntity('./__import/contact.json');
         $this->seedEntity('./__import/vacation.json');
         $this->seedEntity('./__import/document.json');
+        $this->seedEntity('./__import/appeal.json');
+        $this->seedEntity('./__import/rop_common.json');
+        $this->seedEntity('./__import/rop_unic.json');
     }
 
     private function seedEntity(String $path): void {

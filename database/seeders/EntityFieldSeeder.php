@@ -16,14 +16,13 @@ class EntityFieldSeeder extends Seeder
     public function run($entityName, $json): void
     {
         $entityId = Entity::where('name', $entityName)->first()->id;
-
+        dump("Засеивание");
+        dump($entityName);
+        dump("----------");
         foreach($json as $name => $value) {
             foreach ($value as $key => $item) {
-                //$id = EntityField::max('id') + 1;
                 if(is_array($item)) {
                     $id = $this->create($entityId, $key, 'array', 255);
-                    dump("Это массив");
-                    //dump($item);
                     $this->call(
                         [
                             EntityFieldFixedValueSeeder::class,
@@ -36,20 +35,13 @@ class EntityFieldSeeder extends Seeder
                     );
                 } else {
                     $this->create($entityId, $key, $item, 255);
-                    dump("Это не массив");
                 }
-                dump("-------------------------");
-//                foreach ($item as $key => $val) {
-//                    dump($key);
-//                    dump($val);
-//                }
             }
         }
     }
 
     private function create($entityId, $name, $type, $maxLength): string {
         $entityField  = EntityField::create([
-            //'id' => $id,
             'entity_id' => $entityId,
             'name' => $name,
             'type' => $type,
