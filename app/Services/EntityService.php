@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\EntityRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class EntityService
 {
@@ -20,6 +21,7 @@ class EntityService
 
     public function create(array $data): Model
     {
+        $data['hash'] = Str::slug($data['name']);
         return $this->repository->create($data);
     }
 

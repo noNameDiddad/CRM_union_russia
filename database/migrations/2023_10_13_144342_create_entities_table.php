@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('entities', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('hash')->unique();
             $table->timestamps();
         });
     }

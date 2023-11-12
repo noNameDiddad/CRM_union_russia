@@ -15,9 +15,9 @@ class EntityValueRepository
 {
     private EntityValue $model;
 
-    public function __construct()
+    public function __construct($table)
     {
-        $this->model = new EntityValue();
+        $this->model = app(EntityValue::class)->setTable($table);
     }
 
     public function allByEntity(Entity $entity): Collection

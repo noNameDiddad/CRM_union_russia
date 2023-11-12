@@ -3,6 +3,7 @@
 namespace App\Services;
 
 
+use App\Models\Entity;
 use App\Repositories\EntityValueRepository;
 
 class EntityValueService
@@ -12,9 +13,10 @@ class EntityValueService
      * @var EntityValueRepository
      */
     private mixed $repository;
+    private mixed $table;
 
-    public function __construct()
+    public function __construct($table)
     {
-        $this->repository = app(EntityValueRepository::class);
+        $this->repository = new EntityValueRepository($table);
     }
 }
