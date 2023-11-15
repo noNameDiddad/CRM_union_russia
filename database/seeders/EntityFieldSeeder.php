@@ -21,8 +21,8 @@ class EntityFieldSeeder extends Seeder
         dump("----------");
         foreach($json as $name => $value) {
             foreach ($value as $key => $item) {
-                if(is_array($item)) {
-                    $id = $this->create($entityId, $key, 'array', 255);
+                if($item['type'] === 'array') {
+                    $id = $this->create($entityId, $key, 'array', $item['typeOf'], 255);
                     $this->call(
                         [
                             EntityFieldFixedValueSeeder::class,
@@ -34,17 +34,18 @@ class EntityFieldSeeder extends Seeder
                         ],
                     );
                 } else {
-                    $this->create($entityId, $key, $item, 255);
+                    $this->create($entityId, $key, $item['type'], $item['typeOf'], 255);
                 }
             }
         }
     }
 
-    private function create($entityId, $name, $type, $maxLength): string {
+    private function create($entityId, $name, $type, $typeOf, $maxLength): string {
         $entityField  = EntityField::create([
             'entity_id' => $entityId,
             'name' => $name,
             'type' => $type,
+            'type_of' => $typeOf,
             'max_length' => $maxLength
         ]);
 

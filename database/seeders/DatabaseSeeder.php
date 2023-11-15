@@ -14,9 +14,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         dump('Выберите способ заполнения');
-        $seedType = $this->command->ask('1 - старая структура, 2(или другой символ)  - структура с разделенными полями');
+        $seedType = $this->command->ask('1 - старая структура, 2 - с разделенными полями, 3 - со связанными полями');
 
-        $dirName = $seedType === '1' ? '__import' : '__import_selected';
+        $dirName = '';
+        switch ($seedType) {
+            case 1:
+                $dirName = '__import';
+                break;
+            case 2:
+                $dirName = '__import_selected';
+                break;
+            case 3:
+                $dirName = '__import_selected_typeof';
+                break;
+            default:
+                return;
+        }
 
         $files = File::files($dirName);
 

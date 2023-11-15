@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('entity_id')->references('id')->on('entities');
             $table->string('name');
             $table->string('type');
+            $table->string('type_of');
             $table->integer('max_length');
             $table->timestamps();
         });
