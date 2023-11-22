@@ -3,21 +3,18 @@
 namespace App\Services;
 
 use App\Enums\FieldTypeEnum;
+use App\Resolvers\FieldTypeResolvers\SelectField;
 use App\Resolvers\FieldTypeResolvers\StringField;
 
 class FieldTypeService extends FieldService
 {
     protected const FIELDSTYPES = [
         FieldTypeEnum::String->value => StringField::class,
+        FieldTypeEnum::Select->value => SelectField::class
     ];
 
-
-    public function dataFieldTypeResolve(array $data): array
+    public static function getClassForFieldType(string $fieldType): ?string
     {
-        $resolvedData = [];
-        foreach ($data as $key => $value) {
-            $resolvedData[$key] = $this->resolveFieldType($value);
-        }
-        return $resolvedData;
+        return self::FIELDSTYPES[$fieldType] ?? null;
     }
 }

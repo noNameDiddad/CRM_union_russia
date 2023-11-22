@@ -8,4 +8,6 @@ enum FieldTypeEnum: string
     case File = 'file';
     case Date = 'date';
     case Select = 'select';
+    case MultiSelect = 'multi_select';
+    case Boolean = 'boolean';
 }
