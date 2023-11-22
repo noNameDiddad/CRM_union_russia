@@ -42,8 +42,9 @@ class EntityValueController extends Controller
 
     public function destroy(Entity $entity, string $entity_value)
     {
+        $entity_table = "table_" . $entity->hash;
+        $this->service = new EntityValueService($entity_table);
         $this->service->delete($entity_value);
-
         return response()->json();
     }
 }
