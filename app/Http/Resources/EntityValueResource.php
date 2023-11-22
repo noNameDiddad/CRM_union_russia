@@ -24,9 +24,9 @@ class EntityValueResource extends JsonResource
             'updated_at' => $this->updated_at,
         ];
 
-        foreach ($fields as $field) {
-            $fieldClass = FieldTypeService::getClassForFieldType($field->type);
-            $response[$field->name] = app($fieldClass)->get($this->{$field->name});
+        foreach ($fields as $key =>$field) {
+            $fieldClass = FieldTypeService::getClassForFieldType($field);
+            $response[$key] = app($fieldClass)->get($this->{$key});
         }
 
         return $response;
