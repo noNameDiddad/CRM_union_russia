@@ -23,7 +23,7 @@ class EntityValueController extends Controller
     {
         $entity_table = "table_" . $entity->hash;
         $this->service = new EntityValueService($entity_table);
-        return new EntityValueResource($this->service->createWithEntity($entity, $request->all()));
+        return new EntityValueResource($this->service->createWithFieldResolver($entity, $request->all()));
     }
 
     public function show(Entity $entity, string $entity_value)

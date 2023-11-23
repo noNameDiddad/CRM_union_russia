@@ -24,7 +24,6 @@ trait CRUDMethods
     {
         $data['entity_id'] = $entity->id;
 
-//        $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data);
         return $this->repository->create($data);
     }
 

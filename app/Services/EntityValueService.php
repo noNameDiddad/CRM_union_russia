@@ -19,4 +19,12 @@ class EntityValueService
     {
         $this->repository = new EntityValueRepository($table);
     }
+
+    public function createWithFieldResolver(Entity $entity, array $data)
+    {
+        $data['entity_id'] = $entity->id;
+
+        $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data);
+        return $this->repository->create($resolvedData);
+    }
 }
