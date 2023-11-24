@@ -14,8 +14,6 @@ class EntitySeeder extends Seeder
      */
     public function run($entityName): void
     {
-        $maxUniqueId =  Entity::latest()->first()->id ?? 0;
-
         Entity::create([
             'name' => $entityName
         ]);

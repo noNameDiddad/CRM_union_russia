@@ -13,12 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->seedEntity('./__import/contact.json');
-        $this->seedEntity('./__import/vacation.json');
-        $this->seedEntity('./__import/document.json');
-        $this->seedEntity('./__import/appeal.json');
-        $this->seedEntity('./__import/rop_common.json');
-        $this->seedEntity('./__import/rop_unic.json');
+        $dirName = '__import';
+
+        $files = File::files($dirName);
+
+        dump('Началось заполнение данных, при возникновении ошибки убедитесь что данные в файлах в формате JSON');
+        dump('Сделать это можно с помощью валидатора, например, https://codebeautify.org/jsonviewer');
+
+        foreach ($files as $file) {
+            if ($file->getExtension() === 'json') {
+                $this->seedEntity('./' . $dirName . '/' . $file->getFilename());
+            }
+        }
     }
 
     private function seedEntity(String $path): void {

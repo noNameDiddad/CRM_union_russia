@@ -6,24 +6,24 @@
             "г-н",
             "г-жа"
           ],
-          "type": "select",
-          "hash": "honorific",
-          "in_stat": true
+          "type": "array",
+          "typeOf": "honorific"
         },
         "Имя": {
           "type": "string",
-          "hash": "name",
-          "in_stat": true
+          "typeOf": "name"
         },
         "Фамилия": {
           "type": "string",
-          "hash": "surname",
-          "in_stat": true
+          "typeOf": "surname"
         },
         "Отчество": {
           "type": "string",
-          "hash": "patronymic",
-          "in_stat": true
+          "typeOf": "patronymic"
+        },
+        "Телефон": {
+          "type": "string",
+          "typeOf": "phone"
         },
         "Телефон": {
           "value":  [
@@ -35,9 +35,12 @@
             "Для рассылок",
             "Другой"
           ],
-          "type": "object",
-          "hash": "phone",
-          "in_stat": true
+          "type": "array",
+          "typeOf": "phone"
+        },
+        "E-mail": {
+          "type": "string",
+          "typeOf": "email"
         },
         "E-mail": {
           "value":  [
@@ -49,23 +52,20 @@
             "Для рассылок",
             "Другой"
           ],
-          "type": "object",
-          "hash": "email",
-          "in_stat": true
+          "type": "array",
+          "typeOf": "email"
         },
         "День рождения": {
           "type": "timestamps",
-          "hash": "birthday",
-          "in_stat": true
+          "typeOf": "birthday"
         },
         "Пол": {
           "value":  [
             "Муж.",
             "Жен."
           ],
-          "type": "select",
-          "hash": "sex",
-          "in_stat": true
+          "type": "array",
+          "typeOf": "sex"
         },
         "Вид м/ж": {
           "value":  [
@@ -73,9 +73,8 @@
             "Поселение",
             "Не указан"
           ],
-          "type": "select",
-          "hash": "residence",
-          "in_stat": true
+          "type": "array",
+          "typeOf": "residence"
         },
         "Гражданство": {
           "value":  [
@@ -83,9 +82,8 @@
             "Дальнее Зарубежье",
             "Содружество Независимых Государств"
           ],
-          "type": "select",
-          "hash": "citizenship",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "citizenship"
         },
         "Автор": {
           "value":  [
@@ -94,19 +92,16 @@
             "Коллективное",
             "Анонимное"
           ],
-          "type": "select",
-          "hash": "author",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "author"
         },
         "Место работы": {
           "type": "string",
-          "hash": "job",
-          "in_stat": false
+          "typeOf": "job"
         },
         "Должность": {
           "type": "string",
-          "hash": "position",
-          "in_stat": false
+          "typeOf": "position"
         },
         "Соц. положение": {
           "value":  [
@@ -129,14 +124,16 @@
             "Служащий",
             "Студент"
           ],
-          "type": "select",
-          "hash": "socialStatus",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "socialStatus"
         },
         "Лояльность": {
           "type": "string",
-          "hash": "loyalty",
-          "in_stat": false
+          "typeOf": "loyalty"
+        },
+        "Адрес (Полный)": {
+          "type": "string",
+          "typeOf": "address"
         },
         "Адрес (Полный)": {
           "value":  [
@@ -146,9 +143,8 @@
               "Юридический",
               "Адрес бенефициара"
           ],
-          "type": "object",
-          "hash": "address",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "address"
         },
         "МО": {
           "value":  [
@@ -202,14 +198,12 @@
               "МО Юрлинского муниципального округа",
               "МО Юсьвинского муниципального округа"
           ],
-          "type": "select",
-          "hash": "municipalDistrict",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "municipalDistrict"
         },
         "УИК": {
           "type": "string",
-          "hash": "uik",
-          "in_stat": false
+          "typeOf": "uik"
         },
         "Льгот. кат.": {
           "value":  [
@@ -232,64 +226,52 @@
             "Участник",
             "Участник боевых действий"
           ],
-          "type": "select",
-          "hash": "preferentialCategory",
-          "in_stat": false
+          "type": "array",
+          "typeOf": "preferentialCategory"
         },
         "Иная информация": {
           "type": "string",
-          "hash": "otherInformation",
-          "in_stat": false
+          "typeOf": "otherInformation"
         },
         "Организация": {
           "type": "string",
-          "hash": "organization",
-          "in_stat": false
+          "typeOf": "organization"
         },
         "Почтовый индекс": {
           "type": "integer",
-          "hash": "postcode",
-          "in_stat": false
+          "typeOf": "postcode"
         },
         "Страна": {
           "type": "string",
-          "hash": "country",
-          "in_stat": false
+          "typeOf": "country"
         },
         "Регион": {
           "type": "string",
-          "hash": "region",
-          "in_stat": false
+          "typeOf": "region"
         },
         "Район": {
           "type": "string",
-          "hash": "area",
-          "in_stat": false
+          "typeOf": "area"
         },
         "Населенный пункт": {
           "type": "string",
-          "hash": "locality",
-          "in_stat": false
+          "typeOf": "locality"
         },
         "Улица, номер дома": {
           "type": "string",
-          "hash": "streetHouseNumber",
-          "in_stat": false
+          "typeOf": "streetHouseNumber"
         },
         "Квартира, офис, комната, этаж": {
           "type": "string",
-          "hash": "apartmentOfficeRoomFloor",
-          "in_stat": false
+          "typeOf": "apartmentOfficeRoomFloor"
         },
         "Адрес для генерации документ": {
           "type": "string",
-          "hash": "documentGenerationAddress",
-          "in_stat": false
+          "typeOf": "documentGenerationAddress"
         },
         "Отвественный": {
           "type": "User",
-          "hash": "responsible",
-          "in_stat": false
+          "typeOf": "responsible"
         }
       }
 }
