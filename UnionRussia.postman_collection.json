@@ -1,0 +1,632 @@
+{
+	"info": {
+		"_postman_id": "e0da5295-0160-48e1-b83c-f342f913d3fa",
+		"name": "UnionRussia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10373302"
+	},
+	"item": [
+		{
+			"name": "EntityValue",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_value"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "asdasdasdas",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Daniil",
+									"type": "text"
+								},
+								{
+									"key": "entity_id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Shvetcov",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_value"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "asdasdasdas",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Oleg",
+									"type": "text"
+								},
+								{
+									"key": "entity_id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Shvetcov",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value/653a80b16b702f2bec00e403",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_value",
+								"653a80b16b702f2bec00e403"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "asdasdasdas3123123",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Oleg2asdwasd",
+									"type": "text"
+								},
+								{
+									"key": "entity_id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "ShvetcovDEVOPS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value/653a80b16b702f2bec00e403",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_value",
+								"653a80b16b702f2bec00e403"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value/653a80b16b702f2bec00e403",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_value",
+								"653a80b16b702f2bec00e403"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entity",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}api/entity",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"entity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daniil",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/entity",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"entity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "asdasdasdas",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Oleg",
+									"type": "text"
+								},
+								{
+									"key": "entity_id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Shvetcov",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"entity",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Обращения",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"entity",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"entity",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityField",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "string",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "mid_name",
+									"type": "text"
+								},
+								{
+									"key": "max_length",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_field"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "asdasdasdas",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Oleg",
+									"type": "text"
+								},
+								{
+									"key": "entity_id",
+									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Shvetcov",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e10",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_field",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "string",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fact_position",
+									"type": "text"
+								},
+								{
+									"key": "max_length",
+									"value": "251",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_field",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"entity_field",
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost/",
+			"type": "string"
+		}
+	]
+}
