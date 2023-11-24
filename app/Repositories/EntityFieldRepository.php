@@ -26,8 +26,8 @@ class EntityFieldRepository extends BaseRepository
         return $this->model->where('entity_id', $entity->id)->get();
     }
 
-    public function getFields(string $entity_id): array
+    public function getFields(string $entity_id): Collection
     {
-        return $this->model->where('entity_id', $entity_id)->pluck('name')->toArray();
+        return $this->model->where('entity_id', $entity_id)->get();
     }
 }

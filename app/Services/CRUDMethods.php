@@ -23,6 +23,7 @@ trait CRUDMethods
     public function createWithEntity(Entity $entity, array $data): MongoModel|StandardModel
     {
         $data['entity_id'] = $entity->id;
+
         return $this->repository->create($data);
     }
 

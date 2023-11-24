@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Helpers\EntityFieldHelper;
-use App\Models\EntityField;
+use App\Services\FieldTypeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -24,8 +24,9 @@ class EntityValueResource extends JsonResource
             'updated_at' => $this->updated_at,
         ];
 
-        foreach ($fields as $field) {
-            $response[$field] = $this->{$field};
+        foreach ($fields as $key =>$field) {
+            $fieldClass = FieldTypeService::getClassForFieldType($field);
+            $response[$key] = app($fieldClass)->get($this->{$key});
         }
 
         return $response;

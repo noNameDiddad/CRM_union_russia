@@ -17,9 +17,17 @@ class EntityFieldHelper
         $this->repository = app(EntityFieldRepository::class);
     }
 
-    public function getFields(string $entity_id)
+    public function getFields(string $entity_id): array
     {
-        return $this->repository->getFields($entity_id);
+        $fields = $this->repository->getFields($entity_id);
+
+        $data = [];
+
+        foreach ($fields as $field) {
+            $data[$field->name] = $field->type;
+        }
+
+        return $data;
     }
 
 }
