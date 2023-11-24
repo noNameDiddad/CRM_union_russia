@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use App\Models\Entity;
 use App\Repositories\EntityFieldRepository;
 
 class EntityFieldHelper
@@ -17,17 +16,20 @@ class EntityFieldHelper
         $this->repository = app(EntityFieldRepository::class);
     }
 
-    public function getFields(string $entity_id): array
+    public function getFields(string $entity_id, bool $isStatistic = false): array
     {
-        $fields = $this->repository->getFields($entity_id);
+        if ($isStatistic) {
+            $fields = $this->repository->getFieldsForStatistic($entity_id);
+        } else {
+            $fields = $this->repository->getFields($entity_id);
+        }
 
         $data = [];
 
         foreach ($fields as $field) {
-            $data[$field->name] = $field->type;
+            $data[$field->hash] = $field->type;
         }
 
         return $data;
     }
-
 }

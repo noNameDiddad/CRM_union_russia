@@ -5,7 +5,6 @@ namespace App\Repositories;
 
 use App\Models\Entity;
 use App\Models\EntityField;
-use App\Models\EntityValue;
 use Illuminate\Database\Eloquent\Collection;
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -29,5 +28,9 @@ class EntityFieldRepository extends BaseRepository
     public function getFields(string $entity_id): Collection
     {
         return $this->model->where('entity_id', $entity_id)->get();
+    }
+    public function getFieldsForStatistic(string $entity_id): Collection
+    {
+        return $this->model->where('entity_id', $entity_id)->where('in_stat', true)->get();
     }
 }
