@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -13,23 +13,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Чтение структуры из файла
-        $json = File::json(base_path('./contact.json'));
+        $dirName = '__import';
 
-        // Чтение имен главных сущностей (в данном примере пока одной)
+        $files = File::files($dirName);
+
+        dump('Началось заполнение данных, при возникновении ошибки убедитесь что данные в файлах в формате JSON');
+        dump('Сделать это можно с помощью валидатора, например, https://codebeautify.org/jsonviewer');
+
+        foreach ($files as $file) {
+            if ($file->getExtension() === 'json') {
+                $this->seedEntity('./' . $dirName . '/' . $file->getFilename());
+            }
+        }
+    }
+
+    private function seedEntity(String $path): void {
+        $json = File::json(base_path($path));
+
         $entityName = null;
         foreach($json as $name => $value) {
             $entityName = $name;
-            //dump($name);
-            //dump($value);
         }
 
-        // Вызыв сидеров с передачей данных
         $this->call(
             [
                 EntitySeeder::class,
                 EntityFieldSeeder::class,
-                EntityValueSeeder::class
             ],
             false,
             [
@@ -37,7 +46,5 @@ class DatabaseSeeder extends Seeder
                 'json' => $json
             ],
         );
-
-        dump('Структура засеяна');
     }
 }

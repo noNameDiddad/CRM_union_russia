@@ -21,6 +21,8 @@ class EntityFieldResource extends JsonResource
             'entity_id' => $this->entity_id,
             'name' => $this->name,
             'type' => $this->type,
+            'hash' => $this->hash,
+            'in_stat' => $this->in_stat,
             'max_length' => $this->max_length,
             'created_at' => $this->created_at
         ];

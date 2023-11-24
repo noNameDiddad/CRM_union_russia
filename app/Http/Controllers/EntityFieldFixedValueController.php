@@ -25,7 +25,7 @@ class EntityFieldFixedValueController extends Controller
         return EntityFieldFixedValueResource::collection($this->service->allByEntityFields($entity_field));
     }
 
-    public function show(EntityField $entity_field, EntityFieldFixedValue $entity_field_fixed_value) {
+    public function show(EntityField $entity_field, string $entity_field_fixed_value) {
         return new EntityFieldFixedValueResource($this->service->show($entity_field_fixed_value));
     }
 
@@ -33,11 +33,11 @@ class EntityFieldFixedValueController extends Controller
         return new EntityFieldFixedValueResource($this->service->createWithEntityField($entity_field, $request->all()));
     }
 
-    public function update(EntityFieldFixedValuesRequest $request, EntityField $entity_field, EntityFieldFixedValue $entity_field_fixed_value) {
+    public function update(EntityFieldFixedValuesRequest $request, EntityField $entity_field, string $entity_field_fixed_value) {
         return new EntityFieldFixedValueResource($this->service->updateWithEntityField($entity_field, $entity_field_fixed_value, $request->all()));
     }
 
-    public function destroy(EntityField $entity_field, EntityFieldFixedValue $entity_field_fixed_value) {
+    public function destroy(EntityField $entity_field, string $entity_field_fixed_value) {
         $this->service->delete($entity_field_fixed_value);
 
         return response()->json();
