@@ -15,7 +15,8 @@ class EntitySeeder extends Seeder
     public function run($entityName): void
     {
         Entity::create([
-            'name' => $entityName
+            'name' => $entityName,
+            'hash' => Str::slug($entityName),
         ]);
     }
 }
