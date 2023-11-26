@@ -21,13 +21,19 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value",
+							"raw": "{{host}}api/9ab49fb8-418b-4d21-9ad4-d315e51d4073/entity_value?XDEBUG_SESSION_START=PHPSTORM",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"9ab49fb8-418b-4d21-9ad4-d315e51d4073",
 								"entity_value"
+							],
+							"query": [
+								{
+									"key": "XDEBUG_SESSION_START",
+									"value": "PHPSTORM"
+								}
 							]
 						}
 					},
@@ -48,7 +54,7 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "title",
+									"key": "surname",
 									"value": "asdasdasdas",
 									"type": "text"
 								},
@@ -56,27 +62,23 @@
 									"key": "name",
 									"value": "Daniil",
 									"type": "text"
-								},
-								{
-									"key": "entity_id",
-									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-									"type": "text"
-								},
-								{
-									"key": "last_name",
-									"value": "Shvetcov",
-									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value",
+							"raw": "{{host}}api/9ab48196-7d99-453f-bc31-2ec9fdead616/entity_value?XDEBUG_SESSION_START=PHPSTORM",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"9ab48196-7d99-453f-bc31-2ec9fdead616",
 								"entity_value"
+							],
+							"query": [
+								{
+									"key": "XDEBUG_SESSION_START",
+									"value": "PHPSTORM"
+								}
 							]
 						}
 					},
@@ -221,6 +223,9 @@
 			"item": [
 				{
 					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -230,13 +235,23 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{host}}api/entity",
+							"raw": "{{host}}api/entity?XDEBUG_SESSION_START=PHPSTORM",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
 								"entity"
+							],
+							"query": [
+								{
+									"key": "XDEBUG_SESSION_START",
+									"value": "PHPSTORM"
+								}
 							]
 						}
 					},
@@ -258,12 +273,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Daniil",
-									"type": "text"
-								},
-								{
-									"key": "id",
-									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+									"value": "Людиввфвыфвd",
 									"type": "text"
 								}
 							]
@@ -411,12 +421,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field",
+							"raw": "{{host}}api/9ab49fb8-418b-4d21-9ad4-d315e51d4073/entity_field",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"9ab49fb8-418b-4d21-9ad4-d315e51d4073",
 								"entity_field"
 							]
 						}
@@ -444,7 +454,7 @@
 								},
 								{
 									"key": "name",
-									"value": "mid_name",
+									"value": "Имя",
 									"type": "text"
 								},
 								{
@@ -453,19 +463,24 @@
 									"type": "text"
 								},
 								{
-									"key": "id",
-									"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"key": "hash",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "in_stat",
+									"value": "true",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field",
+							"raw": "{{host}}api/9ab0a747-62ad-4ea0-8415-b72d520eb5e7/entity_field",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"9ab0a747-62ad-4ea0-8415-b72d520eb5e7",
 								"entity_field"
 							]
 						}
@@ -512,14 +527,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e10",
+							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
 								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
 								"entity_field",
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e10"
+								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
 							]
 						}
 					},
@@ -571,7 +586,7 @@
 					"response": []
 				},
 				{
-					"name": "destroy Copy",
+					"name": "destroy",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -586,20 +601,44 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+							"raw": "{{host}}api/9a985112-1fa4-4180-895b-8724409b73f0/entity_field/9aa29a35-6148-4dd6-ae18-a89c64cc554b",
 							"host": [
 								"{{host}}api"
 							],
 							"path": [
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+								"9a985112-1fa4-4180-895b-8724409b73f0",
 								"entity_field",
-								"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+								"9aa29a35-6148-4dd6-ae18-a89c64cc554b"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "get_statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}api/9ab49fb8-418b-4d21-9ad4-d315e51d4073/get_statistics?XDEBUG_SESSION_START=PHPSTORM",
+					"host": [
+						"{{host}}api"
+					],
+					"path": [
+						"9ab49fb8-418b-4d21-9ad4-d315e51d4073",
+						"get_statistics"
+					],
+					"query": [
+						{
+							"key": "XDEBUG_SESSION_START",
+							"value": "PHPSTORM"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
