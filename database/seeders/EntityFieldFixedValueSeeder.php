@@ -16,11 +16,14 @@ class EntityFieldFixedValueSeeder extends Seeder
      */
     public function run($entityFieldId, $fieldNames): void
     {
-       dump($entityFieldId);
-       dump($fieldNames);
-       EntityFieldFixedValue::create([
-           'entity_field_id' => $entityFieldId,
-           'value' => $fieldNames,
-       ]);
+        dump($entityFieldId);
+        dump($fieldNames);
+
+        foreach ($fieldNames['value'] as $fieldName) {
+            EntityFieldFixedValue::create([
+                'entity_field_id' => $entityFieldId,
+                'value' => $fieldName,
+            ]);
+        };
     }
 }

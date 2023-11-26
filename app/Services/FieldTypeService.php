@@ -4,14 +4,20 @@ namespace App\Services;
 
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
+use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
 use App\Resolvers\FieldTypeResolvers\StringField;
+use App\Resolvers\FieldTypeResolvers\TimestampsField;
+use App\Resolvers\FieldTypeResolvers\UserField;
 
 class FieldTypeService extends FieldService
 {
     protected const FIELDSTYPES = [
         FieldTypeEnum::String->value => StringField::class,
-        FieldTypeEnum::Select->value => SelectField::class
+        FieldTypeEnum::Select->value => SelectField::class,
+        FieldTypeEnum::User->value => UserField::class,
+        FieldTypeEnum::Integer->value => IntegerField::class,
+        FieldTypeEnum::Timestamps->value => TimestampsField::class
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string

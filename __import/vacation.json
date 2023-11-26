@@ -22,12 +22,12 @@
           "in_stat": true
         },
         "Сотрудник уходящий в отпуск": {
-          "type": "User",
+          "type": "user",
           "hash": "goingEmployee",
           "in_stat": false
         },
         "Замещающий сотрудник": {
-          "type": "User",
+          "type": "user",
           "hash": "substituteEmployee",
           "in_stat": false
         },

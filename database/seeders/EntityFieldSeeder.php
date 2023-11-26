@@ -22,7 +22,7 @@ class EntityFieldSeeder extends Seeder
         foreach($json as $name => $value) {
             foreach ($value as $key => $item) {
                 if($item['type'] === 'select' or $item['type'] === 'object') {
-                    $id = $this->create($entityId, $key, 'array', $item['hash'], $item['in_stat'], 255);
+                    $id = $this->create($entityId, $key, 'select', $item['hash'], $item['in_stat'], 255);
                     $this->call(
                         [
                             EntityFieldFixedValueSeeder::class,
