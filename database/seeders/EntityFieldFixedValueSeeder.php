@@ -19,7 +19,7 @@ class EntityFieldFixedValueSeeder extends Seeder
         dump($entityFieldId);
         dump($fieldNames);
 
-        foreach ($fieldNames['value'] as $fieldName) {
+        foreach ($fieldNames as $fieldName) {
             EntityFieldFixedValue::create([
                 'entity_field_id' => $entityFieldId,
                 'value' => $fieldName,

@@ -15,33 +15,51 @@ class EntityFieldSeeder extends Seeder
      */
     public function run($entityName, $json): void
     {
-        $entityId = Entity::where('name', $entityName)->first()->id;
+        $entity = Entity::where('name', $entityName)->first();
         dump("Засеивание");
         dump($entityName);
         dump("----------");
-        foreach($json as $name => $value) {
-            foreach ($value as $key => $item) {
-                if($item['type'] === 'select' or $item['type'] === 'object') {
-                    $id = $this->create($entityId, $key, 'select', $item['hash'], $item['in_stat'], 255);
-                    $this->call(
-                        [
-                            EntityFieldFixedValueSeeder::class,
-                        ],
-                        false,
-                        [
-                            'entityFieldId' => $id,
-                            'fieldNames' => $item
-                        ],
-                    );
-                } else {
-                    $this->create($entityId, $key, $item['type'], $item['hash'], $item['in_stat'], 255);
-                }
+        $fields = [];
+        foreach ($json as $key => $item) {
+            if ($item['type'] === 'select' or $item['type'] === 'object') {
+                $entityFieldId = $this->create($entity->id, $key, 'select', $item['hash'], $item['in_stat'], 255);
+                $fields[$item['hash']] = [
+                    'type' => 'select',
+                    'id' => $entityFieldId
+                ];
+                $this->call(
+                    [
+                        EntityFieldFixedValueSeeder::class,
+                    ],
+                    false,
+                    [
+                        'entityFieldId' => $entityFieldId,
+                        'fieldNames' => $item['value']
+                    ],
+                );
+            } else {
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['in_stat'], 255);
+                $fields[$item['hash']] = [
+                    'type' => $item['type'],
+                    'id' => $entityFieldId
+                ];;
             }
         }
+        $this->call(
+            [
+                EntityValueSeeder::class,
+            ],
+            false,
+            [
+                'entity' => $entity,
+                'fields' => $fields
+            ]
+        );
     }
 
-    private function create($entityId, $name, $type, $hash, $inStat, $maxLength): string {
-        $entityField  = EntityField::create([
+    private function create($entityId, $name, $type, $hash, $inStat, $maxLength): string
+    {
+        $entityField = EntityField::create([
             'entity_id' => $entityId,
             'name' => $name,
             'type' => $type,

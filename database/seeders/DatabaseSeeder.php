@@ -30,21 +30,18 @@ class DatabaseSeeder extends Seeder
     private function seedEntity(String $path): void {
         $json = File::json(base_path($path));
 
-        $entityName = null;
         foreach($json as $name => $value) {
             $entityName = $name;
+            $this->call(
+                [
+                    EntitySeeder::class,
+                ],
+                false,
+                [
+                    'entityName' => $entityName,
+                    'json' => $value
+                ],
+            );
         }
-
-        $this->call(
-            [
-                EntitySeeder::class,
-                EntityFieldSeeder::class,
-            ],
-            false,
-            [
-                'entityName' => $entityName,
-                'json' => $json
-            ],
-        );
     }
 }
