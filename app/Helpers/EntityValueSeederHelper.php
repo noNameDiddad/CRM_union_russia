@@ -30,7 +30,7 @@ class EntityValueSeederHelper
             FieldTypeEnum::Integer->value => fake()->numberBetween(1, 1000),
 //            FieldTypeEnum::File->value =>
             FieldTypeEnum::User->value => User::first()->id ?? null,
-            FieldTypeEnum::Timestamps->value => now()->toString(),
+            FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
 //            FieldTypeEnum::MultiSelect->value =>
             FieldTypeEnum::Boolean->value => fake()->boolean

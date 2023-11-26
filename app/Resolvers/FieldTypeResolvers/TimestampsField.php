@@ -11,21 +11,13 @@ class TimestampsField implements FieldResolverInterface
         // TODO: Implement validate() method.
     }
 
-    public function set($value): string
+    public function set($value): ?string
     {
-        return json_encode($value);
+        return $value;
     }
 
-    public function get($value): array
+    public function get($value): ?string
     {
-        $instance = EntityFieldFixedValue::find($value);
-
-        if ($value == null) {
-            return [];
-        }
-        return [
-            'id' => $instance->id,
-            'value' => $instance->value
-        ];
+        return $value;
     }
 }
