@@ -8,22 +8,22 @@
           ],
           "type": "select",
           "hash": "honorific",
-          "in_stat": true
+          "inStat": true
         },
         "Имя": {
           "type": "string",
           "hash": "name",
-          "in_stat": true
+          "inStat": true
         },
         "Фамилия": {
           "type": "string",
           "hash": "surname",
-          "in_stat": true
+          "inStat": true
         },
         "Отчество": {
           "type": "string",
           "hash": "patronymic",
-          "in_stat": true
+          "inStat": true
         },
         "Телефон": {
           "value":  [
@@ -37,7 +37,7 @@
           ],
           "type": "object",
           "hash": "phone",
-          "in_stat": true
+          "inStat": true
         },
         "E-mail": {
           "value":  [
@@ -51,12 +51,12 @@
           ],
           "type": "object",
           "hash": "email",
-          "in_stat": true
+          "inStat": true
         },
         "День рождения": {
           "type": "timestamps",
           "hash": "birthday",
-          "in_stat": true
+          "inStat": true
         },
         "Пол": {
           "value":  [
@@ -65,7 +65,7 @@
           ],
           "type": "select",
           "hash": "sex",
-          "in_stat": true
+          "inStat": true
         },
         "Вид м/ж": {
           "value":  [
@@ -75,7 +75,7 @@
           ],
           "type": "select",
           "hash": "residence",
-          "in_stat": true
+          "inStat": true
         },
         "Гражданство": {
           "value":  [
@@ -85,7 +85,7 @@
           ],
           "type": "select",
           "hash": "citizenship",
-          "in_stat": false
+          "inStat": false
         },
         "Автор": {
           "value":  [
@@ -96,17 +96,17 @@
           ],
           "type": "select",
           "hash": "author",
-          "in_stat": false
+          "inStat": false
         },
         "Место работы": {
           "type": "string",
           "hash": "job",
-          "in_stat": false
+          "inStat": false
         },
         "Должность": {
           "type": "string",
           "hash": "position",
-          "in_stat": false
+          "inStat": false
         },
         "Соц. положение": {
           "value":  [
@@ -131,12 +131,12 @@
           ],
           "type": "select",
           "hash": "socialStatus",
-          "in_stat": false
+          "inStat": false
         },
         "Лояльность": {
           "type": "string",
           "hash": "loyalty",
-          "in_stat": false
+          "inStat": false
         },
         "Адрес (Полный)": {
           "value":  [
@@ -148,7 +148,7 @@
           ],
           "type": "object",
           "hash": "address",
-          "in_stat": false
+          "inStat": false
         },
         "МО": {
           "value":  [
@@ -204,12 +204,12 @@
           ],
           "type": "select",
           "hash": "municipalDistrict",
-          "in_stat": false
+          "inStat": false
         },
         "УИК": {
           "type": "string",
           "hash": "uik",
-          "in_stat": false
+          "inStat": false
         },
         "Льгот. кат.": {
           "value":  [
@@ -234,62 +234,62 @@
           ],
           "type": "select",
           "hash": "preferentialCategory",
-          "in_stat": false
+          "inStat": false
         },
         "Иная информация": {
           "type": "string",
           "hash": "otherInformation",
-          "in_stat": false
+          "inStat": false
         },
         "Организация": {
           "type": "string",
           "hash": "organization",
-          "in_stat": false
+          "inStat": false
         },
         "Почтовый индекс": {
           "type": "integer",
           "hash": "postcode",
-          "in_stat": false
+          "inStat": false
         },
         "Страна": {
           "type": "string",
           "hash": "country",
-          "in_stat": false
+          "inStat": false
         },
         "Регион": {
           "type": "string",
           "hash": "region",
-          "in_stat": false
+          "inStat": false
         },
         "Район": {
           "type": "string",
           "hash": "area",
-          "in_stat": false
+          "inStat": false
         },
         "Населенный пункт": {
           "type": "string",
           "hash": "locality",
-          "in_stat": false
+          "inStat": false
         },
         "Улица, номер дома": {
           "type": "string",
           "hash": "streetHouseNumber",
-          "in_stat": false
+          "inStat": false
         },
         "Квартира, офис, комната, этаж": {
           "type": "string",
           "hash": "apartmentOfficeRoomFloor",
-          "in_stat": false
+          "inStat": false
         },
         "Адрес для генерации документ": {
           "type": "string",
           "hash": "documentGenerationAddress",
-          "in_stat": false
+          "inStat": false
         },
         "Отвественный": {
           "type": "user",
           "hash": "responsible",
-          "in_stat": false
+          "inStat": false
         }
       }
 }

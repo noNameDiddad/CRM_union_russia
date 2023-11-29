@@ -9,27 +9,27 @@
           ],
           "type": "select",
           "hash": "event",
-          "in_stat": true
+          "inStat": true
         },
         "Дата начала": {
           "type": "timestamps",
           "hash": "startDate",
-          "in_stat": true
+          "inStat": true
         },
         "Дата завершения": {
           "type": "timestamps",
           "hash": "endDate",
-          "in_stat": true
+          "inStat": true
         },
         "Сотрудник уходящий в отпуск": {
           "type": "user",
           "hash": "goingEmployee",
-          "in_stat": false
+          "inStat": false
         },
         "Замещающий сотрудник": {
           "type": "user",
           "hash": "substituteEmployee",
-          "in_stat": false
+          "inStat": false
         },
         "Стадия": {
           "value":  [
@@ -43,12 +43,12 @@
           ],
           "type": "select",
           "hash": "state",
-          "in_stat": false
+          "inStat": false
         },
         "Статус отпуска": {
           "type": "string",
           "hash": "vacationStatus",
-          "in_stat": false
+          "inStat": false
         }
       }
 }
