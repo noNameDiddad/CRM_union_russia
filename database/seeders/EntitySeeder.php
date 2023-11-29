@@ -11,11 +11,11 @@ class EntitySeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run($entityName, $json): void
+    public function run($entityName, $json, $hash): void
     {
         Entity::create([
             'name' => $entityName,
-            'hash' => Str::slug($entityName),
+            'hash' => $hash,
         ]);
 
         $this->call(

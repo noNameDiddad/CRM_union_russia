@@ -12,4 +12,5 @@ enum FieldTypeEnum: string
     case Select = 'select';
     case MultiSelect = 'multi_select';
     case Boolean = 'boolean';
+    case Relation = 'relation';
 }

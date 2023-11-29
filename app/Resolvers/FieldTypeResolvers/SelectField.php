@@ -16,7 +16,7 @@ class SelectField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value): ?array
+    public function get($value, $field = null): ?array
     {
         $instance = EntityFieldFixedValue::find($value);
 

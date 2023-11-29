@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('hash');
             $table->boolean('in_stat');
             $table->integer('max_length');
+            $table->string('relate_to')->nullable();
             $table->timestamps();
         });
     }

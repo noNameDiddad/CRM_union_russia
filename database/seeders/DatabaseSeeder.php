@@ -15,22 +15,25 @@ class DatabaseSeeder extends Seeder
     {
         $dirName = '__import';
 
-        $files = File::files($dirName);
+        if (File::exists($dirName . '/order.json')) {
+            $order = File::json($dirName . '/order.json');
+        }
 
-        dump('Началось заполнение данных, при возникновении ошибки убедитесь что данные в файлах в формате JSON');
-        dump('Сделать это можно с помощью валидатора, например, https://codebeautify.org/jsonviewer');
-
-        foreach ($files as $file) {
-            if ($file->getExtension() === 'json') {
-                $this->seedEntity('./' . $dirName . '/' . $file->getFilename());
+        foreach ($order['order'] as $item) {
+            if (File::exists($dirName . '/data/'.$item.'.json')) {
+                $this->seedEntity($dirName . '/data/'.$item.'.json', $item);
             }
+
         }
     }
 
-    private function seedEntity(String $path): void {
+    private function seedEntity(string $path, $hash): void
+    {
         $json = File::json(base_path($path));
 
-        foreach($json as $name => $value) {
+        dump('Обработка файла ' . $path . '.' );
+
+        foreach ($json as $name => $value) {
             $entityName = $name;
             $this->call(
                 [
@@ -39,7 +42,8 @@ class DatabaseSeeder extends Seeder
                 false,
                 [
                     'entityName' => $entityName,
-                    'json' => $value
+                    'json' => $value,
+                    'hash' => $hash
                 ],
             );
         }

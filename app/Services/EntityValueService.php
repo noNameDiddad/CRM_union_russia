@@ -27,4 +27,14 @@ class EntityValueService
         $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data);
         return $this->repository->create($resolvedData);
     }
+
+    public function getRandomElement()
+    {
+        return $this->repository->randomId();
+    }
+
+    public function truncate(): void
+    {
+        $this->repository->truncate();
+    }
 }

@@ -47,4 +47,15 @@ class EntityValueRepository
     {
         return $this->model->findOrFail($id);
     }
+
+    public function randomId()
+    {
+        $all_id = collect($this->model->where('_id', 'exists', true)->get()->toArray());
+        return $all_id->pluck('_id')->random();
+    }
+
+    public function truncate(): void
+    {
+        $this->model->truncate();
+    }
 }

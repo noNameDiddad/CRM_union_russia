@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
+use App\Resolvers\FieldTypeResolvers\RelationField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
 use App\Resolvers\FieldTypeResolvers\StringField;
 use App\Resolvers\FieldTypeResolvers\TimestampsField;
@@ -17,7 +18,8 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Select->value => SelectField::class,
         FieldTypeEnum::User->value => UserField::class,
         FieldTypeEnum::Integer->value => IntegerField::class,
-        FieldTypeEnum::Timestamps->value => TimestampsField::class
+        FieldTypeEnum::Timestamps->value => TimestampsField::class,
+        FieldTypeEnum::Relation->value => RelationField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string
@@ -36,7 +38,7 @@ class FieldTypeService extends FieldService
             if (!isset($fields[$key])) {
                 continue;
             }
-            $resolvedData[$key] = app(static::getClassForFieldType($fields[$key]))->set($value);
+            $resolvedData[$key] = app(static::getClassForFieldType($fields[$key]['type']))->set($value);
         }
 
         return $resolvedData;

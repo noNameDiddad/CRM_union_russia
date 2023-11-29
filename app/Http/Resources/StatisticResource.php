@@ -25,8 +25,8 @@ class StatisticResource extends JsonResource
         ];
 
         foreach ($fields as $key =>$field) {
-            $fieldClass = FieldTypeService::getClassForFieldType($field);
-            $response[$key] = app($fieldClass)->get($this->{$key});
+            $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
+            $response[$key] = app($fieldClass)->get($this->{$key}, $field);
         }
 
         return $response;

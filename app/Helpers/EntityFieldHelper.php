@@ -27,7 +27,10 @@ class EntityFieldHelper
         $data = [];
 
         foreach ($fields as $field) {
-            $data[$field->hash] = $field->type;
+            $data[$field->hash] = [
+                'type' => $field->type,
+                'relateTo' => $field->relate_to
+            ];
         }
 
         return $data;

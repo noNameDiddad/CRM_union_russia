@@ -2,10 +2,9 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
-use App\Models\User;
+use App\Services\EntityValueService;
 
-class UserField implements FieldResolverInterface
+class RelationField implements FieldResolverInterface
 {
     public function validate()
     {
@@ -19,9 +18,11 @@ class UserField implements FieldResolverInterface
 
     public function get($value, $field = null): ?array
     {
-        if ($value == null) {
-            return null;
-        }
-        return User::find($value)->toArray();
+        $entity_table = "table_" . $field['relateTo'];
+        $service = new EntityValueService($entity_table);
+
+        $instanse = $service->show($value);
+
+        return $instanse->toArray();
     }
 }

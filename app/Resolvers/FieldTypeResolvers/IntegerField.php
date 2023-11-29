@@ -16,7 +16,7 @@ class IntegerField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value): ?int
+    public function get($value, $field = null): ?int
     {
         return $value;
     }

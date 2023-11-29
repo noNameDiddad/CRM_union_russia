@@ -22,8 +22,9 @@ class EntityFieldSeeder extends Seeder
         $fields = [];
         foreach ($json as $key => $item) {
             if ($item['type'] === 'select' or $item['type'] === 'object') {
-                $entityFieldId = $this->create($entity->id, $key, 'select', $item['hash'], $item['in_stat'], 255);
+                $entityFieldId = $this->create($entity->id, $key, 'select', $item['hash'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
+                    'relateTo' => null,
                     'type' => 'select',
                     'id' => $entityFieldId
                 ];
@@ -38,8 +39,13 @@ class EntityFieldSeeder extends Seeder
                     ],
                 );
             } else {
-                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['in_stat'], 255);
+                $relateTo = null;
+                if ($item['type'] === 'relation') {
+                    $relateTo = $item['relateTo'];
+                }
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255, $relateTo);
                 $fields[$item['hash']] = [
+                    'relateTo' => $relateTo,
                     'type' => $item['type'],
                     'id' => $entityFieldId
                 ];;
@@ -57,7 +63,7 @@ class EntityFieldSeeder extends Seeder
         );
     }
 
-    private function create($entityId, $name, $type, $hash, $inStat, $maxLength): string
+    private function create($entityId, $name, $type, $hash, $inStat, $maxLength, $relateTo = null): string
     {
         $entityField = EntityField::create([
             'entity_id' => $entityId,
@@ -65,7 +71,8 @@ class EntityFieldSeeder extends Seeder
             'type' => $type,
             'hash' => $hash,
             'in_stat' => $inStat,
-            'max_length' => $maxLength
+            'max_length' => $maxLength,
+            'relate_to' => $relateTo
         ]);
 
         return $entityField->id;

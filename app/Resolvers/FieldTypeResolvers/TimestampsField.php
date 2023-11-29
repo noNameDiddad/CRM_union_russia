@@ -16,7 +16,7 @@ class TimestampsField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value): ?string
+    public function get($value, $field = null): ?string
     {
         return $value;
     }

@@ -20,6 +20,7 @@ class EntityValueSeeder extends Seeder
     {
         $entity_table = "table_" . $entity->hash;
         $service = new EntityValueService($entity_table);
+        $service->truncate();
         for ($i = 0; $i < 100; $i++) {
             $service->createWithFieldResolver($entity, $this->generateData($entity, $fields));
         }
