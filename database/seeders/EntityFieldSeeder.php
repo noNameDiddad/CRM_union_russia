@@ -22,10 +22,10 @@ class EntityFieldSeeder extends Seeder
         $fields = [];
         foreach ($json as $key => $item) {
             if ($item['type'] === 'select' or $item['type'] === 'object') {
-                $entityFieldId = $this->create($entity->id, $key, 'select', $item['hash'], $item['inStat'], 255);
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
                     'relateTo' => null,
-                    'type' => 'select',
+                    'type' => $item['type'],
                     'id' => $entityFieldId
                 ];
                 $this->call(

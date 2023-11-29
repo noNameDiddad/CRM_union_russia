@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
+use App\Resolvers\FieldTypeResolvers\ObjectField;
 use App\Resolvers\FieldTypeResolvers\RelationField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
 use App\Resolvers\FieldTypeResolvers\StringField;
@@ -20,6 +21,7 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Integer->value => IntegerField::class,
         FieldTypeEnum::Timestamps->value => TimestampsField::class,
         FieldTypeEnum::Relation->value => RelationField::class,
+        FieldTypeEnum::Object->value => ObjectField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string

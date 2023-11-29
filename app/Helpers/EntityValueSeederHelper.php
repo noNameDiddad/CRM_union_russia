@@ -23,9 +23,6 @@ class EntityValueSeederHelper
 
     public static function generateField($field_id, $type, $relateTo = null): mixed
     {
-        if ($type == 'User') {
-            dd($field_id, $type);
-        }
         return match ($type) {
             FieldTypeEnum::String->value => fake()->word,
             FieldTypeEnum::Integer->value => fake()->numberBetween(1, 1000),
@@ -33,9 +30,9 @@ class EntityValueSeederHelper
             FieldTypeEnum::User->value => User::first()->id ?? null,
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
-//            FieldTypeEnum::MultiSelect->value =>
             FieldTypeEnum::Boolean->value => fake()->boolean,
-            FieldTypeEnum::Relation->value => self::generateRelation($relateTo)
+            FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
+            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value]
         };
     }
 

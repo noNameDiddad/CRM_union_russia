@@ -3,12 +3,7 @@
 namespace Database\Seeders;
 
 use App\Helpers\EntityValueSeederHelper;
-use App\Models\Entity;
-use App\Models\EntityField;
-use App\Models\EntityValue;
 use App\Services\EntityValueService;
-use App\Services\FieldTypeService;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class EntityValueSeeder extends Seeder
