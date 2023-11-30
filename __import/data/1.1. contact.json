@@ -1,29 +1,17 @@
 {
     "Контакты": 
       {
-        "Обращение": {
-          "value":  [
-            "г-н",
-            "г-жа"
-          ],
-          "type": "select",
-          "hash": "honorific",
-          "inStat": true
+        "Фамилия": {
+          "type": "string",
+          "in_stat": true
         },
         "Имя": {
           "type": "string",
-          "hash": "name",
-          "inStat": true
-        },
-        "Фамилия": {
-          "type": "string",
-          "hash": "surname",
-          "inStat": true
+          "in_stat": true
         },
         "Отчество": {
           "type": "string",
-          "hash": "patronymic",
-          "inStat": true
+          "in_stat": true
         },
         "Телефон": {
           "value":  [
@@ -36,8 +24,7 @@
             "Другой"
           ],
           "type": "object",
-          "hash": "phone",
-          "inStat": true
+          "in_stat": true
         },
         "E-mail": {
           "value":  [
@@ -50,13 +37,11 @@
             "Другой"
           ],
           "type": "object",
-          "hash": "email",
-          "inStat": true
+          "in_stat": true
         },
         "День рождения": {
           "type": "timestamps",
-          "hash": "birthday",
-          "inStat": true
+          "in_stat": true
         },
         "Пол": {
           "value":  [
@@ -64,8 +49,7 @@
             "Жен."
           ],
           "type": "select",
-          "hash": "sex",
-          "inStat": true
+          "in_stat": true
         },
         "Вид м/ж": {
           "value":  [
@@ -74,8 +58,7 @@
             "Не указан"
           ],
           "type": "select",
-          "hash": "residence",
-          "inStat": true
+          "in_stat": true
         },
         "Гражданство": {
           "value":  [
@@ -84,8 +67,7 @@
             "Содружество Независимых Государств"
           ],
           "type": "select",
-          "hash": "citizenship",
-          "inStat": false
+          "in_stat": false
         },
         "Автор": {
           "value":  [
@@ -95,18 +77,15 @@
             "Анонимное"
           ],
           "type": "select",
-          "hash": "author",
-          "inStat": false
+          "in_stat": false
         },
         "Место работы": {
           "type": "string",
-          "hash": "job",
-          "inStat": false
+          "in_stat": false
         },
         "Должность": {
           "type": "string",
-          "hash": "position",
-          "inStat": false
+          "in_stat": false
         },
         "Соц. положение": {
           "value":  [
@@ -127,28 +106,40 @@
             "Предприниматель",
             "Сельскохозяйственный рабочий",
             "Служащий",
-            "Студент"
+            "Студент",
+            "Учащийся",
+            "Фермер"
           ],
           "type": "select",
-          "hash": "socialStatus",
-          "inStat": false
+          "in_stat": false
+        },
+        "Льготные категории": {
+          "value":  [
+            "Блокадник",
+            "Ветеран Великой Отечественной Войны",
+            "Ветеран труда",
+            "Герой",
+            "Другие",
+            "Инвалид",
+            "Инвалид Великой Отечественной Войны",
+            "Мать многодетная",
+            "Несовершеннолетний узник",
+            "Репрессированный",
+            "Семья многодетная",
+            "Семья малоимущая",
+            "Семья СВО",
+            "Родитель одиноко воспитывающий",
+            "Сирота",
+            "Труженик тыла",
+            "Участник ЧАЭС",
+            "Участник боевых действий"
+          ],
+          "type": "select",
+          "in_stat": false
         },
         "Лояльность": {
           "type": "string",
-          "hash": "loyalty",
-          "inStat": false
-        },
-        "Адрес (Полный)": {
-          "value":  [
-              "Адрес доставки",
-              "Фактический",
-              "Адрес регистрации",
-              "Юридический",
-              "Адрес бенефициара"
-          ],
-          "type": "object",
-          "hash": "address",
-          "inStat": false
+          "in_stat": false
         },
         "МО": {
           "value":  [
@@ -203,93 +194,23 @@
               "МО Юсьвинского муниципального округа"
           ],
           "type": "select",
-          "hash": "municipalDistrict",
-          "inStat": false
+          "in_stat": false
         },
-        "УИК": {
+        "Адрес": {
+          "type": "address",
+          "in_stat": false
+        },
+         "УИК": {
           "type": "string",
-          "hash": "uik",
-          "inStat": false
-        },
-        "Льгот. кат.": {
-          "value":  [
-            "Блокадник",
-            "Ветеран Великой Отечественной Войны",
-            "Ветеран труда",
-            "Герой",
-            "Другие",
-            "Инвалид",
-            "Инвалид Великой Отечественной Войны",
-            "Мать многодетная",
-            "Несовершенно летний узник",
-            "Репрессированный",
-            "Семья многодетная",
-            "Семья малоимущая",
-            "Семья СВО",
-            "Родитель одиноко воспитывающий",
-            "Сирота",
-            "Труженик тыла",
-            "Участник",
-            "Участник боевых действий"
-          ],
-          "type": "select",
-          "hash": "preferentialCategory",
-          "inStat": false
+          "in_stat": false
         },
         "Иная информация": {
           "type": "string",
-          "hash": "otherInformation",
-          "inStat": false
+          "in_stat": false
         },
         "Организация": {
           "type": "string",
-          "hash": "organization",
-          "inStat": false
-        },
-        "Почтовый индекс": {
-          "type": "integer",
-          "hash": "postcode",
-          "inStat": false
-        },
-        "Страна": {
-          "type": "string",
-          "hash": "country",
-          "inStat": false
-        },
-        "Регион": {
-          "type": "string",
-          "hash": "region",
-          "inStat": false
-        },
-        "Район": {
-          "type": "string",
-          "hash": "area",
-          "inStat": false
-        },
-        "Населенный пункт": {
-          "type": "string",
-          "hash": "locality",
-          "inStat": false
-        },
-        "Улица, номер дома": {
-          "type": "string",
-          "hash": "streetHouseNumber",
-          "inStat": false
-        },
-        "Квартира, офис, комната, этаж": {
-          "type": "string",
-          "hash": "apartmentOfficeRoomFloor",
-          "inStat": false
-        },
-        "Адрес для генерации документ": {
-          "type": "string",
-          "hash": "documentGenerationAddress",
-          "inStat": false
-        },
-        "Отвественный": {
-          "type": "user",
-          "hash": "responsible",
-          "inStat": false
+          "in_stat": false
         }
       }
 }

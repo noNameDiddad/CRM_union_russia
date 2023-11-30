@@ -1,0 +1,37 @@
+{
+    "Адрес": 
+      {
+        "Почтовый индекс": {
+          "type": "integer",
+          "in_stat": false
+        },
+        "Страна": {
+          "type": "timestamps",
+          "in_stat": false
+        },
+        "Регион": {
+          "type": "select",
+          "in_stat": false
+        },
+        "Район": {
+          "type": "select",
+          "in_stat": false
+        },
+        "Населенный пункт": {
+          "type": "select",
+          "in_stat": false
+        },
+        "Населенный пункт": {
+          "type": "select",
+          "in_stat": false
+        },
+        "Улица, номер дома": {
+          "type": "File",
+          "in_stat": false
+        },
+        "Квартира, офис, комната, этаж": {
+          "type": "Files",
+          "in_stat": false
+        }
+      }
+}

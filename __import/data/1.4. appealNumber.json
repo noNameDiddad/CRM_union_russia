@@ -1,0 +1,17 @@
+{
+    "Номер вопроса": 
+      {
+        "Текущий год": {
+          "type": "integer",
+          "in_stat": true
+        },
+        "Номер региона": {
+          "type": "integer",
+          "in_stat": true
+        },
+        "Номер обращения": {
+          "type": "id",
+          "in_stat": true
+        }
+      }
+}
