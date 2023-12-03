@@ -3,15 +3,15 @@
       {
         "Фамилия": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Имя": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Отчество": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Телефон": {
           "value":  [
@@ -24,7 +24,7 @@
             "Другой"
           ],
           "type": "object",
-          "in_stat": true
+          "inStat": false
         },
         "E-mail": {
           "value":  [
@@ -37,11 +37,11 @@
             "Другой"
           ],
           "type": "object",
-          "in_stat": true
+          "inStat": false
         },
         "День рождения": {
           "type": "timestamps",
-          "in_stat": true
+          "inStat": false
         },
         "Пол": {
           "value":  [
@@ -49,7 +49,7 @@
             "Жен."
           ],
           "type": "select",
-          "in_stat": true
+          "inStat": false
         },
         "Вид м/ж": {
           "value":  [
@@ -58,7 +58,7 @@
             "Не указан"
           ],
           "type": "select",
-          "in_stat": true
+          "inStat": false
         },
         "Гражданство": {
           "value":  [
@@ -67,7 +67,7 @@
             "Содружество Независимых Государств"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Автор": {
           "value":  [
@@ -77,15 +77,15 @@
             "Анонимное"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Место работы": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Должность": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Соц. положение": {
           "value":  [
@@ -111,7 +111,7 @@
             "Фермер"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Льготные категории": {
           "value":  [
@@ -135,11 +135,11 @@
             "Участник боевых действий"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Лояльность": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "МО": {
           "value":  [
@@ -194,23 +194,24 @@
               "МО Юсьвинского муниципального округа"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Адрес": {
-          "type": "address",
-          "in_stat": false
+          "type": "relation",
+          "relateTo": "address",
+          "inStat": false
         },
          "УИК": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Иная информация": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Организация": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         }
       }
 }

@@ -1,13 +1,9 @@
 {
-    "Обращения граждан": 
+    "Об обращении": 
       {
-        "Гражданин": {
-          "type": "contact",
-          "in_stat": false
-        },
         "Дата принятия обращения": {
           "type": "timestamps",
-          "in_stat": false
+          "inStat": false
         },
         "Форма": {
           "value":  [
@@ -20,7 +16,7 @@
             "Не указано"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Формат участия": {
           "value":  [
@@ -28,7 +24,7 @@
             "Дистанционно"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Частота обращения": {
           "value":  [
@@ -38,15 +34,15 @@
             "Повторное"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Заявление": {
           "type": "File",
-          "in_stat": false
+          "inStat": false
         },
         "Приложение к заявлению": {
-          "type": "Files",
-          "in_stat": false
+          "type": "File",
+          "inStat": false
         },
         "Вид обращения": {
           "value":  [
@@ -59,11 +55,11 @@
             "Отрицательное"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Обращение на, л.": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Адресат": {
           "value":  [
@@ -78,7 +74,7 @@
             "Общероссийский народный фронт"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Вел прием": {
           "value":  [
@@ -100,67 +96,46 @@
             "Член РПС"
           ],
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Должность (Вел прием)": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "ФИО (Вел прием)": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Регистратор": {
-          "type": "User",
-          "in_stat": false
+          "type": "relation",
+          "relateTo": "user",
+          "inStat": false
         },
         "Исполнитель": {
-          "type": "User",
-          "in_stat": false
+          "type": "relation",
+          "relateTo": "user",
+          "inStat": false
         },
         "На контроле": {
           "type": "boolean",
-          "in_stat": false
+          "inStat": false
         },
         "Ответственный": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "Дата контроля": {
           "type": "timestamps",
-          "in_stat": false
+          "inStat": false
         },
         "Ссылка на папку обращения": {
           "type": "string",
-          "in_stat": false
+          "inStat": false
         },
         "План помощи (автоматическое поле)": {
-          "type": "File",
-          "in_stat": false
-        },
-        "Согласование": {
-          "type": "approval",
-          "in_stat": false
-        },
-        "Вопрос (для архивных)": {
-          "type": "questionForArchived",
-          "in_stat": false
-        },
-        "Вопросы граждан": {
-          "type": "citizensQuestions",
-          "in_stat": false
-        },
-        "Этап согласования (для РОП)": {
-          "value":  [
-            "Внесение обращения",
-            "Распределение юристом",
-            "В работе",
-            "На контроле",
-            "Согласование",
-            "Закрытие"
-          ],
-          "type": "select",
-          "in_stat": false
+          "type": "relation",
+          "relateTo": "helpPlan",
+          "inStat": false
         }
       }
 }

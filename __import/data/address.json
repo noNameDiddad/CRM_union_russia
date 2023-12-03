@@ -3,35 +3,35 @@
       {
         "Почтовый индекс": {
           "type": "integer",
-          "in_stat": false
+          "inStat": false
         },
         "Страна": {
           "type": "timestamps",
-          "in_stat": false
+          "inStat": false
         },
         "Регион": {
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Район": {
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Населенный пункт": {
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Населенный пункт": {
           "type": "select",
-          "in_stat": false
+          "inStat": false
         },
         "Улица, номер дома": {
-          "type": "File",
-          "in_stat": false
+          "type": "string",
+          "inStat": false
         },
         "Квартира, офис, комната, этаж": {
-          "type": "Files",
-          "in_stat": false
+          "type": "string",
+          "inStat": false
         }
       }
 }

@@ -2,12 +2,13 @@
     "Номер вопроса": 
       {
         "Номер обращения": {
-          "type": "appealNumber",
-          "in_stat": true
+          "type": "relation",
+          "relateTo": "appealNumber",
+          "inStat": false
         },
         "Номер вопроса в обращении": {
           "type": "integer",
-          "in_stat": true
+          "inStat": false
         }
       }
 }

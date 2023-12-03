@@ -3,15 +3,15 @@
       {
         "Текущий год": {
           "type": "integer",
-          "in_stat": true
+          "inStat": false
         },
         "Номер региона": {
           "type": "integer",
-          "in_stat": true
+          "inStat": false
         },
         "Номер обращения": {
-          "type": "id",
-          "in_stat": true
+          "type": "integer",
+          "inStat": false
         }
       }
 }

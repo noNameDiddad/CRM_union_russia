@@ -3,30 +3,31 @@
       {
         "Аннотация": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Тематика": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Событие": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Комментарий, результат приема": {
           "type": "string",
-          "in_stat": true
+          "inStat": false
         },
         "Вопросы граждан": {
-          "type": "Question",
-          "in_stat": true
+          "type": "question",
+          "relateTo": "citizensQuestions",
+          "inStat": false
         },
         "Подтвердите, что все вопросы по обращению внесены корректно": {
           "value":  [
             "Подтверждаю"
           ],
           "type": "select",
-          "in_stat": true
+          "inStat": false
         }
       }
 }

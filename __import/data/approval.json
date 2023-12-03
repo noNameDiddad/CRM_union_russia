@@ -3,7 +3,7 @@
       {
         "Документ для согласования": {
           "type": "File",
-          "in_stat": true
+          "inStat": false
         }
       }
 }

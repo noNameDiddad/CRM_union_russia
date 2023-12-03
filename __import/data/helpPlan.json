@@ -1,0 +1,34 @@
+{
+    "Номер вопроса": 
+      {
+        "Дата обращения": {
+          "type": "string",
+          "inStat": false
+        },
+        "Вид обращения": {
+          "type": "string",
+          "inStat": false
+        },
+        "ФИО заявителя": {
+          "type": "string",
+          "inStat": false
+        },
+        "Дата рождения": {
+          "type": "timestamps",
+          "inStat": false
+        },
+        "Контактный телефон": {
+          "type": "string",
+          "inStat": false
+        },
+        "Адрес проживания": {
+          "type": "string",
+          "inStat": false
+        },
+        "Отвественный": {
+          "type": "relation",
+          "relateTo": "user",
+          "inStat": false
+        }
+      }
+}
