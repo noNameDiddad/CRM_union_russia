@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
+use App\Resolvers\FieldTypeResolvers\BooleanField;
+use App\Resolvers\FieldTypeResolvers\FileField;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
 use App\Resolvers\FieldTypeResolvers\RelationField;
@@ -24,6 +26,8 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Relation->value => RelationField::class,
         FieldTypeEnum::Object->value => ObjectField::class,
         FieldTypeEnum::Stage->value => StageField::class,
+        FieldTypeEnum::File->value => FileField::class,
+        FieldTypeEnum::Boolean->value => BooleanField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string

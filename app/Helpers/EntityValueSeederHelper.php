@@ -26,7 +26,7 @@ class EntityValueSeederHelper
         return match ($type) {
             FieldTypeEnum::String->value => fake()->word,
             FieldTypeEnum::Integer->value => fake()->numberBetween(1, 1000),
-//            FieldTypeEnum::File->value =>
+            FieldTypeEnum::File->value => "/" . fake()->word,
             FieldTypeEnum::User->value => User::first()->id ?? null,
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
