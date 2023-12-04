@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Entity;
 use App\Models\EntityField;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class EntityFieldSeeder extends Seeder
 {
@@ -22,6 +21,7 @@ class EntityFieldSeeder extends Seeder
         $fields = [];
         foreach ($json as $key => $item) {
             $fixedValuesType = ['select', 'object', 'stage'];
+            $item['hash'] = Str::slug($key);
             if (in_array($item['type'], $fixedValuesType)) {
                 $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
