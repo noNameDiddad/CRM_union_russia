@@ -1,0 +1,14 @@
+{
+    "Номер вопроса": 
+      {
+        "Номер обращения": {
+          "type": "relation",
+          "relateTo": "appealNumber",
+          "inStat": false
+        },
+        "Номер вопроса в обращении": {
+          "type": "integer",
+          "inStat": false
+        }
+      }
+}

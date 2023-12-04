@@ -1,0 +1,33 @@
+{
+    "Вопрос (для архивных)": 
+      {
+        "Аннотация": {
+          "type": "string",
+          "inStat": false
+        },
+        "Тематика": {
+          "type": "string",
+          "inStat": false
+        },
+        "Событие": {
+          "type": "string",
+          "inStat": false
+        },
+        "Комментарий, результат приема": {
+          "type": "string",
+          "inStat": false
+        },
+        "Вопросы граждан": {
+          "type": "question",
+          "relateTo": "citizensQuestions",
+          "inStat": false
+        },
+        "Подтвердите, что все вопросы по обращению внесены корректно": {
+          "value":  [
+            "Подтверждаю"
+          ],
+          "type": "select",
+          "inStat": false
+        }
+      }
+}

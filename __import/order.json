@@ -1,7 +1,14 @@
 {
   "order": [
-    "contact",
-    "vacation",
-    "appeals"
+      "appealNumber",
+      "questionNumber",
+      "citizensQuestions",
+      "questionForArchived",
+      "approval",
+      "helpPlan",
+      "aboutAppeal",
+      "address",
+      "contact",
+      "appeals"
   ]
 }
