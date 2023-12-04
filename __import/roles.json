@@ -1,0 +1,25 @@
+{
+  "roles": {
+    "Администратор": {
+      "hash": "admin"
+    },
+    "Руководитель РОП": {
+      "hash": "director_rop"
+    },
+    "Начальник отдела": {
+      "hash": "head_department"
+    },
+    "Юрист": {
+      "hash": "lawyer"
+    },
+    "Администратор ИАС": {
+      "hash": "admin_ias"
+    },
+    "Консультант": {
+      "hash": "consultant"
+    },
+    "СМИ": {
+      "hash": "smi"
+    }
+  }
+}
