@@ -4,31 +4,26 @@
         "Контакт (Гражданин)": {
           "type": "relation",
           "relateTo": "contact",
-          "hash": "contact",
           "inStat": true
         },
         "Об обращении": {
           "type": "relation",
           "relateTo": "aboutAppeal",
-          "hash": "aboutAppeal",
           "inStat": true
         },
         "Согласование": {
           "type": "relation",
-          "relateTo": "approval",
           "relateTo": "approval",
           "inStat": false
         },
         "Вопрос (для архивных)": {
           "type": "relation",
           "relateTo": "questionForArchived",
-          "hash": "questionForArchived",
           "inStat": false
         },
         "Вопросы граждан": {
           "type": "relation",
           "relateTo": "citizensQuestions",
-          "hash": "citizensQuestions",
           "inStat": false
         },
         "Этап согласования (для РОП)": {
@@ -40,7 +35,6 @@
             "Согласование",
             "Закрытие"
           ],
-          "hash": "citizensQuestions",
           "type": "select",
           "inStat": false
         }

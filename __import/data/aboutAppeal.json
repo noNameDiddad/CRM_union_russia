@@ -37,11 +37,11 @@
           "inStat": false
         },
         "Заявление": {
-          "type": "File",
+          "type": "file",
           "inStat": false
         },
         "Приложение к заявлению": {
-          "type": "File",
+          "type": "file",
           "inStat": false
         },
         "Вид обращения": {
@@ -107,13 +107,11 @@
           "inStat": false
         },
         "Регистратор": {
-          "type": "relation",
-          "relateTo": "user",
+          "type": "user",
           "inStat": false
         },
         "Исполнитель": {
-          "type": "relation",
-          "relateTo": "user",
+          "type": "user",
           "inStat": false
         },
         "На контроле": {

@@ -1,5 +1,5 @@
 {
-    "Номер вопроса": 
+    "План помощи":
       {
         "Дата обращения": {
           "type": "string",
@@ -26,8 +26,7 @@
           "inStat": false
         },
         "Отвественный": {
-          "type": "relation",
-          "relateTo": "user",
+          "type": "user",
           "inStat": false
         }
       }

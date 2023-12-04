@@ -10,19 +10,19 @@
           "inStat": false
         },
         "Регион": {
-          "type": "select",
+          "type": "string",
           "inStat": false
         },
         "Район": {
-          "type": "select",
+          "type": "string",
           "inStat": false
         },
         "Населенный пункт": {
-          "type": "select",
+          "type": "string",
           "inStat": false
         },
         "Населенный пункт": {
-          "type": "select",
+          "type": "string",
           "inStat": false
         },
         "Улица, номер дома": {

@@ -18,7 +18,7 @@
           "inStat": false
         },
         "Вопросы граждан": {
-          "type": "question",
+          "type": "relation",
           "relateTo": "citizensQuestions",
           "inStat": false
         },

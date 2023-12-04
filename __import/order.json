@@ -2,13 +2,13 @@
   "order": [
       "appealNumber",
       "questionNumber",
-      "citizensQuestions",
-      "questionForArchived",
-      "approval",
-      "helpPlan",
-      "aboutAppeal",
       "address",
       "contact",
+      "helpPlan",
+      "aboutAppeal",
+      "approval",
+      "citizensQuestions",
+      "questionForArchived",
       "appeals"
   ]
 }

@@ -248,11 +248,6 @@
           "type": "string",
           "inStat": false
         },
-        "Обращения граждан": {
-          "type": "relation",
-          "relateTo": "appeal",
-          "inStat": false
-        },
         "Статус решения вопроса": {
           "value":  [
             "Ответ-консультация",
@@ -272,8 +267,7 @@
           "inStat": false
         },
         "Исполнитель": {
-          "type": "relation",
-          "relateTo": "user",
+          "type": "user",
           "inStat": false
         }
       }
