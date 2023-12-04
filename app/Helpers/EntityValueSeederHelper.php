@@ -29,7 +29,7 @@ class EntityValueSeederHelper
 //            FieldTypeEnum::File->value =>
             FieldTypeEnum::User->value => User::first()->id ?? null,
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
-            FieldTypeEnum::Select->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
+            FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
             FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value]

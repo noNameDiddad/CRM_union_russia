@@ -21,7 +21,8 @@ class EntityFieldSeeder extends Seeder
         dump("----------");
         $fields = [];
         foreach ($json as $key => $item) {
-            if ($item['type'] === 'select' or $item['type'] === 'object') {
+            $fixedValuesType = ['select', 'object', 'stage'];
+            if (in_array($item['type'], $fixedValuesType)) {
                 $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
                     'relateTo' => null,

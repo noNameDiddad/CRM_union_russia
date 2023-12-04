@@ -15,6 +15,21 @@ class DatabaseSeeder extends Seeder
     {
         $dirName = '__import';
 
+
+        if (File::exists($dirName . '/roles.json')) {
+            $roles = File::json($dirName . '/roles.json');
+            $this->call(
+                [
+                    RoleSeeder::class,
+                ],
+                false,
+                [
+                    'json' => $roles
+                ],
+            );
+        }
+
+
         if (File::exists($dirName . '/order.json')) {
             $order = File::json($dirName . '/order.json');
         }

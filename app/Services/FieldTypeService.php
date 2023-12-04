@@ -8,6 +8,7 @@ use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
 use App\Resolvers\FieldTypeResolvers\RelationField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
+use App\Resolvers\FieldTypeResolvers\StageField;
 use App\Resolvers\FieldTypeResolvers\StringField;
 use App\Resolvers\FieldTypeResolvers\TimestampsField;
 use App\Resolvers\FieldTypeResolvers\UserField;
@@ -22,6 +23,7 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Timestamps->value => TimestampsField::class,
         FieldTypeEnum::Relation->value => RelationField::class,
         FieldTypeEnum::Object->value => ObjectField::class,
+        FieldTypeEnum::Stage->value => StageField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string
