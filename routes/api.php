@@ -32,6 +32,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::resource('{entity}/entity_field', EntityFieldController::class);
     Route::resource('{entity}/entity_value', EntityValueController::class);
     Route::resource('{entity_field}/entity_field_fixed_value', EntityFieldFixedValueController::class);
+    Route::resource('role', RoleController::class);
 
     Route::get('{entity}/get_statistics', [StatisticController::class, 'getStatistics']);
 });
