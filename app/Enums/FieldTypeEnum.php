@@ -15,4 +15,5 @@ enum FieldTypeEnum: string
     case Boolean = 'boolean';
     case Stage = 'stage';
     case Relation = 'relation';
+    case Priority = 'priority';
 }

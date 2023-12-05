@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Helpers\EntityFieldHelper;
 use App\Models\Entity;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model as StandardModel;
+use Illuminate\Support\Arr;
 use MongoDB\Laravel\Eloquent\Model as MongoModel;
 
 
@@ -12,7 +14,8 @@ trait CRUDMethodsForEntity
 {
     public function getAllByEntity(Entity $entity): Collection
     {
-        return $this->repository->allByEntity($entity);
+        $data = $this->repository->allByEntity($entity);
+        return EntityFieldHelper::sortFieldsByPriority($data, $entity->id);
     }
 
     public function createWithEntity(Entity $entity, array $data): MongoModel|StandardModel

@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Repositories\EntityFieldRepository;
+use Illuminate\Database\Eloquent\Collection;
 
 class EntityFieldHelper
 {
@@ -14,6 +15,17 @@ class EntityFieldHelper
     public function __construct()
     {
         $this->repository = app(EntityFieldRepository::class);
+    }
+
+    public static function sortFieldsByPriority(Collection $data, $entity_id): Collection
+    {
+        $fields = app(EntityFieldHelper::class)->getFields($entity_id);
+        foreach ($fields as $key => $field) {
+            if ($field['type'] == 'priority') {
+                return $data->sortBy($key);
+            }
+        }
+        return $data;
     }
 
     public function getFields(string $entity_id, bool $isStatistic = false): array

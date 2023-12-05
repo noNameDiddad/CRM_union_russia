@@ -8,6 +8,7 @@ use App\Resolvers\FieldTypeResolvers\BooleanField;
 use App\Resolvers\FieldTypeResolvers\FileField;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
+use App\Resolvers\FieldTypeResolvers\PriorityField;
 use App\Resolvers\FieldTypeResolvers\RelationField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
 use App\Resolvers\FieldTypeResolvers\StageField;
@@ -28,6 +29,7 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Stage->value => StageField::class,
         FieldTypeEnum::File->value => FileField::class,
         FieldTypeEnum::Boolean->value => BooleanField::class,
+        FieldTypeEnum::Priority->value => PriorityField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string

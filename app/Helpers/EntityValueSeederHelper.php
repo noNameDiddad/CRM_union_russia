@@ -32,7 +32,8 @@ class EntityValueSeederHelper
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
-            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value]
+            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],
+            FieldTypeEnum::Priority->value => fake()->numberBetween(1, 100),
         };
     }
 
