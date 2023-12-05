@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Entity;
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -15,6 +12,10 @@ class UserSeeder extends Seeder
      */
     public function run($roles): void
     {
+        User::factory()->create([
+            'role_id' => collect($roles)->where('hash', 'admin')->first()->id,
+            'email' => 'example@example.com',
+        ]);
         foreach ($roles as $item) {
             User::factory()->create(['role_id' => $item->id]);
         }
