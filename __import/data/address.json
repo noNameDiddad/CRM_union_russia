@@ -6,7 +6,7 @@
           "inStat": false
         },
         "Страна": {
-          "type": "timestamps",
+          "type": "string",
           "inStat": false
         },
         "Регион": {
@@ -30,7 +30,7 @@
           "inStat": false
         },
         "Квартира, офис, комната, этаж": {
-          "type": "string",
+          "type": "integer",
           "inStat": false
         }
       }
