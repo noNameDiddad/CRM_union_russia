@@ -5,8 +5,8 @@ use App\Http\Controllers\EntityController;
 use App\Http\Controllers\EntityFieldController;
 use App\Http\Controllers\EntityFieldFixedValueController;
 use App\Http\Controllers\EntityValueController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatisticController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,23 +21,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
-    Route::post('login', [AuthController::class, 'login']);
-    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('login', [AuthController::class, 'login'])->name('login');
+    Route::get('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::post('me', [AuthController::class, 'me']);
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'api'], function () {
+    Route::resource('entity', EntityController::class);
+    Route::resource('{entity}/entity_field', EntityFieldController::class);
+    Route::resource('{entity}/entity_value', EntityValueController::class);
+    Route::resource('{entity_field}/entity_field_fixed_value', EntityFieldFixedValueController::class);
+
+    Route::get('{entity}/get_statistics', [StatisticController::class, 'getStatistics']);
 });
-
-Route::resource('entity', EntityController::class);
-Route::resource('{entity}/entity_field', EntityFieldController::class);
-Route::resource('{entity}/entity_value', EntityValueController::class);
-Route::resource('{entity_field}/entity_field_fixed_value', EntityFieldFixedValueController::class);
-
-Route::get('{entity}/get_statistics',  [StatisticController::class, 'getStatistics']);
-
 
 
 
