@@ -1,0 +1,25 @@
+{
+    "РОП Уникальные": 
+      {
+        "Название": {
+          "type": "string",
+          "inStat": false
+        },
+        "ID": {
+          "type": "integer",
+          "inStat": false
+        },
+        "Дата рождения": {
+          "type": "timestamps",
+          "inStat": false
+        },
+        "Дата подачи": {
+          "type": "timestamps",
+          "inStat": false
+        },         
+        "Должность (Вел прием)": {
+          "type": "string",
+          "inStat": false
+        }
+      }
+}

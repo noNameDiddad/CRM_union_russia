@@ -1,0 +1,101 @@
+{
+    "РОП Общие": 
+      {
+        "Название": {
+          "type": "string",
+          "inStat": false
+        },
+        "ID": {
+          "type": "integer",
+          "inStat": false
+        },
+        "Приоритет": {
+          "type": "priority",
+          "inStat": false
+        },
+        "Регион": {
+          "type": "string",
+          "inStat": false
+        },
+        "Местное отделение": {
+          "type": "string",
+          "inStat": false
+        },
+        "УИК": {
+          "type": "string",
+          "inStat": false
+        },
+        "Фамилия": {
+          "type": "string",
+          "inStat": false
+        },
+        "Имя": {
+          "type": "string",
+          "inStat": false
+        },
+        "Отчество": {
+          "type": "string",
+          "inStat": false
+        },
+        "Дата рождения": {
+          "type": "timestamps",
+          "inStat": false
+        },
+        "Адрес": {
+          "type": "string",
+          "inStat": false
+        },        
+        "E-mail": {
+          "type": "string",
+          "inStat": false
+        },
+        "Мобильный телефон (без цифры 8)": {
+          "type": "string",
+          "inStat": false
+        },        
+        "Домашний телефон": {
+          "type": "string",
+          "inStat": false
+        },        
+        "Место работы": {
+          "type": "string",
+          "inStat": false
+        },        
+        "Должность": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Лояльность": {
+          "type": "string",
+          "inStat": false
+        }, 
+        "Социальное положение": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Дата подачи": {
+          "type": "timestamps",
+          "inStat": false
+        },         
+        "Тема обращения": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Краткая аннотация": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Вел прием": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Должность (Вел прием)": {
+          "type": "string",
+          "inStat": false
+        },         
+        "Льготная категория": {
+          "type": "string",
+          "inStat": false
+        }
+      }
+}

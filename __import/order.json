@@ -9,6 +9,8 @@
       "approval",
       "citizensQuestions",
       "questionForArchived",
-      "appeals"
+      "appeals",
+      "rop_common",
+      "rop_unic"
   ]
 }
