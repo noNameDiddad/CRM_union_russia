@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EntityFieldFixedValueService
 {
-    use CRUDMethods;
+    use CRUDMethodsForEntity;
     /**
      * @var EntityFieldFixedValueRepository
      */

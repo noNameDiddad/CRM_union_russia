@@ -7,7 +7,7 @@ use App\Repositories\EntityFieldRepository;
 
 class EntityFieldsService
 {
-    use CRUDMethods;
+    use CRUDMethodsForEntity;
     /**
      * @var EntityFieldRepository
      */

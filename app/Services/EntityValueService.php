@@ -8,7 +8,7 @@ use App\Repositories\EntityValueRepository;
 
 class EntityValueService
 {
-    use CRUDMethods;
+    use CRUDMethodsForEntity;
     /**
      * @var EntityValueRepository
      */
