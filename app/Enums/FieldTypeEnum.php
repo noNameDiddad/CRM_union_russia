@@ -16,4 +16,6 @@ enum FieldTypeEnum: string
     case Stage = 'stage';
     case Relation = 'relation';
     case Priority = 'priority';
+    case PhoneNumber = 'phone_number';
+    case Email = 'email';
 }

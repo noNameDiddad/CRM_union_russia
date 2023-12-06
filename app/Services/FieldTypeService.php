@@ -5,9 +5,11 @@ namespace App\Services;
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
 use App\Resolvers\FieldTypeResolvers\BooleanField;
+use App\Resolvers\FieldTypeResolvers\EmailField;
 use App\Resolvers\FieldTypeResolvers\FileField;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
+use App\Resolvers\FieldTypeResolvers\PhoneNumberField;
 use App\Resolvers\FieldTypeResolvers\PriorityField;
 use App\Resolvers\FieldTypeResolvers\RelationField;
 use App\Resolvers\FieldTypeResolvers\SelectField;
@@ -30,6 +32,8 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::File->value => FileField::class,
         FieldTypeEnum::Boolean->value => BooleanField::class,
         FieldTypeEnum::Priority->value => PriorityField::class,
+        FieldTypeEnum::PhoneNumber->value => PhoneNumberField::class,
+        FieldTypeEnum::Email->value => EmailField::class,
     ];
 
     public static function getClassForFieldType(string $fieldType): ?string

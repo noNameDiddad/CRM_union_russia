@@ -24,6 +24,7 @@
             "Другой"
           ],
           "type": "object",
+          "subType": "phone_number",
           "inStat": false
         },
         "E-mail": {
@@ -37,6 +38,7 @@
             "Другой"
           ],
           "type": "object",
+          "subType": "email",
           "inStat": false
         },
         "День рождения": {

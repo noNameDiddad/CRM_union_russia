@@ -20,12 +20,13 @@ class EntityFieldSeeder extends Seeder
         dump("----------");
         $fields = [];
         foreach ($json as $key => $item) {
-            $fixedValuesType = ['select', 'object', 'stage'];
+            $fixedValuesType = ['select', 'stage'];
             $item['hash'] = Str::slug($key);
             if (in_array($item['type'], $fixedValuesType)) {
                 $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
                     'relateTo' => null,
+                    'subType' => null,
                     'type' => $item['type'],
                     'id' => $entityFieldId
                 ];
@@ -39,14 +40,34 @@ class EntityFieldSeeder extends Seeder
                         'fieldNames' => $item['value']
                     ],
                 );
-            } else {
+            }elseif ($item['type'] === 'object') {
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 500, $item['subType']);
+                $fields[$item['hash']] = [
+                    'relateTo' => null,
+                    'subType' => $item['subType'],
+                    'type' => $item['type'],
+                    'id' => $entityFieldId
+                ];
+                $this->call(
+                    [
+                        EntityFieldFixedValueSeeder::class,
+                    ],
+                    false,
+                    [
+                        'entityFieldId' => $entityFieldId,
+                        'fieldNames' => $item['value']
+                    ],
+                );
+            }else {
                 $relateTo = null;
+                $subType = null;
                 if ($item['type'] === 'relation') {
                     $relateTo = $item['relateTo'];
                 }
-                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255, $relateTo);
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255, $subType, $relateTo);
                 $fields[$item['hash']] = [
                     'relateTo' => $relateTo,
+                    'subType' => $subType,
                     'type' => $item['type'],
                     'id' => $entityFieldId
                 ];;
@@ -64,13 +85,14 @@ class EntityFieldSeeder extends Seeder
         );
     }
 
-    private function create($entityId, $name, $type, $hash, $inStat, $maxLength, $relateTo = null): string
+    private function create($entityId, $name, $type, $hash, $inStat, $maxLength, $subtype = null, $relateTo = null, ): string
     {
         $entityField = EntityField::create([
             'entity_id' => $entityId,
             'name' => $name,
             'type' => $type,
             'hash' => $hash,
+            'sub_type' => $subtype,
             'in_stat' => $inStat,
             'max_length' => $maxLength,
             'relate_to' => $relateTo

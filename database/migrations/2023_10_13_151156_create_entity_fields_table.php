@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('hash');
             $table->boolean('in_stat');
+            $table->string('sub_type')->nullable();
             $table->integer('max_length');
             $table->string('relate_to')->nullable();
             $table->timestamps();

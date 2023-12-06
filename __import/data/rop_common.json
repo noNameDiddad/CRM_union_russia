@@ -45,15 +45,15 @@
       "inStat": false
     },
     "E-mail": {
-      "type": "string",
+      "type": "email",
       "inStat": false
     },
     "Мобильный телефон (без цифры 8)": {
-      "type": "string",
+      "type": "phone_number",
       "inStat": false
     },
     "Домашний телефон": {
-      "type": "string",
+      "type": "phone_number",
       "inStat": false
     },
     "Facebook": {
@@ -145,7 +145,7 @@
       "inStat": false
     },
     "Телефон ответственного": {
-      "type": "string",
+      "type": "phone_number",
       "inStat": false
     },
     "Мгер": {
