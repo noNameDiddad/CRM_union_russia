@@ -9,7 +9,7 @@ trait CRUDMethods
 {
     public function getAll()
     {
-        return $this->repository->all();
+        return $this->repository->where('is_sub_entity', false)->get();
     }
 
     public function create(array $data): StandardModel
