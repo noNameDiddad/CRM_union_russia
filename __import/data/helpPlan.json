@@ -1,6 +1,7 @@
 {
   "План помощи": {
-    "isSubEntity": false,
+    "isKanban": false,
+    "isSubEntity": true,
     "fields": {
       "Дата обращения": {
         "type": "string",

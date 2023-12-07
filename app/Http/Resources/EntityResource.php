@@ -18,6 +18,7 @@ class EntityResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'hash' => $this->hash,
+            'is_kanban' => $this->is_kanban,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

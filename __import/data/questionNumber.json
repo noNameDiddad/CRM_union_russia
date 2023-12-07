@@ -1,5 +1,6 @@
 {
     "Номер вопроса": {
+      "isKanban": false,
       "isSubEntity": true,
       "fields": {
         "Номер обращения": {

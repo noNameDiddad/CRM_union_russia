@@ -1,5 +1,6 @@
 {
     "Контакты": {
+      "isKanban": false,
       "isSubEntity": false,
       "fields": {
         "Фамилия": {

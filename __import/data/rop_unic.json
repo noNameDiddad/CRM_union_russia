@@ -1,5 +1,6 @@
 {
   "РОП Уникальные": {
+    "isKanban": false,
     "isSubEntity": false,
     "fields": {
       "Название": {

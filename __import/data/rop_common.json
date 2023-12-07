@@ -1,5 +1,6 @@
 {
   "РОП Общие": {
+    "isKanban": false,
     "isSubEntity": false,
     "fields": {
       "Название": {

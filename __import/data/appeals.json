@@ -1,6 +1,7 @@
 {
     "Обращения граждан": {
       "isSubEntity": false,
+      "isKanban": true,
       "fields": {
         "Контакт (Гражданин)": {
           "type": "relation",

@@ -1,5 +1,6 @@
 {
   "Номер обращения": {
+    "isKanban": false,
     "isSubEntity": true,
     "fields": {
       "Текущий год": {

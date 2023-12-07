@@ -1,5 +1,6 @@
 {
   "Об обращении": {
+    "isKanban": false,
     "isSubEntity": true,
     "fields": {
       "Дата принятия обращения": {

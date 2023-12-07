@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('hash')->unique();
             $table->boolean('is_sub_entity')->default(false);
+            $table->boolean('is_kanban')->default(false);
             $table->timestamps();
         });
     }

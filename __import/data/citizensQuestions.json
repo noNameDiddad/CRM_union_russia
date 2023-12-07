@@ -1,6 +1,7 @@
 {
   "Вопросы граждан": {
     "isSubEntity": true,
+    "isKanban": false,
     "fields": {
       "Номер вопроса": {
         "type": "relation",

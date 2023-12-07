@@ -16,6 +16,7 @@ class EntitySeeder extends Seeder
         Entity::create([
             'name' => $entityName,
             'is_sub_entity' => $json['isSubEntity'],
+            'is_kanban' => $json['isKanban'],
             'hash' => $hash,
         ]);
 
