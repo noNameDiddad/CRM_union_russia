@@ -1,6 +1,7 @@
 {
-    "Номер вопроса": 
-      {
+    "Номер вопроса": {
+      "isSubEntity": true,
+      "fields": {
         "Номер обращения": {
           "type": "relation",
           "relateTo": "appealNumber",
@@ -10,5 +11,6 @@
           "type": "integer",
           "inStat": false
         }
+      }
       }
 }

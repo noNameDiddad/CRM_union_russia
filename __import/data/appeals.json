@@ -1,6 +1,7 @@
 {
-    "Обращения граждан": 
-      {
+    "Обращения граждан": {
+      "isSubEntity": false,
+      "fields": {
         "Контакт (Гражданин)": {
           "type": "relation",
           "relateTo": "contact",
@@ -38,5 +39,6 @@
           "type": "select",
           "inStat": false
         }
+      }
       }
 }

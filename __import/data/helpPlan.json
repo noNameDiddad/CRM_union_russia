@@ -1,33 +1,35 @@
 {
-    "План помощи":
-      {
-        "Дата обращения": {
-          "type": "string",
-          "inStat": false
-        },
-        "Вид обращения": {
-          "type": "string",
-          "inStat": false
-        },
-        "ФИО заявителя": {
-          "type": "string",
-          "inStat": false
-        },
-        "Дата рождения": {
-          "type": "timestamps",
-          "inStat": false
-        },
-        "Контактный телефон": {
-          "type": "phone_number",
-          "inStat": false
-        },
-        "Адрес проживания": {
-          "type": "string",
-          "inStat": false
-        },
-        "Отвественный": {
-          "type": "user",
-          "inStat": false
-        }
+  "План помощи": {
+    "isSubEntity": false,
+    "fields": {
+      "Дата обращения": {
+        "type": "string",
+        "inStat": false
+      },
+      "Вид обращения": {
+        "type": "string",
+        "inStat": false
+      },
+      "ФИО заявителя": {
+        "type": "string",
+        "inStat": false
+      },
+      "Дата рождения": {
+        "type": "timestamps",
+        "inStat": false
+      },
+      "Контактный телефон": {
+        "type": "phone_number",
+        "inStat": false
+      },
+      "Адрес проживания": {
+        "type": "string",
+        "inStat": false
+      },
+      "Отвественный": {
+        "type": "user",
+        "inStat": false
       }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 {
-    "Контакты": 
-      {
+    "Контакты": {
+      "isSubEntity": false,
+      "fields": {
         "Фамилия": {
           "type": "string",
           "inStat": false
@@ -214,6 +215,7 @@
         "Организация": {
           "type": "string",
           "inStat": false
+        }
         }
       }
 }

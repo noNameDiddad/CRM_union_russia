@@ -1,240 +1,243 @@
 {
   "РОП Общие": {
-    "Название": {
-      "type": "string",
-      "inStat": false
-    },
-    "ID": {
-      "type": "integer",
-      "inStat": false
-    },
-    "Приоритет": {
-      "type": "priority",
-      "inStat": false
-    },
-    "Регион": {
-      "type": "string",
-      "inStat": false
-    },
-    "Местное отделение": {
-      "type": "string",
-      "inStat": false
-    },
-    "УИК": {
-      "type": "string",
-      "inStat": false
-    },
-    "Фамилия": {
-      "type": "string",
-      "inStat": false
-    },
-    "Имя": {
-      "type": "string",
-      "inStat": false
-    },
-    "Отчество": {
-      "type": "string",
-      "inStat": false
-    },
-    "Дата рождения": {
-      "type": "timestamps",
-      "inStat": false
-    },
-    "Адрес": {
-      "type": "string",
-      "inStat": false
-    },
-    "E-mail": {
-      "type": "email",
-      "inStat": false
-    },
-    "Мобильный телефон (без цифры 8)": {
-      "type": "phone_number",
-      "inStat": false
-    },
-    "Домашний телефон": {
-      "type": "phone_number",
-      "inStat": false
-    },
-    "Facebook": {
-      "type": "string",
-      "inStat": false
-    },
-    "VK": {
-      "type": "string",
-      "inStat": false
-    },
-    "OK": {
-      "type": "string",
-      "inStat": false
-    },
-    "Twitter": {
-      "type": "string",
-      "inStat": false
-    },
-    "Instagram": {
-      "type": "string",
-      "inStat": false
-    },
-    "TikTok": {
-      "type": "string",
-      "inStat": false
-    },
-    "Мой Мир": {
-      "type": "string",
-      "inStat": false
-    },
-    "Место работы": {
-      "type": "string",
-      "inStat": false
-    },
-    "Должность": {
-      "type": "string",
-      "inStat": false
-    },
-    "Секретарь ПО": {
-      "type": "string",
-      "inStat": false
-    },
-    "Мун. деп.": {
-      "type": "string",
-      "inStat": false
-    },
-    "Член МПС": {
-      "type": "string",
-      "inStat": false
-    },
-    "Член РПС": {
-      "type": "string",
-      "inStat": false
-    },
-    "Член ГС": {
-      "type": "string",
-      "inStat": false
-    },
-    "Член ПРПС": {
-      "type": "string",
-      "inStat": false
-    },
-    "Секретарь МО": {
-      "type": "string",
-      "inStat": false
-    },
-    "Партийный статус": {
-      "type": "string",
-      "inStat": false
-    },
-    "Сторонник президента": {
-      "type": "string",
-      "inStat": false
-    },
-    "Сторонник партии": {
-      "type": "string",
-      "inStat": false
-    },
-    "Лояльность": {
-      "type": "string",
-      "inStat": false
-    },
-    "Целевая аудитория": {
-      "type": "string",
-      "inStat": false
-    },
-    "Примечание": {
-      "type": "string",
-      "inStat": false
-    },
-    "Телефон ответственного": {
-      "type": "phone_number",
-      "inStat": false
-    },
-    "Мгер": {
-      "type": "string",
-      "inStat": false
-    },
-    "Уровень МГЕР": {
-      "type": "string",
-      "inStat": false
-    },
-    "Статус в МГЕР": {
-      "type": "string",
-      "inStat": false
-    },
-    "Основная ячейка": {
-      "type": "string",
-      "inStat": false
-    },
-    "Другие ячейки": {
-      "type": "string",
-      "inStat": false
-    },
-    "Агитатор": {
-      "type": "string",
-      "inStat": false
-    },
-    "ВЦ": {
-      "type": "string",
-      "inStat": false
-    },
-    "Готовность - Регион": {
-      "type": "string",
-      "inStat": false
-    },
-    "Дума": {
-      "type": "string",
-      "inStat": false
-    },
-    "Не мобильный телефон": {
-      "type": "string",
-      "inStat": false
-    },
-    "НП": {
-      "type": "string",
-      "inStat": false
-    },
-    "Первичное Отделение": {
-      "type": "string",
-      "inStat": false
-    },
-    "Предположительно негативист": {
-      "type": "string",
-      "inStat": false
-    },
-    "Проголосовал": {
-      "type": "string",
-      "inStat": false
-    },
-    "Умерший": {
-      "type": "string",
-      "inStat": false
-    },
-    "Социальное положение": {
-      "type": "string",
-      "inStat": false
-    },
-    "Дата подачи": {
-      "type": "timestamps",
-      "inStat": false
-    },
-    "Тема обращения": {
-      "type": "string",
-      "inStat": false
-    },
-    "Краткая аннотация": {
-      "type": "string",
-      "inStat": false
-    },
-    "Вел прием": {
-      "type": "string",
-      "inStat": false
-    },
-    "Должность (Вел прием)": {
-      "type": "string",
-      "inStat": false
-    },
-    "Льготная категория": {
-      "type": "string",
-      "inStat": false
+    "isSubEntity": false,
+    "fields": {
+      "Название": {
+        "type": "string",
+        "inStat": false
+      },
+      "ID": {
+        "type": "integer",
+        "inStat": false
+      },
+      "Приоритет": {
+        "type": "priority",
+        "inStat": false
+      },
+      "Регион": {
+        "type": "string",
+        "inStat": false
+      },
+      "Местное отделение": {
+        "type": "string",
+        "inStat": false
+      },
+      "УИК": {
+        "type": "string",
+        "inStat": false
+      },
+      "Фамилия": {
+        "type": "string",
+        "inStat": false
+      },
+      "Имя": {
+        "type": "string",
+        "inStat": false
+      },
+      "Отчество": {
+        "type": "string",
+        "inStat": false
+      },
+      "Дата рождения": {
+        "type": "timestamps",
+        "inStat": false
+      },
+      "Адрес": {
+        "type": "string",
+        "inStat": false
+      },
+      "E-mail": {
+        "type": "email",
+        "inStat": false
+      },
+      "Мобильный телефон (без цифры 8)": {
+        "type": "phone_number",
+        "inStat": false
+      },
+      "Домашний телефон": {
+        "type": "phone_number",
+        "inStat": false
+      },
+      "Facebook": {
+        "type": "string",
+        "inStat": false
+      },
+      "VK": {
+        "type": "string",
+        "inStat": false
+      },
+      "OK": {
+        "type": "string",
+        "inStat": false
+      },
+      "Twitter": {
+        "type": "string",
+        "inStat": false
+      },
+      "Instagram": {
+        "type": "string",
+        "inStat": false
+      },
+      "TikTok": {
+        "type": "string",
+        "inStat": false
+      },
+      "Мой Мир": {
+        "type": "string",
+        "inStat": false
+      },
+      "Место работы": {
+        "type": "string",
+        "inStat": false
+      },
+      "Должность": {
+        "type": "string",
+        "inStat": false
+      },
+      "Секретарь ПО": {
+        "type": "string",
+        "inStat": false
+      },
+      "Мун. деп.": {
+        "type": "string",
+        "inStat": false
+      },
+      "Член МПС": {
+        "type": "string",
+        "inStat": false
+      },
+      "Член РПС": {
+        "type": "string",
+        "inStat": false
+      },
+      "Член ГС": {
+        "type": "string",
+        "inStat": false
+      },
+      "Член ПРПС": {
+        "type": "string",
+        "inStat": false
+      },
+      "Секретарь МО": {
+        "type": "string",
+        "inStat": false
+      },
+      "Партийный статус": {
+        "type": "string",
+        "inStat": false
+      },
+      "Сторонник президента": {
+        "type": "string",
+        "inStat": false
+      },
+      "Сторонник партии": {
+        "type": "string",
+        "inStat": false
+      },
+      "Лояльность": {
+        "type": "string",
+        "inStat": false
+      },
+      "Целевая аудитория": {
+        "type": "string",
+        "inStat": false
+      },
+      "Примечание": {
+        "type": "string",
+        "inStat": false
+      },
+      "Телефон ответственного": {
+        "type": "phone_number",
+        "inStat": false
+      },
+      "Мгер": {
+        "type": "string",
+        "inStat": false
+      },
+      "Уровень МГЕР": {
+        "type": "string",
+        "inStat": false
+      },
+      "Статус в МГЕР": {
+        "type": "string",
+        "inStat": false
+      },
+      "Основная ячейка": {
+        "type": "string",
+        "inStat": false
+      },
+      "Другие ячейки": {
+        "type": "string",
+        "inStat": false
+      },
+      "Агитатор": {
+        "type": "string",
+        "inStat": false
+      },
+      "ВЦ": {
+        "type": "string",
+        "inStat": false
+      },
+      "Готовность - Регион": {
+        "type": "string",
+        "inStat": false
+      },
+      "Дума": {
+        "type": "string",
+        "inStat": false
+      },
+      "Не мобильный телефон": {
+        "type": "string",
+        "inStat": false
+      },
+      "НП": {
+        "type": "string",
+        "inStat": false
+      },
+      "Первичное Отделение": {
+        "type": "string",
+        "inStat": false
+      },
+      "Предположительно негативист": {
+        "type": "string",
+        "inStat": false
+      },
+      "Проголосовал": {
+        "type": "string",
+        "inStat": false
+      },
+      "Умерший": {
+        "type": "string",
+        "inStat": false
+      },
+      "Социальное положение": {
+        "type": "string",
+        "inStat": false
+      },
+      "Дата подачи": {
+        "type": "timestamps",
+        "inStat": false
+      },
+      "Тема обращения": {
+        "type": "string",
+        "inStat": false
+      },
+      "Краткая аннотация": {
+        "type": "string",
+        "inStat": false
+      },
+      "Вел прием": {
+        "type": "string",
+        "inStat": false
+      },
+      "Должность (Вел прием)": {
+        "type": "string",
+        "inStat": false
+      },
+      "Льготная категория": {
+        "type": "string",
+        "inStat": false
+      }
     }
   }
 }

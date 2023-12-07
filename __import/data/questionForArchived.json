@@ -1,6 +1,7 @@
 {
-    "Вопрос (для архивных)": 
-      {
+    "Вопрос (для архивных)": {
+      "isSubEntity": true,
+      "fields": {
         "Аннотация": {
           "type": "string",
           "inStat": false
@@ -29,5 +30,6 @@
           "type": "select",
           "inStat": false
         }
+      }
       }
 }

@@ -15,6 +15,7 @@ class EntitySeeder extends Seeder
     {
         Entity::create([
             'name' => $entityName,
+            'is_sub_entity' => $json['isSubEntity'],
             'hash' => $hash,
         ]);
 
@@ -25,7 +26,7 @@ class EntitySeeder extends Seeder
             false,
             [
                 'entityName' => $entityName,
-                'json' => $json
+                'json' => $json['fields'],
             ]
         );
     }
