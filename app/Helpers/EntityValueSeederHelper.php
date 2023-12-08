@@ -28,12 +28,12 @@ class EntityValueSeederHelper
             FieldTypeEnum::Integer->value => fake()->numberBetween(1, 1000),
             FieldTypeEnum::File->value => "/" . fake()->word,
             FieldTypeEnum::User->value => User::first()->id ?? null,
-            FieldTypeEnum::Users->value => fake()->randomElements(User::pluck('id')->toArray(), count(User::pluck('id')->toArray()) - 5),
+            FieldTypeEnum::Users->value => fake()->randomElements(User::pluck('id')->toArray(), fake()->numberBetween(1, count(User::pluck('id')->toArray()))),
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
-            FieldTypeEnum::ManyRelation->value => self::generateManyRelation($relateTo),
+            FieldTypeEnum::ManyRelation->value => self::generateRelation($relateTo, 3),
             FieldTypeEnum::Object->value => ['value' => self::generateField($field_id, $subType), 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],
             FieldTypeEnum::Priority->value => fake()->numberBetween(1, 100),
             FieldTypeEnum::PhoneNumber->value => fake()->phoneNumber,
@@ -41,22 +41,23 @@ class EntityValueSeederHelper
         };
     }
 
-    public static function generateRelation($relateTo): string
+    public static function generateRelation($relateTo, $count = 1): string
     {
         $entity_table = "table_" . $relateTo;
         $service = new EntityValueService($entity_table);
 
-        $randomId = $service->getRandomElement();
+        $randomId = $service->getRandomElement($count);
 
         return $randomId;
     }
 
-    public static function generateManyRelation($relateTo): array
-    {
-        $entity_table = "table_" . $relateTo;
-        $service = new EntityValueService($entity_table);
-        $randomIds = $service->getRandomElement(3)->toArray();
+//     public static function generateManyRelation($relateTo): array
+//     {
+//         $entity_table = "table_" . $relateTo;
+//         $service = new EntityValueService($entity_table);
+//         $randomIds = $service->getRandomElement(3)->toArray();
 
-        return $randomIds;
-    }
+//         return $randomIds;
+//     }
+// }
 }
