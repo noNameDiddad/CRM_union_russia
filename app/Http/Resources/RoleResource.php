@@ -19,9 +19,7 @@ class RoleResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'hash' => $this->hash,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'hash' => $this->hash
         ];
     }
 }
