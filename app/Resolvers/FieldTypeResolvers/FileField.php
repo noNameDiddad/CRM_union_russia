@@ -11,13 +11,31 @@ class FileField implements FieldResolverInterface
         // TODO: Implement validate() method.
     }
 
-    public function set($value): ?string
+    public function set($value): ?array
     {
-        return $value;
+        $date = Carbon::now();
+        $date->setTimezone('Europe/Moscow');
+        $timeInMilliseconds = $date->valueOf();
+        $timeInDays = ceil($timeInMilliseconds / 1000 / 60 / 60 / 24);
+
+        $paths = [];
+        foreach ($value as $file) {
+            $fileName = $timeInMilliseconds . '_' . $file->getClientOriginalName();
+
+            $path = Storage::disk('public')->putFileAs('/files/' . $timeInDays, $file, $fileName);
+            $paths[] = $path;
+        }
+        return $paths;
     }
 
     public function get($value, $field = null): ?array
     {
-        return $value;
+        $fileArr = [];
+        foreach ($value as $file) {
+            $xmlFile = pathinfo($file);
+            $fileArr += [explode('_', $xmlFile['basename'])[1] => $file];
+        }
+
+        return $fileArr;
     }
 }
