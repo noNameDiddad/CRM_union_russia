@@ -1,10 +1,10 @@
 {
     "Документооборот": {
-        "isKanban": false,
+        "isKanban":  true,
         "isSubEntity": false,
         "fields": {
             "Документы для согласования": {
-                "type": "string",
+                "type": "file",
                 "inStat": false
             },
             "Тип документа": {

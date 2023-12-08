@@ -50,14 +50,4 @@ class EntityValueSeederHelper
 
         return $randomId;
     }
-
-//     public static function generateManyRelation($relateTo): array
-//     {
-//         $entity_table = "table_" . $relateTo;
-//         $service = new EntityValueService($entity_table);
-//         $randomIds = $service->getRandomElement(3)->toArray();
-
-//         return $randomIds;
-//     }
-// }
 }
