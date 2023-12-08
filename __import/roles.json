@@ -8,6 +8,7 @@
         "entities_fixed_value": ["view","create","update","delete"],
         "users":                ["view","create","update","delete"],
         "roles":                ["view","create","update","delete"],
+        "permissions":          ["view","create","update","delete"],
         "appeals":              ["view","create","update","delete"],
         "citizensQuestions":    ["view","create","update","delete"],
         "contact":              ["view","create","update","delete"],
