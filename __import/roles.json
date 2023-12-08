@@ -1,25 +1,144 @@
 {
   "roles": {
     "Администратор": {
-      "hash": "admin"
+      "hash": "admin",
+      "permissions": {
+        "entities":             ["view","create","update","delete"],
+        "entities_field":       ["view","create","update","delete"],
+        "entities_fixed_value": ["view","create","update","delete"],
+        "users":                ["view","create","update","delete"],
+        "roles":                ["view","create","update","delete"],
+        "appeals":              ["view","create","update","delete"],
+        "citizensQuestions":    ["view","create","update","delete"],
+        "contact":              ["view","create","update","delete"],
+        "appealNumber":         ["view","create","update","delete"],
+        "questionNumber":       ["view","create","update","delete"],
+        "address":              ["view","create","update","delete"],
+        "helpPlan":             ["view","create","update","delete"],
+        "aboutAppeal":          ["view","create","update","delete"],
+        "approval":             ["view","create","update","delete"],
+        "questionForArchived":  ["view","create","update","delete"],
+        "rop_common":           ["view","create","update","delete"],
+        "rop_unic":             ["view","create","update","delete"]
+      }
     },
     "Руководитель РОП": {
-      "hash": "director_rop"
+      "hash": "director_rop",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view","create","update","delete"],
+        "citizensQuestions":    ["view","create"],
+        "questionForArchived":  ["view","create"],
+        "contact":              ["view","create"],
+        "appealNumber":         ["view","create"],
+        "questionNumber":       ["view","create"],
+        "address":              ["view","create"],
+        "helpPlan":             ["view","create"],
+        "aboutAppeal":          ["view","create"],
+        "approval":             ["view","create"],
+        "rop_common":           ["view","create"],
+        "rop_unic":             ["view","create"]
+      }
     },
     "Начальник отдела": {
-      "hash": "head_department"
+      "hash": "head_department",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view","create","delete"],
+        "citizensQuestions":    ["view","create"],
+        "questionForArchived":  ["view"],
+        "contact":              ["view","create"],
+        "appealNumber":         ["view","create"],
+        "questionNumber":       ["view","create"],
+        "address":              ["view","create"],
+        "helpPlan":             ["view","create"],
+        "aboutAppeal":          ["view","create"],
+        "approval":             ["view","create"],
+        "rop_common":           ["view","create"],
+        "rop_unic":             ["view","create"]
+      }
     },
     "Юрист": {
-      "hash": "lawyer"
+      "hash": "lawyer",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view","create","delete"],
+        "citizensQuestions":    ["view","create"],
+        "questionForArchived":  ["view"],
+        "contact":              ["view","create"],
+        "appealNumber":         ["view","create"],
+        "questionNumber":       ["view","create"],
+        "address":              ["view","create"],
+        "helpPlan":             ["view","create"],
+        "aboutAppeal":          ["view","create"],
+        "approval":             ["view","create"],
+        "rop_common":           ["view","create"],
+        "rop_unic":             ["view","create"]
+      }
     },
     "Администратор ИАС": {
-      "hash": "admin_ias"
+      "hash": "admin_ias",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view","create","delete"],
+        "citizensQuestions":    ["view","create"],
+        "questionForArchived":  ["view","create"],
+        "contact":              ["view"],
+        "appealNumber":         ["view","create"],
+        "questionNumber":       ["view","create"],
+        "address":              ["view","create"],
+        "helpPlan":             ["view","create"],
+        "aboutAppeal":          ["view","create"],
+        "approval":             ["view","create"],
+        "rop_common":           ["view","create","update","delete"],
+        "rop_unic":             ["view","create","update","delete"]
+      }
     },
     "Консультант": {
-      "hash": "consultant"
+      "hash": "consultant",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view","create","delete"],
+        "citizensQuestions":    ["view","create"],
+        "questionForArchived":  ["view","create"],
+        "contact":              ["view"],
+        "appealNumber":         ["view","create"],
+        "questionNumber":       ["view","create"],
+        "address":              ["view","create"],
+        "helpPlan":             ["view","create"],
+        "aboutAppeal":          ["view","create"],
+        "approval":             ["view","create"],
+        "rop_common":           ["view","create","update","delete"],
+        "rop_unic":             ["view","create","update","delete"]
+      }
     },
     "СМИ": {
-      "hash": "smi"
+      "hash": "smi",
+      "permissions": {
+        "entities":             ["view"],
+        "entities_field":       ["view"],
+        "entities_fixed_value": ["view"],
+        "appeals":              ["view"],
+        "citizensQuestions":    ["view"],
+        "questionForArchived":  ["view"],
+        "contact":              ["view"],
+        "appealNumber":         ["view"],
+        "questionNumber":       ["view"],
+        "address":              ["view"],
+        "helpPlan":             ["view"],
+        "aboutAppeal":          ["view"],
+        "approval":             ["view"]
+      }
     }
   }
 }

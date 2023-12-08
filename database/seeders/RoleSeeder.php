@@ -30,5 +30,15 @@ class RoleSeeder extends Seeder
                 'roles' => $roles
             ],
         );
+        $this->call(
+            [
+                PermissionSeeder::class,
+            ],
+            false,
+            [
+                'roles' => $roles,
+                'json' => $json
+            ],
+        );
     }
 }
