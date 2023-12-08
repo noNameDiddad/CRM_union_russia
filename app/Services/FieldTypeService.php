@@ -8,6 +8,7 @@ use App\Resolvers\FieldTypeResolvers\BooleanField;
 use App\Resolvers\FieldTypeResolvers\EmailField;
 use App\Resolvers\FieldTypeResolvers\FileField;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
+use App\Resolvers\FieldTypeResolvers\ManyRelationField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
 use App\Resolvers\FieldTypeResolvers\PhoneNumberField;
 use App\Resolvers\FieldTypeResolvers\PriorityField;
@@ -17,6 +18,7 @@ use App\Resolvers\FieldTypeResolvers\StageField;
 use App\Resolvers\FieldTypeResolvers\StringField;
 use App\Resolvers\FieldTypeResolvers\TimestampsField;
 use App\Resolvers\FieldTypeResolvers\UserField;
+use App\Resolvers\FieldTypeResolvers\UsersField;
 
 class FieldTypeService extends FieldService
 {
@@ -24,9 +26,11 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::String->value => StringField::class,
         FieldTypeEnum::Select->value => SelectField::class,
         FieldTypeEnum::User->value => UserField::class,
+        FieldTypeEnum::Users->value => UsersField::class,
         FieldTypeEnum::Integer->value => IntegerField::class,
         FieldTypeEnum::Timestamps->value => TimestampsField::class,
         FieldTypeEnum::Relation->value => RelationField::class,
+        FieldTypeEnum::ManyRelation->value => ManyRelationField::class,
         FieldTypeEnum::Object->value => ObjectField::class,
         FieldTypeEnum::Stage->value => StageField::class,
         FieldTypeEnum::File->value => FileField::class,

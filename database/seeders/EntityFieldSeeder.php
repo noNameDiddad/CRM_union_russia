@@ -61,7 +61,7 @@ class EntityFieldSeeder extends Seeder
             }else {
                 $relateTo = null;
                 $subType = null;
-                if ($item['type'] === 'relation') {
+                if ($item['type'] === 'relation' || $item['type'] === 'many_relation') {
                     $relateTo = $item['relateTo'];
                 }
                 $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255, $subType, $relateTo);
