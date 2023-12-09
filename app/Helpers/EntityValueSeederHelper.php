@@ -26,13 +26,14 @@ class EntityValueSeederHelper
         return match ($type) {
             FieldTypeEnum::String->value => fake()->word,
             FieldTypeEnum::Integer->value => fake()->numberBetween(1, 1000),
-            FieldTypeEnum::File->value => "/" . fake()->word,
+            FieldTypeEnum::File->value => self::generateFiles(),
             FieldTypeEnum::User->value => User::first()->id ?? null,
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
-            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value]
+            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],
+            FieldTypeEnum::Priority->value => fake()->unique()->randomNumber()
         };
     }
 
@@ -44,5 +45,15 @@ class EntityValueSeederHelper
         $randomId = $service->getRandomElement();
 
         return $randomId;
+    }
+
+    public static function generateFiles(): array
+    {
+        $result  = [];
+        for ($i = 0; $i < 3; $i++) {
+            $result[] = fake()->filePath();
+        }
+
+        return $result;
     }
 }

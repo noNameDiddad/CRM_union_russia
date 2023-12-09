@@ -2,10 +2,12 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
+use App\Helpers\EntityValueFileHelper;
+
 
 class FileField implements FieldResolverInterface
 {
+
     public function validate()
     {
         // TODO: Implement validate() method.
@@ -13,18 +15,16 @@ class FileField implements FieldResolverInterface
 
     public function set($value): ?array
     {
-        $date = Carbon::now();
-        $date->setTimezone('Europe/Moscow');
-        $timeInMilliseconds = $date->valueOf();
-        $timeInDays = ceil($timeInMilliseconds / 1000 / 60 / 60 / 24);
 
         $paths = [];
-        foreach ($value as $file) {
-            $fileName = $timeInMilliseconds . '_' . $file->getClientOriginalName();
-
-            $path = Storage::disk('public')->putFileAs('/files/' . $timeInDays, $file, $fileName);
-            $paths[] = $path;
+        if(is_array($value)) {
+            foreach ($value as $file) {
+                $paths[] = EntityValueFileHelper::addFile($file);
+            }
+        } else {
+            $paths[] = EntityValueFileHelper::addFile($value);
         }
+
         return $paths;
     }
 
@@ -33,9 +33,18 @@ class FileField implements FieldResolverInterface
         $fileArr = [];
         foreach ($value as $file) {
             $xmlFile = pathinfo($file);
-            $fileArr += [explode('_', $xmlFile['basename'])[1] => $file];
+            if (str_contains($xmlFile['basename'], '_')) {
+                $parseName = explode('_', $xmlFile['basename']);
+                array_shift($parseName);
+                $fileArr += [implode('_', $parseName) => $file];
+            } else {
+                $fileArr += [$xmlFile['basename'] => $file];
+            }
+
         }
 
         return $fileArr;
     }
 }
+
+
