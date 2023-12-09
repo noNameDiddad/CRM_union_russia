@@ -347,7 +347,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{host}}api/entity?XDEBUG_SESSION_START=PHPSTORM",
+									"raw": "{{host}}api/entity?withAll=1",
 									"host": [
 										"{{host}}api"
 									],
@@ -356,8 +356,8 @@
 									],
 									"query": [
 										{
-											"key": "XDEBUG_SESSION_START",
-											"value": "PHPSTORM"
+											"key": "withAll",
+											"value": "1"
 										}
 									]
 								}
@@ -528,12 +528,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/9ac86ea6-1968-4435-a561-5b9680b55b94/entity_field",
+									"raw": "{{host}}api/9accf793-dc5e-4d6c-ad13-0e96b2b825a5/entity_field",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ac86ea6-1968-4435-a561-5b9680b55b94",
+										"9accf793-dc5e-4d6c-ad13-0e96b2b825a5",
 										"entity_field"
 									]
 								}
@@ -738,13 +738,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/9ac86ea6-1968-4435-a561-5b9680b55b94/entity_fixed_values",
+									"raw": "{{host}}api/9accf793-e635-4cae-a5a8-58a3afcbffcc/entity_field_fixed_value",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ac86ea6-1968-4435-a561-5b9680b55b94",
-										"entity_fixed_values"
+										"9accf793-e635-4cae-a5a8-58a3afcbffcc",
+										"entity_field_fixed_value"
 									]
 								}
 							},
@@ -792,13 +792,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/9ab0a747-62ad-4ea0-8415-b72d520eb5e7/entity_fixed_values",
+									"raw": "{{host}}api/9ab0a747-62ad-4ea0-8415-b72d520eb5e7/entity_field_fixed_value",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"9ab0a747-62ad-4ea0-8415-b72d520eb5e7",
-										"entity_fixed_values"
+										"entity_field_fixed_value"
 									]
 								}
 							},
@@ -844,13 +844,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_fixed_values/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field_fixed_value/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-										"entity_fixed_values",
+										"entity_field_fixed_value",
 										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
 									]
 								}
@@ -889,13 +889,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_fixed_values/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field_fixed_value/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-										"entity_fixed_values",
+										"entity_field_fixed_value",
 										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
 									]
 								}
@@ -918,13 +918,13 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/9a985112-1fa4-4180-895b-8724409b73f0/entity_fixed_values/9aa29a35-6148-4dd6-ae18-a89c64cc554b",
+									"raw": "{{host}}api/9a985112-1fa4-4180-895b-8724409b73f0/entity_field_fixed_value/9aa29a35-6148-4dd6-ae18-a89c64cc554b",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"9a985112-1fa4-4180-895b-8724409b73f0",
-										"entity_fixed_values",
+										"entity_field_fixed_value",
 										"9aa29a35-6148-4dd6-ae18-a89c64cc554b"
 									]
 								}
