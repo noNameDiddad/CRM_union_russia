@@ -29,10 +29,7 @@ class EntityFieldResource extends JsonResource
             $entity_field_fixed_value_collection = app(EntityFieldFixedValueRepository::class)->allByEntityFieldsById($this->id);
 
             foreach ($entity_field_fixed_value_collection as $item) {
-                $entity_field_fixed_value[] = [
-                    'id' => $item->id,
-                    'value' => $item->value
-                ];
+                $entity_field_fixed_value[$item->value] = $item->id;
             }
         }
 
