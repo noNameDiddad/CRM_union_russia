@@ -15,13 +15,13 @@ class EntityValueSeederHelper
     {
         $data = [];
         foreach ($fields as $fieldName => $field) {
-            $data[$fieldName] = self::generateField($field['id'], $field['type'], $field['relateTo']);
+            $data[$fieldName] = self::generateField($field['id'], $field['type'], $field['relateTo'], $field['subType']);
         }
 
         return $data;
     }
 
-    public static function generateField($field_id, $type, $relateTo = null): mixed
+    public static function generateField($field_id, $type, $relateTo = null, $subType = null): mixed
     {
         return match ($type) {
             FieldTypeEnum::String->value => fake()->word,
@@ -32,8 +32,10 @@ class EntityValueSeederHelper
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
-            FieldTypeEnum::Object->value => ['value' => fake()->word, 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],
-            FieldTypeEnum::Priority->value => fake()->unique()->randomNumber()
+            FieldTypeEnum::Object->value => ['value' => self::generateField($field_id, $subType), 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],
+            FieldTypeEnum::Priority->value => fake()->numberBetween(1, 100),
+            FieldTypeEnum::PhoneNumber->value => fake()->phoneNumber,
+            FieldTypeEnum::Email->value => fake()->email
         };
     }
 
