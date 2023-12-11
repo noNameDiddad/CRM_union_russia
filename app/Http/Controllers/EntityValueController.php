@@ -34,7 +34,6 @@ class EntityValueController extends Controller
 
     public function show(Entity $entity, string $entity_value)
     {
-        $this->authorize('view', [auth()->user(), $entity_value]);
         $entity_table = "table_" . $entity->hash;
         $this->service = new EntityValueService($entity_table);
         return new EntityValueResource($this->service->show($entity_value));
