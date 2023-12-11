@@ -37,7 +37,7 @@ class EntityValueController extends Controller
     {
         $entity_table = "table_" . $entity->hash;
         $this->service = new EntityValueService($entity_table);
-        return new EntityValueResource($this->service->updateWithEntity($entity, $entity_value, $request->all()));
+        return new EntityValueResource($this->service->updateWithFieldResolver($entity, $entity_value, $request->all()));
     }
 
     public function destroy(Entity $entity, string $entity_value)

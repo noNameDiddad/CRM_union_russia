@@ -28,6 +28,15 @@ class EntityValueService
         return $this->repository->create($resolvedData);
     }
 
+
+    public function updateWithFieldResolver(Entity $entity, string $id, array $data)
+    {
+        $data['entity_id'] = $entity->id;
+
+        $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data);
+        return $this->repository->update($resolvedData, $id);
+    }
+
     public function getRandomElement()
     {
         return $this->repository->randomId();
