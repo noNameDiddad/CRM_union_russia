@@ -63,4 +63,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->role->permissions();
     }
+
+    public function canDo($hash) {
+        return collect(auth()->user()->permissions)->where('hash', $hash)->pluck('permissions');
+    }
 }

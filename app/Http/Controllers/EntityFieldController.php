@@ -9,7 +9,7 @@ use App\Models\Contact;
 use App\Models\Entity;
 use App\Models\EntityField;
 use App\Services\EntityFieldsService as EntityFieldService;
-
+use Illuminate\Support\Facades\Request;
 
 class EntityFieldController extends Controller
 {
@@ -18,6 +18,7 @@ class EntityFieldController extends Controller
     public function __construct()
     {
         $this->service = new EntityFieldService();
+        $this->authorizeResource(EntityField::class, 'EntityField');
     }
 
     public function index(Entity $entity)

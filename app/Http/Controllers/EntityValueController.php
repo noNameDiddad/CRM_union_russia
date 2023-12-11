@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EntityValueRequest;
 use App\Http\Resources\EntityValueResource;
 use App\Models\Entity;
+use App\Models\EntityValue;
 use App\Services\EntityValueService;
 
 class EntityValueController extends Controller
 {
 
     private EntityValueService $service;
+
+    public function __construct()
+    {
+        $this->authorizeResource(EntityValue::class, 'EntityValue');
+    }
 
     public function index(Entity $entity)
     {
@@ -28,6 +34,7 @@ class EntityValueController extends Controller
 
     public function show(Entity $entity, string $entity_value)
     {
+        $this->authorize('view', [auth()->user(), $entity_value]);
         $entity_table = "table_" . $entity->hash;
         $this->service = new EntityValueService($entity_table);
         return new EntityValueResource($this->service->show($entity_value));
