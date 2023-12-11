@@ -37,9 +37,9 @@ class EntityValueService
         return $this->repository->update($resolvedData, $id);
     }
 
-    public function getRandomElement()
+    public function getRandomElement($count = 1)
     {
-        return $this->repository->randomId();
+        return $this->repository->randomId($count);
     }
 
     public function truncate(): void

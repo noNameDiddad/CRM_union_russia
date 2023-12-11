@@ -1,0 +1,54 @@
+{
+    "Документооборот": {
+        "isKanban":  true,
+        "isSubEntity": false,
+        "fields": {
+            "Документы для согласования": {
+                "type": "file",
+                "inStat": false
+            },
+            "Тип документа": {
+                "value": [
+                    "Приказ",
+                    "Нормативный документ",
+                    "Исходящая корреспонденция",
+                    "Графики"
+                ],
+                "type": "select",
+                "inStat": false
+            },
+            "Согласующие": {
+                "type": "users",
+                "inStat": false
+            },
+            "Подписанты": {
+                "type": "users",
+                "inStat": false
+            },
+            "Документ в архиве?": {
+                "value": [
+                    "Да",
+                    "Нет"
+                ],
+                "type": "select",
+                "inStat": false
+            },
+            "Номер документа": {
+                "type": "integer",
+                "inStat": false
+            },
+            "Стадия": {
+                "value": [
+                    "Внесение",
+                    "Согласование",
+                    "Подписание",
+                    "Исполнение"
+                ],
+                "type": "stage",
+                "inStat": false
+            }
+        }
+    }
+}
+
+
