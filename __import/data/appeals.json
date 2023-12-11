@@ -37,7 +37,7 @@
             "Согласование",
             "Закрытие"
           ],
-          "type": "select",
+          "type": "stage",
           "inStat": false
         }
       }
