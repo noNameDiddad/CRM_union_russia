@@ -45,9 +45,11 @@ class EntityValueSeederHelper
     {
         $entity_table = "table_" . $relateTo;
         $service = new EntityValueService($entity_table);
-
-        $randomId = $service->getRandomElement($count);
-
+        if ($count == 1 ) {
+            $randomId = $service->getRandomElement($count)->first();
+        } else {
+            $randomId = $service->getRandomElement($count);
+        }
         return $randomId;
     }
 
