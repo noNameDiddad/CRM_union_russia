@@ -36,6 +36,7 @@ class EntityFieldResource extends JsonResource
         return [
             'id' => $this->id,
             'entity_id' => $this->entity_id,
+            'relate_to' => $this->relate_to,
             'name' => $this->name,
             'type' => $this->type,
             'hash' => $this->hash,
