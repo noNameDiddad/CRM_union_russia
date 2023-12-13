@@ -24,7 +24,7 @@ class EntityMasterPolicy
         return true;
     }
 
-    public function view(User $user, EntityValue $entityValue): bool
+    public function view(User $user): bool
     {
         // anyone can
         return true;
@@ -35,27 +35,14 @@ class EntityMasterPolicy
         return in_array('create', ...$this->permission);
     }
 
-    public function update(User $user, EntityValue $entityValue): bool
+    public function update(User $user): bool
     {
         return in_array('update', ...$this->permission);
     }
 
-    public function delete(User $user, EntityValue $entityValue): bool
+    public function delete(User $user): bool
     {
         return in_array('delete', ...$this->permission);
     }
 
-    public function after() {
-        dd('emw');
-    }
-
-    // public function restore(User $user, EntityValue $entityValue): bool
-    // {
-    //     return true;
-    // }
-
-    // public function forceDelete(User $user, EntityValue $entityValue): bool
-    // {
-    //     return true;
-    // }
 }
