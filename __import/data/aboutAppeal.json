@@ -116,10 +116,6 @@
         "type": "user",
         "inStat": false
       },
-      "На контроле": {
-        "type": "boolean",
-        "inStat": false
-      },
       "Ответственный": {
         "type": "string",
         "inStat": false
