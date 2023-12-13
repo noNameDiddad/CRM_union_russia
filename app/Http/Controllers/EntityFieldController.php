@@ -10,7 +10,6 @@ use App\Models\Entity;
 use App\Models\EntityField;
 use App\Services\EntityFieldsService as EntityFieldService;
 
-
 class EntityFieldController extends Controller
 {
     private EntityFieldService $service;
@@ -18,6 +17,7 @@ class EntityFieldController extends Controller
     public function __construct()
     {
         $this->service = new EntityFieldService();
+        $this->authorizeResource(EntityField::class, 'EntityField');
     }
 
     public function index(Entity $entity)

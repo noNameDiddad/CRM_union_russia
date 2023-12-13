@@ -19,7 +19,6 @@ class StageField implements FieldResolverInterface
     public function get($value, $field = null): ?array
     {
         $instance = EntityFieldFixedValue::find($value);
-
         if ($value == null) {
             return [];
         }

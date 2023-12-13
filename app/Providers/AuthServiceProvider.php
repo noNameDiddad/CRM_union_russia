@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+
+use App\Models\EntityField;
 use App\Models\EntityValue;
-use App\Policies\EntityValuePolicy;
+use App\Policies\EntityMasterPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -16,7 +18,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         //
-        EntityValue::class => EntityValuePolicy::class,
+        EntityValue::class => EntityMasterPolicy::class,
+        EntityField::class => EntityMasterPolicy::class,
     ];
 
     /**
@@ -24,6 +27,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // $this->registerPolicies();
     }
 }
