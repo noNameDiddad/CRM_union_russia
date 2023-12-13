@@ -8,6 +8,7 @@ use App\Models\EntityField;
 use App\Models\EntityValue;
 use App\Policies\EntityMasterPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,10 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // $this->registerPolicies();
+        Gate::define('view', [EntityMasterPolicy::class, 'view']);
+        Gate::define('viewAny', [EntityMasterPolicy::class, 'viewAny']);
+        Gate::define('create', [EntityMasterPolicy::class, 'create']);
+        Gate::define('update', [EntityMasterPolicy::class, 'update']);
+        Gate::define('delete', [EntityMasterPolicy::class, 'delete']);
     }
 }
