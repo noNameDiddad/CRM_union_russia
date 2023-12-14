@@ -6,10 +6,6 @@ use App\Services\EntityValueService;
 
 class RelationField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
 
     public function set($value): ?string
     {

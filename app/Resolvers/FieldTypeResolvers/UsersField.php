@@ -2,16 +2,10 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
 use App\Models\User;
 
 class UsersField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
     public function set($value): ?array
     {
         return $value;

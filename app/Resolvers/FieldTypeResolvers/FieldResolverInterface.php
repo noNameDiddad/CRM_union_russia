@@ -6,5 +6,4 @@ interface FieldResolverInterface
 {
     public function set($value);
     public function get($value, $field = null);
-    public function validate();
 }

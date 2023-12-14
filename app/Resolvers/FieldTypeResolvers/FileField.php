@@ -7,12 +7,6 @@ use App\Helpers\EntityValueFileHelper;
 
 class FileField implements FieldResolverInterface
 {
-
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
     public function set($value): ?array
     {
 
