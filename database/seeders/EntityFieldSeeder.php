@@ -22,8 +22,9 @@ class EntityFieldSeeder extends Seeder
         foreach ($json as $key => $item) {
             $fixedValuesType = ['select', 'stage'];
             $item['hash'] = Str::slug($key);
+            if (!isset($item['rules'])) $item['rules'] = [];
             if (in_array($item['type'], $fixedValuesType)) {
-                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255);
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['rules'], $item['inStat'], 255);
                 $fields[$item['hash']] = [
                     'relateTo' => null,
                     'subType' => null,
@@ -41,7 +42,7 @@ class EntityFieldSeeder extends Seeder
                     ],
                 );
             }elseif ($item['type'] === 'object') {
-                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 500, $item['subType']);
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['rules'], $item['inStat'], 500, $item['subType']);
                 $fields[$item['hash']] = [
                     'relateTo' => null,
                     'subType' => $item['subType'],
@@ -64,7 +65,7 @@ class EntityFieldSeeder extends Seeder
                 if ($item['type'] === 'relation' || $item['type'] === 'many_relation') {
                     $relateTo = $item['relateTo'];
                 }
-                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['inStat'], 255, $subType, $relateTo);
+                $entityFieldId = $this->create($entity->id, $key, $item['type'], $item['hash'], $item['rules'], $item['inStat'], 255, $subType, $relateTo);
                 $fields[$item['hash']] = [
                     'relateTo' => $relateTo,
                     'subType' => $subType,
@@ -85,13 +86,14 @@ class EntityFieldSeeder extends Seeder
         );
     }
 
-    private function create($entityId, $name, $type, $hash, $inStat, $maxLength, $subtype = null, $relateTo = null, ): string
+    private function create($entityId, $name, $type, $hash,$rules, $inStat, $maxLength, $subtype = null, $relateTo = null, ): string
     {
         $entityField = EntityField::create([
             'entity_id' => $entityId,
             'name' => $name,
             'type' => $type,
             'hash' => $hash,
+            'rules' => $rules ?? null,
             'sub_type' => $subtype,
             'in_stat' => $inStat,
             'max_length' => $maxLength,

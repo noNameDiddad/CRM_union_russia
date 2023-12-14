@@ -58,4 +58,9 @@ class EntityValueRepository
     {
         $this->model->truncate();
     }
+
+    public function find($id)
+    {
+        return $this->model->find($id);
+    }
 }

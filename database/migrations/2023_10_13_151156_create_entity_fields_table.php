@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('hash');
+            $table->json('rules')->nullable();
             $table->boolean('in_stat');
             $table->string('sub_type')->nullable();
             $table->integer('max_length');

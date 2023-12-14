@@ -46,4 +46,9 @@ class EntityValueService
     {
         $this->repository->truncate();
     }
+
+    public function find($id)
+    {
+        return $this->repository->find($id);
+    }
 }

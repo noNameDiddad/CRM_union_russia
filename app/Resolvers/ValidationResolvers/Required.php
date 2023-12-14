@@ -5,8 +5,16 @@ namespace App\Resolvers\ValidationResolvers;
 class Required implements ValidationResolverInterface
 {
 
-    public function resolve()
+    public function validate($value, $key, $field): bool
     {
-        // TODO: Implement resolve() method.
+        if ($value === null || $value === '') {
+            return false;
+        }
+        return true;
+    }
+
+    public function message($key)
+    {
+        return "Field {$key} is required";
     }
 }
