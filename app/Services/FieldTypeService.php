@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
+use App\Repositories\EntityFieldRepository;
 use App\Resolvers\FieldTypeResolvers\BooleanField;
 use App\Resolvers\FieldTypeResolvers\EmailField;
 use App\Resolvers\FieldTypeResolvers\FileField;
@@ -45,12 +46,16 @@ class FieldTypeService extends FieldService
         return self::FIELDSTYPES[$fieldType] ?? null;
     }
 
-    public function dataFieldTypeResolve(array $data): array
+    public function dataFieldTypeResolve(array $data, $action = 'create'): array
     {
         $resolvedData['entity_id'] = $data['entity_id'];
 
         $fields = app(EntityFieldHelper::class)->getFields($data['entity_id']);
-        unset($data['entity_id']);
+        $stadiaKey = collect($fields)->where('type', FieldTypeEnum::Stage->value)->keys()->first();
+
+        if ( $stadiaKey !== null && !isset($data[$stadiaKey]) && $action == 'create') {
+            $resolvedData[$stadiaKey] = app(EntityFieldRepository::class)->getFirstStageId($data['entity_id'], $stadiaKey);
+        }
 
         foreach ($data as $key => $value) {
             if (!isset($fields[$key])) {

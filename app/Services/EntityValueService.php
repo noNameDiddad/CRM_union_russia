@@ -33,7 +33,7 @@ class EntityValueService
     {
         $data['entity_id'] = $entity->id;
 
-        $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data);
+        $resolvedData = app(FieldTypeService::class)->dataFieldTypeResolve($data, 'update');
         return $this->repository->update($resolvedData, $id);
     }
 
