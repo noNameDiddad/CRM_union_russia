@@ -1,45 +1,62 @@
 {
-    "Обращения граждан": {
-      "isSubEntity": false,
-      "isKanban": true,
-      "fields": {
-        "Контакт (Гражданин)": {
-          "type": "relation",
-          "relateTo": "contact",
-          "inStat": true
-        },
-        "Об обращении": {
-          "type": "relation",
-          "relateTo": "aboutAppeal",
-          "inStat": true
-        },
-        "Согласование": {
-          "type": "relation",
-          "relateTo": "approval",
-          "inStat": false
-        },
-        "Вопрос (для архивных)": {
-          "type": "relation",
-          "relateTo": "questionForArchived",
-          "inStat": false
-        },
-        "Вопросы граждан": {
-          "type": "relation",
-          "relateTo": "citizensQuestions",
-          "inStat": false
-        },
-        "Стадия": {
-          "value":  [
-            "Внесение обращения",
-            "Распределение юристом",
-            "В работе",
-            "На контроле",
-            "Согласование",
-            "Закрытие"
-          ],
-          "type": "stage",
-          "inStat": false
-        }
+  "Обращения граждан": {
+    "isSubEntity": false,
+    "isKanban": true,
+    "fields": {
+      "Контакт (Гражданин)": {
+        "type": "relation",
+        "relateTo": "contact",
+        "inStat": true,
+        "rules": [
+          "required",
+          "issetRelation"
+        ]
+      },
+      "Об обращении": {
+        "type": "relation",
+        "relateTo": "aboutAppeal",
+        "inStat": true,
+        "rules": [
+          "issetRelation"
+        ]
+      },
+      "Согласование": {
+        "type": "relation",
+        "relateTo": "approval",
+        "inStat": false,
+        "rules": [
+          "issetRelation"
+        ]
+      },
+      "Вопрос (для архивных)": {
+        "type": "relation",
+        "relateTo": "questionForArchived",
+        "inStat": false,
+        "rules": [
+          "issetRelation"
+        ]
+      },
+      "Вопросы граждан": {
+        "type": "relation",
+        "relateTo": "citizensQuestions",
+        "inStat": false,
+        "rules": [
+          "required",
+          "issetRelation"
+        ]
+      },
+      "Стадия": {
+        "value": [
+          "Внесение обращения",
+          "Распределение юристом",
+          "В работе",
+          "На контроле",
+          "Согласование",
+          "Закрытие"
+        ],
+        "type": "stage",
+        "inStat": false
       }
-      }
+    }
+  }
 }
