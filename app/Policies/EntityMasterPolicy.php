@@ -27,7 +27,7 @@ class EntityMasterPolicy
     public function view(User $user): bool
     {
         // anyone can
-        return true;
+        return in_array('view', ...$this->permission);
     }
 
     public function create(User $user): bool

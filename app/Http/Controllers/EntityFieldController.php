@@ -17,7 +17,7 @@ class EntityFieldController extends Controller
     public function __construct()
     {
         $this->service = new EntityFieldService();
-        $this->authorizeResource(EntityField::class, 'EntityField');
+        $this->authorizeResource(EntityField::class);
     }
 
     public function index(Entity $entity)

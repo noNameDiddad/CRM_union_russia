@@ -15,7 +15,7 @@ class EntityValueController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(EntityValue::class, 'EntityValue');
+        $this->authorizeResource(EntityValue::class);
     }
 
     public function index(Entity $entity)

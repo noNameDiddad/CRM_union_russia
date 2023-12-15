@@ -5,6 +5,7 @@ namespace App\Providers;
 // use Illuminate\Support\Facades\Gate;
 
 use App\Models\EntityField;
+use App\Models\EntityFieldFixedValue;
 use App\Models\EntityValue;
 use App\Policies\EntityMasterPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -21,6 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         //
         EntityValue::class => EntityMasterPolicy::class,
         EntityField::class => EntityMasterPolicy::class,
+        EntityFieldFixedValue::class => EntityMasterPolicy::class,
     ];
 
     /**

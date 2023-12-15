@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\StatisticResource;
 use App\Models\Entity;
+use App\Models\StatisticFormat;
 use App\Services\EntityValueService;
 
 class StatisticController extends Controller
 {
     private EntityValueService $service;
 
-    public function getStatistics(Entity $entity)
+    public function getStatistics($action)
     {
-        $entity_table = "table_" . $entity->hash;
-        $this->service = new EntityValueService($entity_table);
-        return StatisticResource::collection($this->service->getAllByEntity($entity));
+        $format = StatisticFormat::where('action', $action)->first();
+
     }
 }

@@ -1,0 +1,26 @@
+{
+    "type1": {
+        "appeals": {
+            "appeal_id": "_id",
+            "questions": {
+                "GROUP_TITLE": "voprosy-grazdan",
+                "question_id": "_id",
+                "question_date": "created_at"
+            },
+            "sender": {
+                "GROUP_TITLE": "kontakt-grazdanin",
+                "sender_id": "_id",
+                "first_name": "imia",
+                "last_name": "familiia",
+                "email": "e-mail",
+                "birthday": "den-rozdeniia"
+            },
+            "themes": "voprosy-grazdan",
+            "consultants": {
+                "GROUP_TITLE": "ob-obrashhenii",
+                "registrar": "registrator",
+                "assigner": "ispolnitel"
+            }
+        }
+    }
+}

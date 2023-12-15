@@ -18,6 +18,7 @@ class EntityFieldFixedValueController extends Controller
     public function __construct()
     {
         $this->service = new EntityFieldService();
+        $this->authorizeResource(EntityFieldFixedValue::class);
     }
 
     public function index(EntityField $entity_field)

@@ -29,6 +29,19 @@ class DatabaseSeeder extends Seeder
             );
         }
 
+        if (File::exists($dirName . '/statistics.json')) {
+            $formats = File::json($dirName . '/statistics.json');
+            $this->call(
+                [
+                    StatisticFormatSeeder::class,
+                ],
+                false,
+                [
+                    'formats' => $formats
+                ],
+            );
+        }
+
 
         if (File::exists($dirName . '/order.json')) {
             $order = File::json($dirName . '/order.json');
