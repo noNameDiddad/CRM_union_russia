@@ -128,7 +128,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/:entitiy_id/entity_value?XDEBUG_SESSION_START=PHPSTORM",
+									"raw": "{{host}}api/:entitiy_id/entity_value",
 									"host": [
 										"{{host}}api"
 									],
@@ -136,16 +136,10 @@
 										":entitiy_id",
 										"entity_value"
 									],
-									"query": [
-										{
-											"key": "XDEBUG_SESSION_START",
-											"value": "PHPSTORM"
-										}
-									],
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": ""
+											"value": "9ad7df72-a332-4619-829f-8b2d774d9a2e"
 										}
 									]
 								}
@@ -169,11 +163,37 @@
 										{
 											"key": "surname",
 											"value": "asdasdasdas",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "dokument-dlia-soglasovaniia",
+											"type": "file",
+											"src": "/home/developer/Рабочий стол/Матрица доступа.ods"
+										},
+										{
+											"key": "kontakt-grazdanin",
+											"value": "9ad7dcfd-0ece-4166-b1bb-cf03581d9896",
 											"type": "text"
 										},
 										{
-											"key": "name",
-											"value": "Daniil",
+											"key": "ob-obrashhenii",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "soglasovanie",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "vopros-dlia-arxivnyx",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "voprosy-grazdan",
+											"value": "1",
 											"type": "text"
 										}
 									]
@@ -196,7 +216,7 @@
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": ""
+											"value": "9ad7df75-781d-4db5-89f7-6bce321f476f"
 										}
 									]
 								}
@@ -243,19 +263,23 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/:entitiy_id/entity_value/9accf7a0-9215-48bf-bc8d-416aa4904f01",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										":entitiy_id",
 										"entity_value",
-										"9accf7a0-9215-48bf-bc8d-416aa4904f01"
+										":entity_value_id"
 									],
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": ""
+											"value": "9ad50954-ad42-443b-9391-0c0402e8947e"
+										},
+										{
+											"key": "entity_value_id",
+											"value": "9ad50954-ea0a-4bb6-8f76-7cb7e26cd9b9"
 										}
 									]
 								}
@@ -277,41 +301,84 @@
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
-											"key": "title",
-											"value": "asdasdasdas3123123",
-											"type": "text"
+											"key": "familiia",
+											"value": "ываываувауа",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "name",
-											"value": "Oleg2asdwasd",
-											"type": "text"
+											"key": "imia",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "entity_id",
-											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-											"type": "text"
+											"key": "otcestvo",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "last_name",
-											"value": "ShvetcovDEVOPS",
+											"key": "telefon",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "e-mail",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "den-rozdeniia",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pol",
+											"value": "9ad1f670-eb05-4806-99e8-220ef45f1fc1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "vid-mz",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adres",
+											"value": "9ad1f670-d2c5-455c-b742-e77795b52d7b",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "kontakt-grazdanin",
+											"value": "9ad50954-ea0a-4bb6-8f76-7cb7e26cd9b9",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/:entitiy_id/entity_value/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										":entitiy_id",
 										"entity_value",
-										"653a80b16b702f2bec00e403"
+										":entity_value_id"
 									],
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": ""
+											"value": "9ad5095b-e8b4-4aa9-8788-d5b8ce7d6563"
+										},
+										{
+											"key": "entity_value_id",
+											"value": "9ad5095b-fdb6-4d74-88c2-90532760be22"
 										}
 									]
 								}
@@ -334,18 +401,22 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/:entitiy_id/entity_value/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										":entitiy_id",
 										"entity_value",
-										"653a80b16b702f2bec00e403"
+										":entity_value_id"
 									],
 									"variable": [
 										{
 											"key": "entitiy_id",
+											"value": ""
+										},
+										{
+											"key": "entity_value_id",
 											"value": ""
 										}
 									]
@@ -587,7 +658,7 @@
 									"variable": [
 										{
 											"key": "entity_id",
-											"value": ""
+											"value": "9ad305f7-c004-4f4d-b1f4-5c256bb0f7b5"
 										}
 									]
 								}
@@ -839,7 +910,7 @@
 									"variable": [
 										{
 											"key": "entity_id",
-											"value": ""
+											"value": "9ad1f670-df2f-483a-ae87-733090551d9e"
 										}
 									]
 								}
@@ -1574,6 +1645,31 @@
 								{
 									"key": "XDEBUG_SESSION_START",
 									"value": "PHPSTORM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFiltredFormattedData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/data/translated?action=DignitariesForGraphic",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"data",
+								"translated"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "DignitariesForGraphic",
+									"description": "Список actions: \nDignitariesForGraphic,\nDignitariesForGraphic,\nDeputesForGraphic,\nConsultantsForGraphic,\nMOPForGraphic,\nROPForGraphic,\nThemesForGraphic,\nDeputesForExcel,\nMOPForExcel,\nROPForExcel,"
 								}
 							]
 						}
