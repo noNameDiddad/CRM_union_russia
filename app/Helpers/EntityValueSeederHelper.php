@@ -5,17 +5,16 @@ namespace App\Helpers;
 use App\Enums\FieldTypeEnum;
 use App\Models\EntityFieldFixedValue;
 use App\Models\User;
-use App\Repositories\EntityFieldRepository;
 use App\Services\EntityValueService;
 
 class EntityValueSeederHelper
 {
 
-    public static function generateData($entity_id, $fields): array
+    public static function generateData($fields): array
     {
         $data = [];
         foreach ($fields as $fieldName => $field) {
-            $data[$fieldName] = self::generateField($field['id'], $field['type'], $field['relateTo'], $field['subType']);
+            $data[$fieldName] = self::generateField($field->id, $field->type, $field->relateTo, $field->subType);
         }
 
         return $data;
@@ -32,6 +31,7 @@ class EntityValueSeederHelper
             FieldTypeEnum::Timestamps->value => now()->format('Y-m-d H:i:s'),
             FieldTypeEnum::Select->value, FieldTypeEnum::Stage->value => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->id,
             FieldTypeEnum::Boolean->value => fake()->boolean,
+            FieldTypeEnum::Address->value => fake()->address,
             FieldTypeEnum::Relation->value => self::generateRelation($relateTo),
             FieldTypeEnum::ManyRelation->value => self::generateRelation($relateTo, 3),
             FieldTypeEnum::Object->value => ['value' => self::generateField($field_id, $subType), 'type' => EntityFieldFixedValue::where('entity_field_id', $field_id)->inRandomOrder()->first()->value],

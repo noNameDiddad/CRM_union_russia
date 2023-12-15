@@ -17,10 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('hash');
-            $table->json('rules')->nullable();
             $table->boolean('in_stat');
+            $table->json('rules')->nullable();
             $table->string('sub_type')->nullable();
-            $table->integer('max_length');
             $table->string('relate_to')->nullable();
             $table->timestamps();
         });

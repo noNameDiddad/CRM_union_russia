@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('hash')->unique();
+            $table->string('short_output')->nullable();
             $table->boolean('is_sub_entity')->default(false);
             $table->boolean('is_kanban')->default(false);
             $table->timestamps();

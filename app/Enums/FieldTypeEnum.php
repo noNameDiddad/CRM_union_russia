@@ -14,6 +14,7 @@ enum FieldTypeEnum: string
     case Select = 'select';
     case MultiSelect = 'multi_select';
     case Boolean = 'boolean';
+    case Address = 'address';
     case Stage = 'stage';
     case Relation = 'relation';
     case ManyRelation = 'many_relation';

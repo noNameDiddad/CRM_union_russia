@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Data\EntityData;
 use App\Models\Entity;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -13,12 +14,8 @@ class EntitySeeder extends Seeder
      */
     public function run($entityName, $json, $hash): void
     {
-        Entity::create([
-            'name' => $entityName,
-            'is_sub_entity' => $json['isSubEntity'],
-            'is_kanban' => $json['isKanban'],
-            'hash' => $hash,
-        ]);
+        $entity = EntityData::from($json+['name' => $entityName, 'hash' => $hash]);
+        Entity::create($entity->toArray());
 
         $this->call(
             [

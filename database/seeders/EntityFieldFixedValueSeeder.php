@@ -2,12 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Entity;
-use App\Models\EntityField;
+use App\Data\EntityFieldFixedValueData;
 use App\Models\EntityFieldFixedValue;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class EntityFieldFixedValueSeeder extends Seeder
 {
@@ -20,10 +17,11 @@ class EntityFieldFixedValueSeeder extends Seeder
         dump($fieldNames);
 
         foreach ($fieldNames as $fieldName) {
-            EntityFieldFixedValue::create([
+            $entityFieldFixedValue = EntityFieldFixedValueData::from([
                 'entity_field_id' => $entityFieldId,
                 'value' => $fieldName,
             ]);
+            EntityFieldFixedValue::create($entityFieldFixedValue->toArray());
         };
     }
 }
