@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 
+use App\Models\Entity;
 use App\Models\StatisticFormat;
 use App\Services\StatisticFormatService;
 use Illuminate\Database\Seeder;
@@ -16,9 +17,10 @@ class StatisticFormatSeeder extends Seeder
     {
         foreach ($formats as $item => $value) {
             $hash = key($value);
+            $entity = Entity::where('hash', $hash)->first();
             StatisticFormat::create([
                 'action' => $item,
-                'hash' => $hash,
+                'entity_id' => $entity->id,
                 'format' => json_encode(reset($value))
             ]);
         }

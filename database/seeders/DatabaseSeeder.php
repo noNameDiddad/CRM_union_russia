@@ -29,6 +29,17 @@ class DatabaseSeeder extends Seeder
             );
         }
 
+        if (File::exists($dirName . '/order.json')) {
+            $order = File::json($dirName . '/order.json');
+        }
+
+        foreach ($order['order'] as $item) {
+            if (File::exists($dirName . '/data/'.$item.'.json')) {
+                $this->seedEntity($dirName . '/data/'.$item.'.json', $item);
+            }
+
+        }
+
         if (File::exists($dirName . '/statistics.json')) {
             $formats = File::json($dirName . '/statistics.json');
             $this->call(
@@ -40,18 +51,6 @@ class DatabaseSeeder extends Seeder
                     'formats' => $formats
                 ],
             );
-        }
-
-
-        if (File::exists($dirName . '/order.json')) {
-            $order = File::json($dirName . '/order.json');
-        }
-
-        foreach ($order['order'] as $item) {
-            if (File::exists($dirName . '/data/'.$item.'.json')) {
-                $this->seedEntity($dirName . '/data/'.$item.'.json', $item);
-            }
-
         }
     }
 
