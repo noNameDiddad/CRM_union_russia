@@ -2,6 +2,7 @@
     "Контакты": {
       "isKanban": false,
       "isSubEntity": false,
+      "shortOutput": "{Фамилия} {Имя} {Отчество}",
       "fields": {
         "Фамилия": {
           "type": "string",
@@ -201,8 +202,7 @@
           "inStat": false
         },
         "Адрес": {
-          "type": "relation",
-          "relateTo": "address",
+          "type": "string",
           "inStat": false
         },
          "УИК": {
