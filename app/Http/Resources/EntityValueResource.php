@@ -16,7 +16,7 @@ class EntityValueResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $fields = app(EntityFieldHelper::class)->getFields($this->entity_id);
+        $fields = app(EntityFieldHelper::class)->getFields($this->entity_id, true);
         $response = [
             'id' => $this->id,
             'entity_id' => $this->entity_id,

@@ -17,7 +17,7 @@ class EntityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $fields = app(EntityFieldHelper::class)->getFields($this->id);
+        $fields = app(EntityFieldHelper::class)->getFields($this->id, false);
         $fields = collect($fields)->whereNotNull("relateTo");
         if ($fields->count() != 0) {
             $subEntities = [];
