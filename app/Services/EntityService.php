@@ -34,4 +34,9 @@ class EntityService
     {
         return $this->repository->update($data, $id);
     }
+
+    public static function getByHash($hash)
+    {
+        return app(EntityRepository::class)->where('hash', $hash)->first();
+    }
 }

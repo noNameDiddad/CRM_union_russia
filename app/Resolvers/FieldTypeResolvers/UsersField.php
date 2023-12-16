@@ -16,9 +16,15 @@ class UsersField implements FieldResolverInterface
         if ($value == null) {
             return null;
         }
+        $users = User::whereIn('id', $value)->get();
+        $result = [];
+        foreach ($users as $user) {
+            $result[] = [
+                'id' => $user->id,
+                'value' => $user->name
+            ];
+        }
 
-        $result = $result[] = User::whereIn('id', $value)->get();
-
-        return $result->toArray();
+        return $result;
     }
 }

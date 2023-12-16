@@ -12,7 +12,7 @@ class EntityValueService
     /**
      * @var EntityValueRepository
      */
-    private mixed $repository;
+    public mixed $repository;
     private mixed $table;
 
     public function __construct($table)

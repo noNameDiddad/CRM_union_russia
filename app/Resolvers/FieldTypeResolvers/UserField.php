@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Helpers\FormatterHelper;
 use App\Models\User;
 
 class UserField implements FieldResolverInterface
@@ -16,6 +17,10 @@ class UserField implements FieldResolverInterface
         if ($value == null) {
             return null;
         }
-        return User::find($value)->toArray();
+        $user =  User::find($value);
+        return [
+            'id' => $user->id,
+            'value' => $user->name
+        ];
     }
 }

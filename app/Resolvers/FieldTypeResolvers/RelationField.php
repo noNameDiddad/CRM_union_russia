@@ -2,8 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Helpers\EntityFieldHelper;
 use App\Helpers\FormatterHelper;
+use App\Services\EntityService;
 use App\Services\EntityValueService;
 
 class RelationField implements FieldResolverInterface
@@ -18,12 +18,12 @@ class RelationField implements FieldResolverInterface
     {
         $entity_table = "table_" . $field['relateTo'];
         $service = new EntityValueService($entity_table);
-
+        $entity = EntityService::getByHash($field['relateTo']);
         $instance = $service->show($value);
 
         return [
             'id' => $instance->id,
-            'value' => FormatterHelper::getShortOutput($instance, $field)
+            'value' => FormatterHelper::getShortOutput($instance, $entity->short_output)
         ];
     }
 }

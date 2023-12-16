@@ -63,4 +63,9 @@ class EntityValueRepository
     {
         return $this->model->find($id);
     }
+
+    public function whereIn($column, $array)
+    {
+        return $this->model->whereIn($column, $array)->get();
+    }
 }

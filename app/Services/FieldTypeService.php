@@ -10,6 +10,7 @@ use App\Resolvers\FieldTypeResolvers\AddressField;
 use App\Resolvers\FieldTypeResolvers\BooleanField;
 use App\Resolvers\FieldTypeResolvers\EmailField;
 use App\Resolvers\FieldTypeResolvers\FileField;
+use App\Resolvers\FieldTypeResolvers\GenerateField;
 use App\Resolvers\FieldTypeResolvers\IntegerField;
 use App\Resolvers\FieldTypeResolvers\ManyRelationField;
 use App\Resolvers\FieldTypeResolvers\ObjectField;
@@ -32,6 +33,7 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::String->value            => StringField::class,
         FieldTypeEnum::Select->value            => SelectField::class,
         FieldTypeEnum::User->value              => UserField::class,
+        FieldTypeEnum::Generate->value          => GenerateField::class,
         FieldTypeEnum::Users->value             => UsersField::class,
         FieldTypeEnum::Integer->value           => IntegerField::class,
         FieldTypeEnum::Timestamps->value        => TimestampsField::class,
