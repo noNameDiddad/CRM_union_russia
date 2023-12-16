@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EntityRequest;
-use App\Http\Resources\EntityResource;
 use App\Http\Resources\FieldFilterResource;
-use App\Services\EntityService;
 use App\Services\FieldFilterService;
 use Illuminate\Http\Request;
 
