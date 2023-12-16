@@ -33,7 +33,8 @@ class EntityFieldHelper
         if ($isStatistic) {
             $fields = $this->repository->getFieldsForStatistic($entity_id);
         } else {
-            $fields = $this->repository->getFields($entity_id);
+            $fields = $this->repository->getFieldsByEntityId($entity_id);
+            $fields = FieldFilterHelper::filterData($fields,$entity_id);
         }
 
         $data = [];

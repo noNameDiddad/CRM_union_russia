@@ -2,10 +2,10 @@
   "Вопросы граждан": {
     "isSubEntity": true,
     "isKanban": false,
+    "shortOutput": "{Название}",
     "fields": {
-      "Номер вопроса": {
-        "type": "relation",
-        "relateTo": "questionNumber",
+      "Название": {
+        "type": "generate",
         "inStat": false
       },
       "Дата решения вопроса": {
@@ -13,6 +13,10 @@
         "inStat": false
       },
       "Аннотация": {
+        "type": "string",
+        "inStat": false
+      },
+      "Событие": {
         "type": "string",
         "inStat": false
       },
@@ -54,6 +58,10 @@
           "Нет"
         ],
         "type": "select",
+        "inStat": false
+      },
+      "Ответственный": {
+        "type": "user",
         "inStat": false
       },
       "Исполнитель": {

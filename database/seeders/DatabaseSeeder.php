@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -13,8 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $dirName = '__import';
-
+        $dirName = env('IMPORT_DIR');
 
         if (File::exists($dirName . '/roles.json')) {
             $roles = File::json($dirName . '/roles.json');

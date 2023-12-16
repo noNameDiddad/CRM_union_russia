@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Entity extends Model
+class FieldFilter extends Model
 {
     use HasFactory, HasUuids;
 
     protected $keyType = 'string';
 
-    protected $fillable = ['id', 'name', 'hash'];
+    protected $fillable = ['id', 'name', 'fields', 'entity_id'];
 
-    public function field_filter()
-    {
-        return $this->hasOne(FieldFilter::class);
-    }
+    protected $casts = [
+        "fields" => "array",
+    ];
 }
