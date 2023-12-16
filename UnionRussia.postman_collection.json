@@ -139,7 +139,7 @@
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": "9ad7df72-a332-4619-829f-8b2d774d9a2e"
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
 										}
 									]
 								}
@@ -173,7 +173,7 @@
 										},
 										{
 											"key": "kontakt-grazdanin",
-											"value": "9ad7dcfd-0ece-4166-b1bb-cf03581d9896",
+											"value": "9ad7df6f-8525-469c-b1c7-0d4f78905c21",
 											"type": "text"
 										},
 										{
@@ -572,7 +572,7 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Обращения",
+											"value": "Контакты",
 											"type": "text"
 										}
 									]
@@ -589,7 +589,7 @@
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": ""
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
 										}
 									]
 								}
@@ -658,7 +658,7 @@
 									"variable": [
 										{
 											"key": "entity_id",
-											"value": "9ad305f7-c004-4f4d-b1f4-5c256bb0f7b5"
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
 										}
 									]
 								}
@@ -1546,6 +1546,70 @@
 										{
 											"key": "permission_id",
 											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FieldFilters",
+					"item": [
+						{
+							"name": "getFilters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/field_filters/:entity_id/show",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"field_filters",
+										":entity_id",
+										"show"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateFIlters",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fields\": {\n        \"familiia\": true,\n        \"imia\": true,\n        \"otcestvo\": true,\n        \"telefon\": true,\n        \"e-mail\": false,\n        \"den-rozdeniia\": true,\n        \"pol\": true,\n        \"vid-mz\": true,\n        \"grazdanstvo\": false,\n        \"avtor\": true,\n        \"mesto-raboty\": false,\n        \"dolznost\": false,\n        \"soc-polozenie\": false,\n        \"lgotnye-kategorii\": false,\n        \"loialnost\": false,\n        \"mo\": false,\n        \"adres\": false,\n        \"uik\": false,\n        \"inaia-informaciia\": false,\n        \"organizaciia\": false,\n        \"otvetstvennyi\": false\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}api/field_filters/:entity_id/update",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"field_filters",
+										":entity_id",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
 										}
 									]
 								}
