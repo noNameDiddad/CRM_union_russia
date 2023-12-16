@@ -5,6 +5,7 @@ use App\Http\Controllers\EntityController;
 use App\Http\Controllers\EntityFieldController;
 use App\Http\Controllers\EntityFieldFixedValueController;
 use App\Http\Controllers\EntityValueController;
+use App\Http\Controllers\FieldFilterController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatisticController;
@@ -38,6 +39,9 @@ Route::group(['middleware' => 'api'], function () {
     Route::resource('role', RoleController::class);
 
     Route::get('{entity}/get_statistics', [StatisticController::class, 'getStatistics']);
+
+    Route::get('field_filters/{entity_id}/show', [FieldFilterController::class, 'show']);
+    Route::put('field_filters/{entity_id}/update', [FieldFilterController::class, 'update']);
 });
 
 
