@@ -7,7 +7,7 @@ use App\Helpers\EntityValueFileHelper;
 
 class FileField implements FieldResolverInterface
 {
-    public function set($value): ?array
+    public function set($value, $field = null): ?array
     {
 
         $paths = [];
@@ -22,7 +22,7 @@ class FileField implements FieldResolverInterface
         return $paths;
     }
 
-    public function get($value, $field = null, $isFormatted = true): ?array
+    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
     {
         $fileArr = [];
         foreach ($value as $file) {

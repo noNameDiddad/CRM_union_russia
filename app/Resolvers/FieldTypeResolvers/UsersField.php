@@ -6,12 +6,12 @@ use App\Models\User;
 
 class UsersField implements FieldResolverInterface
 {
-    public function set($value): ?array
+    public function set($value, $field = null): ?array
     {
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true): ?array
+    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
     {
         if ($value == null) {
             return null;

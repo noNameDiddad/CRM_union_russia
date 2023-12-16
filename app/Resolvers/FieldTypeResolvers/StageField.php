@@ -6,12 +6,12 @@ use App\Models\EntityFieldFixedValue;
 
 class StageField implements FieldResolverInterface
 {
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true): ?array
+    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
     {
         $instance = EntityFieldFixedValue::find($value);
         if ($value == null) {

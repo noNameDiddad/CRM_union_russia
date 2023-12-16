@@ -9,15 +9,15 @@ use App\Services\EntityValueService;
 class RelationField implements FieldResolverInterface
 {
 
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true): ?array
+    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
     {
-        $entity_table = "table_" . $field['relateTo'];
-        $service = new EntityValueService($entity_table);
+        $service = new EntityValueService(EntityService::getByHash($field['relateTo']));
+
         $entity = EntityService::getByHash($field['relateTo']);
         $instance = $service->show($value);
 

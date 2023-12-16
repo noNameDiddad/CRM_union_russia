@@ -81,7 +81,7 @@ class FieldTypeService extends FieldService
             if (!isset($fields[$key])) {
                 continue;
             }
-            $resolvedData[$key] = app(static::getClassForFieldType($fields[$key]['type']))->set($value);
+            $resolvedData[$key] = app(static::getClassForFieldType($fields[$key]['type']))->set($value, $fields[$key]);
         }
 
         return $resolvedData;

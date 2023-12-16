@@ -7,12 +7,12 @@ use App\Models\User;
 
 class UserField implements FieldResolverInterface
 {
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true): ?array
+    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
     {
         if ($value == null) {
             return null;
