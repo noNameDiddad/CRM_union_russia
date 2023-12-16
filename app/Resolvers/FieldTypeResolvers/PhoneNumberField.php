@@ -9,7 +9,7 @@ class PhoneNumberField implements FieldResolverInterface
         return json_encode($value);
     }
 
-    public function get($value, $field = null): ?string
+    public function get($value, $field = null, $isFormatted = true): ?string
     {
         return json_decode($value);
     }

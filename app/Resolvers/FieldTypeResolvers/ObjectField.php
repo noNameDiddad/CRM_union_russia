@@ -9,7 +9,7 @@ class ObjectField implements FieldResolverInterface
         return json_encode($value);
     }
 
-    public function get($value, $field = null): ?array
+    public function get($value, $field = null, $isFormatted = true): ?array
     {
         $object = json_decode($value);
         return [

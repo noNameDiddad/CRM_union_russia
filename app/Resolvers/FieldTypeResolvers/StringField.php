@@ -9,7 +9,7 @@ class StringField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null): ?string
+    public function get($value, $field = null, $isFormatted = true): ?string
     {
         return $value;
     }

@@ -14,7 +14,7 @@ class ManyRelationField implements FieldResolverInterface
 
     }
 
-    public function get($value, $field = null): ?array
+    public function get($value, $field = null, $isFormatted = true): ?array
     {
         $entity_table = "table_" . $field['relateTo'];
         $service = new EntityValueService($entity_table);
@@ -24,10 +24,10 @@ class ManyRelationField implements FieldResolverInterface
         $instanses = [];
         foreach($elements as $unit) {
 
-            $instanses[] = [
+            $instanses[] = $isFormatted ?[
                 'id' =>  $unit->id,
                 'value' => FormatterHelper::getShortOutput($unit, $entity->short_output)
-            ];
+            ] : $unit->toArray();
         }
 
         return $instanses;

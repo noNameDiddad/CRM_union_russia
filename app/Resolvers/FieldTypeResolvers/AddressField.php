@@ -10,7 +10,7 @@ class AddressField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null): ?array
+    public function get($value, $field = null, $isFormatted = true): ?array
     {
         return $value;
     }
