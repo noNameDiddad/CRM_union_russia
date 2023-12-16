@@ -29,11 +29,11 @@ class EntitySeeder extends Seeder
         );
         $dirName = env('IMPORT_DIR');
         $filterPath = $dirName . '/filters/'.$hash.'.json';
+        $chapterPath = $dirName . '/chapters/'.$hash.'.json';
         if (File::exists($filterPath)) {
             dump('Обработка файла ' . $filterPath . '.' );
             $entityFilter = File::json($filterPath);
-            foreach ($entityFilter as $name => $value) {
-                $entityName = $name;
+            foreach ($entityFilter as $filterName => $filterValue) {
                 $this->call(
                     [
                         FieldFilterSeeder::class,
@@ -41,10 +41,29 @@ class EntitySeeder extends Seeder
                     false,
                     [
                         'entity_id' => $entity_id,
-                        'filterName' => $name,
-                        'json' => $value,
+                        'filterName' => $filterName,
+                        'json' => $filterValue,
                     ]
                 );
+            }
+        }
+        if (File::exists($chapterPath)) {
+            $chapters = File::json($chapterPath);
+            $order = 0;
+            foreach ($chapters as $chapterName => $chapterValue) {
+                $this->call(
+                    [
+                        ChapterSeeder::class,
+                    ],
+                    false,
+                    [
+                        'entity_id' => $entity_id,
+                        'chapterName' => $chapterName,
+                        'json' => $chapterValue,
+                        'order' => $order
+                    ]
+                );
+                $order++;
             }
         }
     }

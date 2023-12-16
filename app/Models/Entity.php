@@ -18,4 +18,8 @@ class Entity extends Model
     {
         return $this->hasOne(FieldFilter::class);
     }
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class);
+    }
 }
