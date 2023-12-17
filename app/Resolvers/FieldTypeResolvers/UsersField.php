@@ -17,7 +17,8 @@ class UsersField implements FieldResolverInterface
         if ($data->value == null) {
             return null;
         }
-        $users = User::whereIn('id', $data->value)->get();
+        $searchArray = json_decode($data->value);
+        $users = User::whereIn('id', $searchArray)->get();
         $result = [];
         foreach ($users as $user) {
             $result[] = [
