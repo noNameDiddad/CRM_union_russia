@@ -32,7 +32,7 @@ class StatisticController extends Controller
                             if ($item[$fValue['GROUP_TITLE']]) {
                                 if (isset($item[$fValue['GROUP_TITLE']][$val]))
                                     foreach ($item[$fValue['GROUP_TITLE']] as $refM) {
-                                        $result[$i][$f][$row] = $item[$fValue['GROUP_TITLE']][$val];
+                                        $result[$i][$f][$row] = isset($item[$fValue['GROUP_TITLE']][$val]['value']) ? $item[$fValue['GROUP_TITLE']][$val]['value'] : $item[$fValue['GROUP_TITLE']][$val];
                                     } else {
                                     $x = 0;
                                     foreach ($item[$fValue['GROUP_TITLE']] as $refM) {
