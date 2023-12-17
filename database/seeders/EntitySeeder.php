@@ -15,7 +15,7 @@ class EntitySeeder extends Seeder
     public function run($entityName, $json, $hash): void
     {
         $entity = EntityData::from($json+['name' => $entityName, 'hash' => $hash]);
-        $entity_id = Entity::create($entity->toArray())->id;
+        $entity = Entity::create($entity->toArray());
 
         $this->call(
             [
@@ -23,7 +23,7 @@ class EntitySeeder extends Seeder
             ],
             false,
             [
-                'entityName' => $entityName,
+                'entity' => $entity,
                 'json' => $json['fields'],
             ]
         );
@@ -40,7 +40,7 @@ class EntitySeeder extends Seeder
                     ],
                     false,
                     [
-                        'entity_id' => $entity_id,
+                        'entity_id' => $entity->id,
                         'filterName' => $filterName,
                         'json' => $filterValue,
                     ]
@@ -57,7 +57,7 @@ class EntitySeeder extends Seeder
                     ],
                     false,
                     [
-                        'entity_id' => $entity_id,
+                        'entity_id' => $entity->id,
                         'chapterName' => $chapterName,
                         'json' => $chapterValue,
                         'order' => $order

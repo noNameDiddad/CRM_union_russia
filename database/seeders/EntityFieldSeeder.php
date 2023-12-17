@@ -12,11 +12,10 @@ class EntityFieldSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run($entityName, $json): void
+    public function run($entity, $json): void
     {
-        $entity = Entity::where('name', $entityName)->first();
         dump("Засеивание");
-        dump($entityName);
+        dump($entity->name);
         dump("----------");
         $fields = [];
         foreach ($json as $key => $item) {

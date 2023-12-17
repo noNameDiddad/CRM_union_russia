@@ -3,6 +3,7 @@
 namespace App\Services;
 
 
+use App\Helpers\EntityFieldHelper;
 use App\Models\Entity;
 use App\Repositories\EntityValueRepository;
 
@@ -15,9 +16,10 @@ class EntityValueService
     public mixed $repository;
     private mixed $table;
 
-    public function __construct($table)
+    public function __construct(private Entity $entity)
     {
-        $this->repository = new EntityValueRepository($table);
+        $entity_table = "table_" . $entity->hash;
+        $this->repository = new EntityValueRepository($entity_table);
     }
 
     public function createWithFieldResolver(Entity $entity, array $data)

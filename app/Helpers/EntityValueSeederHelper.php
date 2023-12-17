@@ -44,8 +44,7 @@ class EntityValueSeederHelper
 
     public static function generateRelation($relateTo, $count = 1): string
     {
-        $entity_table = "table_" . $relateTo;
-        $service = new EntityValueService($entity_table);
+        $service = new EntityValueService(EntityService::getByHash($relateTo));
         if ($count == 1 ) {
             $randomId = $service->getRandomElement($count)->first();
         } else {

@@ -12,8 +12,7 @@ class StatisticController extends Controller
 
     public function getStatistics(Entity $entity)
     {
-        $entity_table = "table_" . $entity->hash;
-        $this->service = new EntityValueService($entity_table);
+        $this->service = new EntityValueService($entity);
         return StatisticResource::collection($this->service->getAllByEntity($entity));
     }
 }
