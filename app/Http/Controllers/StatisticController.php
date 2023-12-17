@@ -18,31 +18,44 @@ class StatisticController extends Controller
 
         $queryHelper = new FormatterHelper();
         $query = $queryHelper->getFormatted($format);
-dd($query);
-        // $format = StatisticFormat::where('action', $action)->first();
-        // $entity = Entity::where('hash', $format->hash)->first();
-        // $entity_table = "table_" . $format->hash;
-        // $this->service = new EntityValueService($entity_table);
 
-        // $format = json_decode($format->format, true);
-        // $query = EntityValueResource::collection($this->service->getAllByEntity($entity));
 
-        // $query = $query->toJson();
-        // $query = json_decode($query, true);
-
+        $format = json_decode($format->format, true);
+        // return $query;
         $result = [];
         $i = 0;
         foreach ($query as $item) {
-            foreach ($format as $unit => $row) {
-                if (isset($row['GROUP_TITLE'])) {
-                    foreach ($row as $subUnit => $subUnitRow) {
-                        if ($subUnit != 'GROUP_TITLE') {
-                            $tmp = $item[$row['GROUP_TITLE']];
-                            $result[$i][$unit][$subUnit] = $tmp[$subUnitRow];
+            foreach ($format as $f => $fValue) {
+                if (isset($fValue['GROUP_TITLE'])) {
+                    foreach ($fValue as $row => $val) {
+                        if ($row !== 'GROUP_TITLE') {
+                            if ($item[$fValue['GROUP_TITLE']]) {
+                                if (isset($item[$fValue['GROUP_TITLE']][$val]))
+                                    foreach ($item[$fValue['GROUP_TITLE']] as $refM) {
+                                        $result[$i][$f][$row] = $item[$fValue['GROUP_TITLE']][$val];
+                                    } else {
+                                    $x = 0;
+                                    foreach ($item[$fValue['GROUP_TITLE']] as $refM) {
+                                        $result[$i][$f][$x][$row] = $refM[$val];
+                                        $x++;
+                                    }
+                                }
+                            }
                         }
                     }
                 } else {
-                    $result[$i][$unit] = $item[$row];
+                    if (is_string($fValue)) {
+                        $result[$i][$f] = $item[$fValue];
+                    } else {
+                        foreach ($fValue as $row => $val) {
+                            if (isset($item[$val]['id'])) {
+                                $result[$i][$f][$row] = $item[$val]['id'];
+                            } else {
+                                $result[$i][$f][$row] = $item[$val];
+                            }
+                            //
+                        }
+                    }
                 }
 
             }

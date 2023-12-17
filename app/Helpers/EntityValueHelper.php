@@ -53,7 +53,8 @@ class EntityValueHelper
                         field: $field,
                         value: $value,
                         entity: $entity,
-                        currentEntityValue: $instance
+                        currentEntityValue: $instance,
+                        isFormatted: false,
                     )
                 );
             }
