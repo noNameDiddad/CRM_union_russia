@@ -79,7 +79,7 @@ class FieldTypeService extends FieldService
             $resolvedData[$stadiaKey] = app(EntityFieldRepository::class)->getFirstStageId($data['entity_id'], $stadiaKey);
         }
 
-        $this->validateAll($fields, $data, $action);
+//        $this->validateAll($fields, $data, $action);
 
         foreach ($data as $key => $value) {
             if (!isset($fields[$key])) {
