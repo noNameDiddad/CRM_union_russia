@@ -39,4 +39,8 @@ class EntityService
     {
         return app(EntityRepository::class)->where('hash', $hash)->first();
     }
+    public static function getById($id)
+    {
+        return app(EntityRepository::class)->where('id', $id)->first();
+    }
 }

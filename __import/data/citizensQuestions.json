@@ -8,6 +8,11 @@
         "type": "generate",
         "inStat": false
       },
+      "Обращение граждан": {
+        "type": "belongs_to",
+        "relateTo": "appeals",
+        "inStat": false
+      },
       "Дата решения вопроса": {
         "type": "timestamps",
         "inStat": false

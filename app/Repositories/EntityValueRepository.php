@@ -68,4 +68,9 @@ class EntityValueRepository
     {
         return $this->model->whereIn($column, $array)->get();
     }
+
+    public function getWhere($field_hash, $id)
+    {
+        return $this->model->where($field_hash, $id)->get();
+    }
 }

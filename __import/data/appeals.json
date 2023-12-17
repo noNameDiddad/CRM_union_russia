@@ -22,7 +22,7 @@
         "inStat": false
       },
       "Вопросы граждан": {
-        "type": "many_relation",
+        "type": "child",
         "relateTo": "citizensQuestions",
         "inStat": false
       },
@@ -386,8 +386,7 @@
         "inStat": false
       },
       "План помощи (автоматическое поле)": {
-        "type": "relation",
-        "relateTo": "helpPlan",
+        "type": "generate",
         "inStat": false
       },
       "Аннотация": {

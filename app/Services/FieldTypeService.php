@@ -7,7 +7,9 @@ use App\Enums\FieldValidationEnum;
 use App\Helpers\EntityFieldHelper;
 use App\Repositories\EntityFieldRepository;
 use App\Resolvers\FieldTypeResolvers\AddressField;
+use App\Resolvers\FieldTypeResolvers\BelongsToField;
 use App\Resolvers\FieldTypeResolvers\BooleanField;
+use App\Resolvers\FieldTypeResolvers\ChildField;
 use App\Resolvers\FieldTypeResolvers\EmailField;
 use App\Resolvers\FieldTypeResolvers\FileField;
 use App\Resolvers\FieldTypeResolvers\GenerateField;
@@ -43,6 +45,8 @@ class FieldTypeService extends FieldService
         FieldTypeEnum::Stage->value             => StageField::class,
         FieldTypeEnum::File->value              => FileField::class,
         FieldTypeEnum::Boolean->value           => BooleanField::class,
+        FieldTypeEnum::BelongsTo->value         => BelongsToField::class,
+        FieldTypeEnum::Child->value             => ChildField::class,
         FieldTypeEnum::Address->value           => AddressField::class,
         FieldTypeEnum::Priority->value          => PriorityField::class,
         FieldTypeEnum::PhoneNumber->value       => PhoneNumberField::class,

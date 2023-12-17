@@ -1,11 +1,11 @@
 {
   "order": [
-      "contact",
-      "helpPlan",
-      "citizensQuestions",
-      "appeals",
-      "rop_common",
-      "rop_unic",
-      "document"
+    "contact",
+    "helpPlan",
+    "appeals",
+    "citizensQuestions",
+    "rop_common",
+    "rop_unic",
+    "document"
   ]
 }

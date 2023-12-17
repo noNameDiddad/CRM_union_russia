@@ -23,10 +23,9 @@ class EntityValueResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
-
         foreach ($fields as $key =>$field) {
             $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-            $response[$key] = app($fieldClass)->get($this->{$key}, $field);
+            $response[$key] = app($fieldClass)->get($this->{$key}, $field, true, $this->resource);
         }
 
         return $response;
