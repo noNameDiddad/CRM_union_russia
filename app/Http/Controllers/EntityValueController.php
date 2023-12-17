@@ -34,7 +34,7 @@ class EntityValueController extends Controller
     public function show(Entity $entity, string $entity_value)
     {
         $this->service = new EntityValueService($entity);
-        return new EntityValueWithChapters($this->service->show($entity_value), $entity);
+        return new EntityValueResource($this->service->show($entity_value), false);
     }
 
     public function update(EntityValueRequest $request, Entity $entity, string $entity_value)

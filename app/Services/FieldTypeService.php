@@ -79,7 +79,7 @@ class FieldTypeService extends FieldService
             $resolvedData[$stadiaKey] = app(EntityFieldRepository::class)->getFirstStageId($data['entity_id'], $stadiaKey);
         }
 
-        $this->validateAll($fields, $data);
+        $this->validateAll($fields, $data, $action);
 
         foreach ($data as $key => $value) {
             if (!isset($fields[$key])) {
@@ -92,12 +92,15 @@ class FieldTypeService extends FieldService
     }
 
 
-    private function validateAll($fields,$data): void
+    private function validateAll($fields,$data, $action = 'create'): void
     {
         $errors = [];
         foreach ($fields as $key => $field) {
             $value = $data[$key] ?? null;
             foreach ($field['rules'] as $rule) {
+                if ($rule == 'required' && $action === 'update') {
+                    continue;
+                }
                 $validator = app(static::getClassForValidation($rule));
                 if ($validator->validate($value, $key, $field)) {
                     continue;

@@ -27,10 +27,15 @@ class StatisticResource extends JsonResource
         ];
 
         foreach ($fields as $key =>$field) {
+            if (is_array($this->{$key})) {
+                $value = json_encode($this->{$key});
+            } else {
+                $value = $this->{$key};
+            }
             $response[$key] = EntityValueHelper::getValueByField(
                 new EntityValueFieldGetData(
                     field: $field,
-                    value: $this->{$key},
+                    value: $value,
                 )
             );
         }

@@ -38,10 +38,15 @@ class EntityValueWithChapters extends JsonResource
                         $params = explode(".", $item);
                         if ($params[0] == "this") {
                             $field = $fields[$params[1]];
+                            if (is_array($this->{$params[1]})) {
+                                $value = json_encode($this->{$params[1]});
+                            } else {
+                                $value = $this->{$params[1]};
+                            }
                             $specialData[$key][$params[1]] = EntityValueHelper::getValueByField(
                                 new EntityValueFieldGetData(
                                     field: $field,
-                                    value: $this->{$params[1]},
+                                    value: $value,
                                     currentEntityValue: $this->resource,
                                     isFormatted: true
 
@@ -50,20 +55,31 @@ class EntityValueWithChapters extends JsonResource
                         } elseif ($params[0] == "parent") {
                             $fieldKey = collect($fields)->where("type", FieldTypeEnum::BelongsTo->value)->keys()->first();
                             $field = $fields[$fieldKey];
+                            if (is_array($this->{$params[1]})) {
+                                $value = json_encode($this->{$fieldKey});
+                            } else {
+                                $value = $this->{$fieldKey};
+                            }
                             $response = EntityValueHelper::getValueByField(
                                 new EntityValueFieldGetData(
                                     field: $field,
-                                    value: $this->{$fieldKey},
+                                    value: $value,
                                     currentEntityValue: $this->resource
                                 )
                             );
                             $specialData[$key][$params[1]] = $response[$params[1]];
                         } else {
                             $fieldKey = collect($fields)->where("relateTo", $params[0])->keys()->first();
+                            $field = $fields[$params[1]];
+                            if (is_array($this->{$params[1]})) {
+                                $value = json_encode($this->{$fieldKey});
+                            } else {
+                                $value = $this->{$fieldKey};
+                            }
                             $response = EntityValueHelper::getValueByField(
                                 new EntityValueFieldGetData(
                                     field: $field,
-                                    value: $this->{$fieldKey},
+                                    value: $value,
                                     currentEntityValue: $this->resource
                                 )
                             );

@@ -5,12 +5,15 @@ namespace App\Http\Resources;
 use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityFieldHelper;
 use App\Helpers\EntityValueHelper;
-use App\Services\FieldTypeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class EntityValueResource extends JsonResource
 {
+    public function __construct($resource, private bool $isFormatted = true)
+    {
+        parent::__construct($resource);
+    }
     /**
      * Transform the resource into an array.
      *
@@ -26,12 +29,17 @@ class EntityValueResource extends JsonResource
             'updated_at' => $this->updated_at,
         ];
         foreach ($fields as $key => $field) {
+            if (is_array($this->{$key})) {
+                $value = json_encode($this->{$key});
+            } else {
+                $value = $this->{$key};
+            }
             $response[$key] = EntityValueHelper::getValueByField(
                 new EntityValueFieldGetData(
                     field: $field,
-                    value: $this->{$key},
+                    value: $value,
                     currentEntityValue: $this->resource,
-                    isFormatted: true
+                    isFormatted: $this->isFormatted
                 )
             );
         }
