@@ -139,7 +139,7 @@
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
 										}
 									]
 								}
@@ -275,11 +275,11 @@
 									"variable": [
 										{
 											"key": "entitiy_id",
-											"value": "9ad50954-ad42-443b-9391-0c0402e8947e"
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
 										},
 										{
 											"key": "entity_value_id",
-											"value": "9ad50954-ea0a-4bb6-8f76-7cb7e26cd9b9"
+											"value": "9ade33a6-2a47-4ae6-837e-c89470b84f92"
 										}
 									]
 								}
@@ -1575,7 +1575,7 @@
 									"variable": [
 										{
 											"key": "entity_id",
-											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
 										}
 									]
 								}
@@ -1589,7 +1589,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"fields\": {\n        \"familiia\": true,\n        \"imia\": true,\n        \"otcestvo\": true,\n        \"telefon\": true,\n        \"e-mail\": false,\n        \"den-rozdeniia\": true,\n        \"pol\": true,\n        \"vid-mz\": true,\n        \"grazdanstvo\": false,\n        \"avtor\": true,\n        \"mesto-raboty\": false,\n        \"dolznost\": false,\n        \"soc-polozenie\": false,\n        \"lgotnye-kategorii\": false,\n        \"loialnost\": false,\n        \"mo\": false,\n        \"adres\": false,\n        \"uik\": false,\n        \"inaia-informaciia\": false,\n        \"organizaciia\": false,\n        \"otvetstvennyi\": false\n    }\n}",
+									"raw": "{\n    \"fields\": {\n            \"nazvanie\": true,\n            \"kontakt-grazdanin\": true,\n            \"data-priniatiia-obrashheniia\": true,\n            \"stadiia\": true,\n            \"vid-obrashheniia\": true,\n            \"fio-vel-priem\": true,\n            \"registrator\": true,\n            \"ispolnitel\": true,\n            \"dokument-dlia-soglasovaniia\": false,\n            \"voprosy-grazdan\": true,\n            \"spravocnik-tematiceskii-klassifikator\": false,\n            \"forma\": false,\n            \"format-ucastiia\": false,\n            \"castota-obrashheniia\": false,\n            \"zaiavlenie\": false,\n            \"prilozenie-k-zaiavleniiu\": false,\n            \"obrashhenie-na-l\": false,\n            \"adresat\": false,\n            \"vel-priem\": false,\n            \"dolznost-vel-priem\": false,\n            \"otvetstvennyi\": false,\n            \"data-kontrolia\": false,\n            \"ssylka-na-papku-obrashheniia\": false,\n            \"plan-pomoshhi-avtomaticeskoe-pole\": false,\n            \"annotaciia\": false,\n            \"tematika\": false,\n            \"kommentarii-rezultat-priema\": false,\n            \"podtverdite-cto-vse-voprosy-po-obrashheniiu-vneseny-korrektno\": false\n        }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1609,7 +1609,210 @@
 									"variable": [
 										{
 											"key": "entity_id",
-											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}api/user",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "hash",
+											"value": "main",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "ГЛАВА",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "asdasdasdas",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Oleg",
+											"type": "text"
+										},
+										{
+											"key": "entity_id",
+											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Shvetcov",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "udate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Глава",
+											"type": "text"
+										},
+										{
+											"key": "hash",
+											"value": "mainer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
 										}
 									]
 								}

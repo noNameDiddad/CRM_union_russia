@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityFieldHelper;
+use App\Helpers\EntityValueHelper;
 use App\Models\Entity;
 use App\Services\FieldTypeService;
 use Illuminate\Http\Request;
@@ -36,32 +38,34 @@ class EntityValueWithChapters extends JsonResource
                         $params = explode(".", $item);
                         if ($params[0] == "this") {
                             $field = $fields[$params[1]];
-                            $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-                            $specialData[$key][$params[1]] = app($fieldClass)->get(
-                                $this->{$params[1]},
-                                $field,
-                                true,
-                                $this->resource
+                            $specialData[$key][$params[1]] = EntityValueHelper::getValueByField(
+                                new EntityValueFieldGetData(
+                                    field: $field,
+                                    value: $this->{$params[1]},
+                                    currentEntityValue: $this->resource,
+                                    isFormatted: true
+
+                                )
                             );
                         } elseif ($params[0] == "parent") {
                             $fieldKey = collect($fields)->where("type", "belongs_to")->keys()->first();
                             $field = $fields[$fieldKey];
-                            $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-                            $response = app($fieldClass)->get(
-                                $this->{$fieldKey},
-                                $field,
-                                false,
-                                $this->resource
+                            $response = EntityValueHelper::getValueByField(
+                                new EntityValueFieldGetData(
+                                    field: $field,
+                                    value: $this->{$fieldKey},
+                                    currentEntityValue: $this->resource
+                                )
                             );
                             $specialData[$key][$params[1]] = $response[$params[1]];
                         } else {
                             $fieldKey = collect($fields)->where("relateTo", $params[0])->keys()->first();
-                            $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-                            $response = app($fieldClass)->get(
-                                $this->{$fieldKey},
-                                $fields[$fieldKey],
-                                false,
-                                $this->resource
+                            $response = EntityValueHelper::getValueByField(
+                                new EntityValueFieldGetData(
+                                    field: $field,
+                                    value: $this->{$fieldKey},
+                                    currentEntityValue: $this->resource
+                                )
                             );
                             $specialData[$key][$params[1]] = $response[$params[1]];
                         }
@@ -75,18 +79,30 @@ class EntityValueWithChapters extends JsonResource
                         $data[$chapter->name][$params[1]] = $specialData[$params[1]];
                     } else {
                         $field = $fields[$params[1]];
-                        $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-                        $data[$chapter->name][$params[1]] = app($fieldClass)->get(
-                            $this->{$params[1]},
-                            $field,
-                            true,
-                            $this->resource
+                        if (is_array($this->{$params[1]})) {
+                            $value = json_encode($this->{$params[1]});
+                        } else {
+                            $value = $this->{$params[1]};
+                        }
+                        $data[$chapter->name][$params[1]] =  EntityValueHelper::getValueByField(
+                            new EntityValueFieldGetData(
+                                field: $field,
+                                value: $value,
+                                currentEntityValue: $this->resource,
+                                isFormatted: true
+
+                            )
                         );
                     }
                 } else {
                     $fieldKey = collect($fields)->where("relateTo", $params[0])->keys()->first();
-                    $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-                    $response = app($fieldClass)->get($this->{$fieldKey}, $fields[$fieldKey], false, $this->resource);
+                    $response = EntityValueHelper::getValueByField(
+                        new EntityValueFieldGetData(
+                            field: $fields[$fieldKey],
+                            value: $this->{$fieldKey},
+                            currentEntityValue: $this->resource
+                        )
+                    );
                     $data[$chapter->name][$params[1]] = $response[$params[1]];
                 }
             }
