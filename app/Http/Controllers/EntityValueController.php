@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EntityValueRequest;
 use App\Http\Resources\EntityValueResource;
+use App\Http\Resources\EntityValueWithChapters;
 use App\Models\Entity;
 use App\Models\EntityValue;
 use App\Services\EntityValueService;
@@ -33,7 +34,7 @@ class EntityValueController extends Controller
     public function show(Entity $entity, string $entity_value)
     {
         $this->service = new EntityValueService($entity);
-        return new EntityValueResource($this->service->show($entity_value));
+        return new EntityValueWithChapters($this->service->show($entity_value), $entity);
     }
 
     public function update(EntityValueRequest $request, Entity $entity, string $entity_value)
