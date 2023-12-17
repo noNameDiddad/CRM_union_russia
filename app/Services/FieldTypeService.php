@@ -95,12 +95,12 @@ class FieldTypeService extends FieldService
     private function validateAll($fields,$data, $action = 'create'): void
     {
         $errors = [];
+        if ($action === 'update') {
+            return;
+        }
         foreach ($fields as $key => $field) {
             $value = $data[$key] ?? null;
             foreach ($field['rules'] as $rule) {
-                if ($rule == 'required' && $action === 'update') {
-                    continue;
-                }
                 $validator = app(static::getClassForValidation($rule));
                 if ($validator->validate($value, $key, $field)) {
                     continue;
