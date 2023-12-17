@@ -1,6 +1,6 @@
 {
   "О вопросе": {
-    "entity": "citizensQuestions",
+    "entity": "this",
     "isSubEntity": false,
     "specialFields": {
       "Справочник Тематический классификатор": [
@@ -29,7 +29,7 @@
     ]
   },
   "Сотрудники": {
-    "entity": "citizensQuestions",
+    "entity": "this",
     "isSubEntity": false,
     "specialFields": [],
     "fields": [

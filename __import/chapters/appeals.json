@@ -4,7 +4,7 @@
     "isSubEntity": true,
     "specialFields": {
       "Контакт (Гражданин)": [
-        "appeal.Контакт (Гражданин)",
+        "this.Контакт (Гражданин)",
         "contact.Телефон",
         "contact.E-mail"
       ]
@@ -34,7 +34,7 @@
     ]
   },
   "Об обращении": {
-    "entity": "appeals",
+    "entity": "this",
     "isSubEntity": false,
     "specialFields": [],
     "fields": [
@@ -50,13 +50,12 @@
       "ФИО (Вел прием)",
       "Регистратор",
       "Исполнитель",
-      "На контроле",
       "Ссылка на папку обращения",
       "План помощи (автоматическое поле)"
     ]
   },
   "Согласование": {
-    "entity": "appeals",
+    "entity": "this",
     "isSubEntity": true,
     "specialFields": [],
     "fields": [
@@ -64,7 +63,7 @@
     ]
   },
   "Вопрос (для архивных)": {
-    "entity": "appeals",
+    "entity": "this",
     "isSubEntity": false,
     "specialFields": [],
     "fields": [

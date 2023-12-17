@@ -1,6 +1,6 @@
 {
   "О контакте": {
-    "entity": "contact",
+    "entity": "this",
     "fields": [
       "Фамилия",
       "Имя",
