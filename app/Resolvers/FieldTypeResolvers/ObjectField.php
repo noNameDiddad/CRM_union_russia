@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class ObjectField implements FieldResolverInterface
 {
     public function set($value, $field = null): ?string
@@ -9,9 +11,9 @@ class ObjectField implements FieldResolverInterface
         return json_encode($value);
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $object = json_decode($value);
+        $object = json_decode($data->value);
         return [
             'value' => $object->value,
             'type' => $object->type

@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class IntegerField implements FieldResolverInterface
 {
     public function set($value, $field = null): ?int
@@ -9,8 +11,8 @@ class IntegerField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?int
+    public function get(EntityValueFieldGetData $data): ?string
     {
-        return $value;
+        return $data->value;
     }
 }

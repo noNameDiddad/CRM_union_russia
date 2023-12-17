@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class GenerateField implements FieldResolverInterface
 {
     public function set($value, $field = null): ?string
@@ -9,8 +11,8 @@ class GenerateField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?string
+    public function get(EntityValueFieldGetData $data): ?string
     {
-        return $value;
+        return $data->value;
     }
 }

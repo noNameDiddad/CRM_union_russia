@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\FormatterHelper;
 use App\Services\EntityService;
 use App\Services\EntityValueService;
@@ -14,17 +15,16 @@ class ChildField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $childEntity = EntityService::getByHash($value);
+        $childEntity = EntityService::getByHash($data->value);
         $service = new EntityValueService($childEntity);
-
-        $childs = $service->getAllByParent(EntityService::getById($current_instance->entity_id)->hash, $current_instance->_id);
+        $children = $service->getAllByParent(EntityService::getById($data->currentEntityValue->entity_id)->hash, $data->currentEntityValue->_id);
 
         $instanses = [];
-        foreach($childs as $unit) {
+        foreach($children as $unit) {
 
-            $instanses[] = $isFormatted ?[
+            $instanses[] = $data->isFormatted ?[
                 'id' =>  $unit->id,
                 'value' => FormatterHelper::getShortOutput($unit, $childEntity->short_output)
             ] : $unit->toArray();

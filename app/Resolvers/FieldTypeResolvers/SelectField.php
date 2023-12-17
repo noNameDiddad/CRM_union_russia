@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Models\EntityFieldFixedValue;
 
 class SelectField implements FieldResolverInterface
@@ -11,11 +12,10 @@ class SelectField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $instance = EntityFieldFixedValue::find($value);
-
-        if ($value == null) {
+        $instance = EntityFieldFixedValue::find($data->value);
+        if ($data->value == null) {
             return [];
         }
         return [

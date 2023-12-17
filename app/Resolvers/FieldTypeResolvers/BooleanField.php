@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class BooleanField implements FieldResolverInterface
 {
 
@@ -10,8 +12,8 @@ class BooleanField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?bool
     {
-        return $value;
+        return $data->value;
     }
 }

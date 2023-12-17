@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityValueHelper;
 use App\Helpers\FormatterHelper;
 use App\Services\EntityService;
@@ -15,14 +16,14 @@ class RelationField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): array
     {
-        $service = new EntityValueService(EntityService::getByHash($field['relateTo']));
+        $service = new EntityValueService(EntityService::getByHash($data->field['relateTo']));
 
-        $entity = EntityService::getByHash($field['relateTo']);
-        $instance = $service->show($value);
+        $entity = EntityService::getByHash($data->field['relateTo']);
+        $instance = $service->show($data->value);
 
-        if ($isFormatted) {
+        if ($data->isFormatted) {
             return [
                 'id' =>  $instance->id,
                 'value' => FormatterHelper::getShortOutput($instance, $entity->short_output)

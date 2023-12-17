@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Models\User;
 
 class UsersField implements FieldResolverInterface
@@ -11,12 +12,12 @@ class UsersField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        if ($value == null) {
+        if ($data->value == null) {
             return null;
         }
-        $users = User::whereIn('id', $value)->get();
+        $users = User::whereIn('id', $data->value)->get();
         $result = [];
         foreach ($users as $user) {
             $result[] = [

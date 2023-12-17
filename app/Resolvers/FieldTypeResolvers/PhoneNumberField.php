@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class PhoneNumberField implements FieldResolverInterface
 {
     public function set($value, $field = null): ?string
@@ -9,8 +11,8 @@ class PhoneNumberField implements FieldResolverInterface
         return json_encode($value);
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?string
+    public function get(EntityValueFieldGetData $data): ?bool
     {
-        return json_decode($value);
+        return json_encode($data->value);
     }
 }

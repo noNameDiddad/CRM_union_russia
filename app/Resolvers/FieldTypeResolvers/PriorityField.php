@@ -2,6 +2,8 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class PriorityField implements FieldResolverInterface
 {
     public function set($value, $field = null): ?string
@@ -9,8 +11,8 @@ class PriorityField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?string
+    public function get(EntityValueFieldGetData $data): ?bool
     {
-        return $value;
+        return $data->value;
     }
 }

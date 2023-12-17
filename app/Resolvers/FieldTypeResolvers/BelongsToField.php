@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityValueHelper;
 use App\Helpers\FormatterHelper;
 use App\Services\EntityService;
@@ -15,12 +16,12 @@ class BelongsToField implements FieldResolverInterface
         return $value;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_entity = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $parentEntity = EntityService::getByHash($field['relateTo']);
+        $parentEntity = EntityService::getByHash($data->field['relateTo']);
         $service = new EntityValueService($parentEntity);
-        $parent = $service->find($value);
-        if ($isFormatted) {
+        $parent = $service->find($data->value);
+        if ($data->isFormatted) {
             return [
                 'id' =>  $parent->id,
                 'value' => FormatterHelper::getShortOutput($parent, $parentEntity->short_output)

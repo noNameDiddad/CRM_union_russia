@@ -2,6 +2,7 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityValueFileHelper;
 
 
@@ -22,10 +23,10 @@ class FileField implements FieldResolverInterface
         return $paths;
     }
 
-    public function get($value, $field = null, $isFormatted = true, $current_instance = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
         $fileArr = [];
-        foreach ($value as $file) {
+        foreach (json_decode($data->value) as $file) {
             $xmlFile = pathinfo($file);
             if (str_contains($xmlFile['basename'], '_')) {
                 $parseName = explode('_', $xmlFile['basename']);
