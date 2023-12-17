@@ -33,8 +33,11 @@ class ChapterSeeder extends Seeder
                     $result['specialFields'][Str::slug($item)][] = $str[0].'.'.Str::slug($str[1]);
                 }
             }
-            $result['fields'][] = $json['entity'].'.'.Str::slug($item);
-
+            if (isset($json['specialFields'][$item])) {
+                $result['fields'][] = 'this.'.Str::slug($item);
+            } else {
+                $result['fields'][] = $json['entity'].'.'.Str::slug($item);
+            }
         }
         return $result;
     }
