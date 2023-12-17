@@ -2,24 +2,18 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
-use App\Models\User;
+use App\Data\EntityValueFieldGetData;
 
 class ObjectField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return json_encode($value);
     }
 
-    public function get($value, $field = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $object = json_decode($value);
+        $object = json_decode($data->value);
         return [
             'value' => $object->value,
             'type' => $object->type

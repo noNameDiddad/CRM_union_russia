@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Data\EntityValueFieldGetData;
 use App\Helpers\EntityFieldHelper;
+use App\Helpers\EntityValueHelper;
 use App\Services\FieldTypeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -25,8 +27,12 @@ class StatisticResource extends JsonResource
         ];
 
         foreach ($fields as $key =>$field) {
-            $fieldClass = FieldTypeService::getClassForFieldType($field['type']);
-            $response[$key] = app($fieldClass)->get($this->{$key}, $field);
+            $response[$key] = EntityValueHelper::getValueByField(
+                new EntityValueFieldGetData(
+                    field: $field,
+                    value: $this->{$key},
+                )
+            );
         }
 
         return $response;

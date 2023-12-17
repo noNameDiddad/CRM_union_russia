@@ -26,5 +26,10 @@ class EntityFieldFixedValueRepository extends BaseRepository
         return $this->model->where('entity_field_id', $entity_field->id)->get();
     }
 
+    public function allByEntityFieldsById(string $entity_field_id): Collection
+    {
+        return $this->model->where('entity_field_id', $entity_field_id)->get();
+    }
+
 }
 

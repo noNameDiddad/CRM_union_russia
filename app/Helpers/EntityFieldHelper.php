@@ -28,12 +28,13 @@ class EntityFieldHelper
         return $data;
     }
 
-    public function getFields(string $entity_id, bool $isStatistic = false): array
+    public function getFields(string $entity_id, bool $isFiltered = false): array
     {
-        if ($isStatistic) {
-            $fields = $this->repository->getFieldsForStatistic($entity_id);
+        if ($isFiltered) {
+            $fields = $this->repository->getFieldsByEntityId($entity_id);
+            $fields = FieldFilterHelper::filterData($fields,$entity_id);
         } else {
-            $fields = $this->repository->getFields($entity_id);
+            $fields = $this->repository->getFieldsByEntityId($entity_id);
         }
 
         $data = [];
@@ -41,7 +42,8 @@ class EntityFieldHelper
         foreach ($fields as $field) {
             $data[$field->hash] = [
                 'type' => $field->type,
-                'relateTo' => $field->relate_to
+                'relateTo' => $field->relate_to,
+                'rules' => $field->rules
             ];
         }
 

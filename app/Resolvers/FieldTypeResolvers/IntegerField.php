@@ -2,22 +2,17 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
+use App\Data\EntityValueFieldGetData;
 
 class IntegerField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?int
+    public function set($value, $field = null): ?int
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?int
+    public function get(EntityValueFieldGetData $data): ?string
     {
-        return $value;
+        return $data->value;
     }
 }

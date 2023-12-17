@@ -4,10 +4,8 @@ namespace App\Services;
 
 use App\Helpers\EntityFieldHelper;
 use App\Models\Entity;
+use App\Models\EntityValue;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model as StandardModel;
-use Illuminate\Support\Arr;
-use MongoDB\Laravel\Eloquent\Model as MongoModel;
 
 
 trait CRUDMethodsForEntity
@@ -18,14 +16,14 @@ trait CRUDMethodsForEntity
         return EntityFieldHelper::sortFieldsByPriority($data, $entity->id);
     }
 
-    public function createWithEntity(Entity $entity, array $data): MongoModel|StandardModel
+    public function createWithEntity(Entity $entity, array $data): Entity|EntityValue
     {
         $data['entity_id'] = $entity->id;
 
         return $this->repository->create($data);
     }
 
-    public function updateWithEntity(Entity $entity, string $id, array $data):  MongoModel|StandardModel
+    public function updateWithEntity(Entity $entity, string $id, array $data):  Entity|EntityValue
     {
         $data['entity_id'] = $entity->id;
         return $this->repository->update($data, $id);
@@ -36,7 +34,7 @@ trait CRUDMethodsForEntity
         return $this->repository->delete($id);
     }
 
-    public function show(string $id): MongoModel|StandardModel|null
+    public function show(string $id): Entity|EntityValue|null
     {
         return $this->repository->findOrFail($id);
     }

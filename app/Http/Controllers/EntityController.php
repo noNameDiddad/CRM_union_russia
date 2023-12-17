@@ -16,9 +16,12 @@ class EntityController extends Controller
         $this->service = new EntityService();
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return EntityResource::collection($this->service->getAll());
+        if ($request->input('withAll')) {
+            return EntityResource::collection($this->service->getAll());
+        }
+        return EntityResource::collection($this->service->getFiltered());
     }
 
     public function store(EntityRequest $request)

@@ -2,23 +2,17 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
-use App\Models\User;
+use App\Data\EntityValueFieldGetData;
 
 class EmailField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return json_encode($value);
     }
 
-    public function get($value, $field = null): ?string
+    public function get(EntityValueFieldGetData $data): ?bool
     {
-        return json_decode($value);
+        return json_encode($data->value);
     }
 }

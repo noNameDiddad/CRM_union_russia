@@ -128,18 +128,18 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/9accf7a0-87d7-47b4-a83d-8c1470e3c022/entity_value?XDEBUG_SESSION_START=PHPSTORM",
+									"raw": "{{host}}api/:entitiy_id/entity_value",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9accf7a0-87d7-47b4-a83d-8c1470e3c022",
+										":entitiy_id",
 										"entity_value"
 									],
-									"query": [
+									"variable": [
 										{
-											"key": "XDEBUG_SESSION_START",
-											"value": "PHPSTORM"
+											"key": "entitiy_id",
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
 										}
 									]
 								}
@@ -163,28 +163,60 @@
 										{
 											"key": "surname",
 											"value": "asdasdasdas",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "dokument-dlia-soglasovaniia",
+											"type": "file",
+											"src": "/home/developer/Рабочий стол/Матрица доступа.ods"
+										},
+										{
+											"key": "kontakt-grazdanin",
+											"value": "9ad7df6f-8525-469c-b1c7-0d4f78905c21",
 											"type": "text"
 										},
 										{
-											"key": "name",
-											"value": "Daniil",
+											"key": "ob-obrashhenii",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "soglasovanie",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "vopros-dlia-arxivnyx",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "voprosy-grazdan",
+											"value": "1",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/9ab48196-7d99-453f-bc31-2ec9fdead616/entity_value?XDEBUG_SESSION_START=PHPSTORM",
+									"raw": "{{host}}api/:entitiy_id/entity_value?XDEBUG_SESSION_START=PHPSTORM",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ab48196-7d99-453f-bc31-2ec9fdead616",
+										":entitiy_id",
 										"entity_value"
 									],
 									"query": [
 										{
 											"key": "XDEBUG_SESSION_START",
 											"value": "PHPSTORM"
+										}
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": "9ad7df75-781d-4db5-89f7-6bce321f476f"
 										}
 									]
 								}
@@ -231,14 +263,24 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/9accf7a0-87d7-47b4-a83d-8c1470e3c022/entity_value/9accf7a0-9215-48bf-bc8d-416aa4904f01",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9accf7a0-87d7-47b4-a83d-8c1470e3c022",
+										":entitiy_id",
 										"entity_value",
-										"9accf7a0-9215-48bf-bc8d-416aa4904f01"
+										":entity_value_id"
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
+										},
+										{
+											"key": "entity_value_id",
+											"value": "9ade33a6-2a47-4ae6-837e-c89470b84f92"
+										}
 									]
 								}
 							},
@@ -259,36 +301,85 @@
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
-											"key": "title",
-											"value": "asdasdasdas3123123",
-											"type": "text"
+											"key": "familiia",
+											"value": "ываываувауа",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "name",
-											"value": "Oleg2asdwasd",
-											"type": "text"
+											"key": "imia",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "entity_id",
-											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-											"type": "text"
+											"key": "otcestvo",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										},
 										{
-											"key": "last_name",
-											"value": "ShvetcovDEVOPS",
+											"key": "telefon",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "e-mail",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "den-rozdeniia",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "pol",
+											"value": "9ad1f670-eb05-4806-99e8-220ef45f1fc1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "vid-mz",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "adres",
+											"value": "9ad1f670-d2c5-455c-b742-e77795b52d7b",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "kontakt-grazdanin",
+											"value": "9ad50954-ea0a-4bb6-8f76-7cb7e26cd9b9",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+										":entitiy_id",
 										"entity_value",
-										"653a80b16b702f2bec00e403"
+										":entity_value_id"
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": "9ad5095b-e8b4-4aa9-8788-d5b8ce7d6563"
+										},
+										{
+											"key": "entity_value_id",
+											"value": "9ad5095b-fdb6-4d74-88c2-90532760be22"
+										}
 									]
 								}
 							},
@@ -310,14 +401,24 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_value/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/:entitiy_id/entity_value/:entity_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+										":entitiy_id",
 										"entity_value",
-										"653a80b16b702f2bec00e403"
+										":entity_value_id"
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": ""
+										},
+										{
+											"key": "entity_value_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -347,7 +448,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{host}}api/entity?XDEBUG_SESSION_START=PHPSTORM",
+									"raw": "{{host}}api/entity?withAll=0",
 									"host": [
 										"{{host}}api"
 									],
@@ -356,8 +457,8 @@
 									],
 									"query": [
 										{
-											"key": "XDEBUG_SESSION_START",
-											"value": "PHPSTORM"
+											"key": "withAll",
+											"value": "0"
 										}
 									]
 								}
@@ -437,13 +538,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+									"raw": "{{host}}api/entity/:entity_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"entity",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+										":entity_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+										}
 									]
 								}
 							},
@@ -465,19 +572,25 @@
 									"urlencoded": [
 										{
 											"key": "name",
-											"value": "Обращения",
+											"value": "Контакты",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+									"raw": "{{host}}api/entity/:entitiy_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"entity",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+										":entitiy_id"
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+										}
 									]
 								}
 							},
@@ -499,13 +612,19 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/entity/99ce83d6-ab81-49f5-acf9-dd4a63ae4e98",
+									"raw": "{{host}}api/entity/:entitiy_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"entity",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+										":entitiy_id"
+									],
+									"variable": [
+										{
+											"key": "entitiy_id",
+											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e98"
+										}
 									]
 								}
 							},
@@ -528,13 +647,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/9ac86ea6-1968-4435-a561-5b9680b55b94/entity_field",
+									"raw": "{{host}}api/:entity_id/entity_field",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ac86ea6-1968-4435-a561-5b9680b55b94",
+										":entity_id",
 										"entity_field"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9adbd554-12de-4b2d-be37-5db1498c5722"
+										}
 									]
 								}
 							},
@@ -582,13 +707,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/9ab0a747-62ad-4ea0-8415-b72d520eb5e7/entity_field",
+									"raw": "{{host}}api/:entity_id/entity_field",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ab0a747-62ad-4ea0-8415-b72d520eb5e7",
+										":entity_id",
 										"entity_field"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -634,14 +765,24 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/:entity_id/entity_field/:entity_field_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+										":entity_id",
 										"entity_field",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+										":entity_field_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										},
+										{
+											"key": "entity_field_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -679,14 +820,24 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_field/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/:entity_id/entity_field/:entity_field_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+										":entity_id",
 										"entity_field",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+										":entity_field_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										},
+										{
+											"key": "entity_field_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -708,14 +859,24 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/9a985112-1fa4-4180-895b-8724409b73f0/entity_field/9aa29a35-6148-4dd6-ae18-a89c64cc554b",
+									"raw": "{{host}}api/:entity_id/entity_field/:entity_field_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9a985112-1fa4-4180-895b-8724409b73f0",
+										":entity_id",
 										"entity_field",
-										"9aa29a35-6148-4dd6-ae18-a89c64cc554b"
+										":entity_field_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										},
+										{
+											"key": "entity_field_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -738,13 +899,19 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}api/9ac86ea6-1968-4435-a561-5b9680b55b94/entity_fixed_values",
+									"raw": "{{host}}api/:entity_id/entity_field_fixed_value",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ac86ea6-1968-4435-a561-5b9680b55b94",
-										"entity_fixed_values"
+										":entity_id",
+										"entity_field_fixed_value"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9ad1f670-df2f-483a-ae87-733090551d9e"
+										}
 									]
 								}
 							},
@@ -792,13 +959,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/9ab0a747-62ad-4ea0-8415-b72d520eb5e7/entity_fixed_values",
+									"raw": "{{host}}api/:entity_id/entity_field_fixed_value",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9ab0a747-62ad-4ea0-8415-b72d520eb5e7",
-										"entity_fixed_values"
+										":entity_id",
+										"entity_field_fixed_value"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -844,14 +1017,24 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_fixed_values/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/:entity_id/entity_field_fixed_value/:entity_field_fixed_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-										"entity_fixed_values",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+										":entity_id",
+										"entity_field_fixed_value",
+										":entity_field_fixed_value_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										},
+										{
+											"key": "entity_field_fixed_value_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -889,14 +1072,20 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/99ce83d6-ab81-49f5-acf9-dd4a63ae4e97/entity_fixed_values/99ce83d6-ab81-49f5-acf9-dd4a63ae4e11",
+									"raw": "{{host}}api/:entity_id/entity_field_fixed_value/9:entity_field_fixed_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
-										"entity_fixed_values",
-										"99ce83d6-ab81-49f5-acf9-dd4a63ae4e11"
+										":entity_id",
+										"entity_field_fixed_value",
+										"9:entity_field_fixed_value_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -918,14 +1107,24 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/9a985112-1fa4-4180-895b-8724409b73f0/entity_fixed_values/9aa29a35-6148-4dd6-ae18-a89c64cc554b",
+									"raw": "{{host}}api/:entity_id/entity_field_fixed_value/:entity_field_fixed_value_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
-										"9a985112-1fa4-4180-895b-8724409b73f0",
-										"entity_fixed_values",
-										"9aa29a35-6148-4dd6-ae18-a89c64cc554b"
+										":entity_id",
+										"entity_field_fixed_value",
+										":entity_field_fixed_value_id"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": ""
+										},
+										{
+											"key": "entity_field_fixed_value_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1037,13 +1236,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/role/9ac6670f-b826-4b42-b9c3-9bc781b6d32c",
+									"raw": "{{host}}api/role/:role_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"role",
-										"9ac6670f-b826-4b42-b9c3-9bc781b6d32c"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1076,13 +1281,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/role/9ac6670f-b826-4b42-b9c3-9bc781b6d32c",
+									"raw": "{{host}}api/role/:role_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"role",
-										"9ac6670f-b826-4b42-b9c3-9bc781b6d32c"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1104,13 +1315,19 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/role/9ac6670f-b826-4b42-b9c3-9bc781b6d32c",
+									"raw": "{{host}}api/role/:role_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"role",
-										"9ac6670f-b826-4b42-b9c3-9bc781b6d32c"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1228,13 +1445,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/permission/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/permission/:permission_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"permission",
-										"653a80b16b702f2bec00e403"
+										":permission_id"
+									],
+									"variable": [
+										{
+											"key": "permission_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1277,13 +1500,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{host}}api/permission/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/permission/:permission_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"permission",
-										"653a80b16b702f2bec00e403"
+										":permission_id"
+									],
+									"variable": [
+										{
+											"key": "permission_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1305,13 +1534,286 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{host}}api/permission/653a80b16b702f2bec00e403",
+									"raw": "{{host}}api/permission/:permission_id",
 									"host": [
 										"{{host}}api"
 									],
 									"path": [
 										"permission",
-										"653a80b16b702f2bec00e403"
+										":permission_id"
+									],
+									"variable": [
+										{
+											"key": "permission_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FieldFilters",
+					"item": [
+						{
+							"name": "getFilters",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}api/field_filters/:entity_id/show",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"field_filters",
+										":entity_id",
+										"show"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateFIlters",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fields\": {\n            \"nazvanie\": true,\n            \"kontakt-grazdanin\": true,\n            \"data-priniatiia-obrashheniia\": true,\n            \"stadiia\": true,\n            \"vid-obrashheniia\": true,\n            \"fio-vel-priem\": true,\n            \"registrator\": true,\n            \"ispolnitel\": true,\n            \"dokument-dlia-soglasovaniia\": false,\n            \"voprosy-grazdan\": true,\n            \"spravocnik-tematiceskii-klassifikator\": false,\n            \"forma\": false,\n            \"format-ucastiia\": false,\n            \"castota-obrashheniia\": false,\n            \"zaiavlenie\": false,\n            \"prilozenie-k-zaiavleniiu\": false,\n            \"obrashhenie-na-l\": false,\n            \"adresat\": false,\n            \"vel-priem\": false,\n            \"dolznost-vel-priem\": false,\n            \"otvetstvennyi\": false,\n            \"data-kontrolia\": false,\n            \"ssylka-na-papku-obrashheniia\": false,\n            \"plan-pomoshhi-avtomaticeskoe-pole\": false,\n            \"annotaciia\": false,\n            \"tematika\": false,\n            \"kommentarii-rezultat-priema\": false,\n            \"podtverdite-cto-vse-voprosy-po-obrashheniiu-vneseny-korrektno\": false\n        }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}api/field_filters/:entity_id/update",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"field_filters",
+										":entity_id",
+										"update"
+									],
+									"variable": [
+										{
+											"key": "entity_id",
+											"value": "9ade33a5-9123-4df6-8e60-0482b68b2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}api/user",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "hash",
+											"value": "main",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "ГЛАВА",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "asdasdasdas",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Oleg",
+											"type": "text"
+										},
+										{
+											"key": "entity_id",
+											"value": "99ce83d6-ab81-49f5-acf9-dd4a63ae4e97",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Shvetcov",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "udate",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Глава",
+											"type": "text"
+										},
+										{
+											"key": "hash",
+											"value": "mainer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}api/user/:user_id",
+									"host": [
+										"{{host}}api"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -1410,6 +1912,31 @@
 								{
 									"key": "XDEBUG_SESSION_START",
 									"value": "PHPSTORM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFiltredFormattedData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}api/data/translated?action=DignitariesForGraphic",
+							"host": [
+								"{{host}}api"
+							],
+							"path": [
+								"data",
+								"translated"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "DignitariesForGraphic",
+									"description": "Список actions: \nDignitariesForGraphic,\nDignitariesForGraphic,\nDeputesForGraphic,\nConsultantsForGraphic,\nMOPForGraphic,\nROPForGraphic,\nThemesForGraphic,\nDeputesForExcel,\nMOPForExcel,\nROPForExcel,"
 								}
 							]
 						}

@@ -11,7 +11,4 @@ class EntityFieldFixedValue extends Model
     use HasFactory, HasUuids;
     protected $keyType = 'string';
     protected $fillable = ['id', 'entity_field_id', 'value'];
-    protected $casts = [
-        'value' => 'array' 
-    ];
 }

@@ -2,25 +2,20 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
 use App\Models\EntityFieldFixedValue;
 
 class SelectField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        $instance = EntityFieldFixedValue::find($value);
-
-        if ($value == null) {
+        $instance = EntityFieldFixedValue::find($data->value);
+        if ($data->value == null) {
             return [];
         }
         return [

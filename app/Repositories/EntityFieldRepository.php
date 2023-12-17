@@ -25,12 +25,19 @@ class EntityFieldRepository extends BaseRepository
         return $this->model->where('entity_id', $entity->id)->get();
     }
 
-    public function getFields(string $entity_id): Collection
+    public function getFieldsByEntityId(string $entity_id): Collection
     {
         return $this->model->where('entity_id', $entity_id)->get();
     }
     public function getFieldsForStatistic(string $entity_id): Collection
     {
         return $this->model->where('entity_id', $entity_id)->where('in_stat', true)->get();
+    }
+
+    public function getFirstStageId(string $entity_id, $stadiaKey):string
+    {
+        $field =  $this->model->where('entity_id', $entity_id)
+            ->where('hash', $stadiaKey)->first();
+        return app(EntityFieldFixedValueRepository::class)->where('entity_field_id', $field->id)->first()->id;
     }
 }

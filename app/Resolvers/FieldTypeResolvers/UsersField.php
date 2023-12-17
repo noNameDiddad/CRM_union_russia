@@ -2,29 +2,30 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
+use App\Data\EntityValueFieldGetData;
 use App\Models\User;
 
 class UsersField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?array
+    public function set($value, $field = null): ?array
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?array
+    public function get(EntityValueFieldGetData $data): ?array
     {
-        if ($value == null) {
+        if ($data->value == null) {
             return null;
         }
+        $users = User::whereIn('id', $data->value)->get();
+        $result = [];
+        foreach ($users as $user) {
+            $result[] = [
+                'id' => $user->id,
+                'value' => $user->name
+            ];
+        }
 
-        $result = $result[] = User::whereIn('id', $value)->get();
-
-        return $result->toArray();
+        return $result;
     }
 }

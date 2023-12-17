@@ -13,4 +13,8 @@ class EntityField extends Model
     protected $keyType = 'string';
 
     protected $fillable = ['id', 'entity_id', 'name', 'type', 'hash', 'in_stat', 'max_length'];
+
+    protected $casts = [
+        'rules' => 'array',
+    ];
 }

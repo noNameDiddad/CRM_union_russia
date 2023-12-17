@@ -2,27 +2,34 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+use App\Helpers\EntityValueHelper;
+use App\Helpers\FormatterHelper;
+use App\Services\EntityService;
 use App\Services\EntityValueService;
 
 class RelationField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
 
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?array
+    public function get(EntityValueFieldGetData $data): array
     {
-        $entity_table = "table_" . $field['relateTo'];
-        $service = new EntityValueService($entity_table);
+        $service = new EntityValueService(EntityService::getByHash($data->field['relateTo']));
 
-        $instanse = $service->show($value);
+        $entity = EntityService::getByHash($data->field['relateTo']);
+        $instance = $service->show($data->value);
 
-        return $instanse->toArray();
+        if ($data->isFormatted) {
+            return [
+                'id' =>  $instance->id,
+                'value' => FormatterHelper::getShortOutput($instance, $entity->short_output)
+            ];
+        } else {
+            return EntityValueHelper::getFormattedEntityValue($instance, $entity);
+        }
     }
 }

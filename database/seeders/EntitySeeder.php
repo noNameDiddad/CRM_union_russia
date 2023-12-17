@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Data\EntityData;
 use App\Models\Entity;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class EntitySeeder extends Seeder
 {
@@ -13,12 +14,8 @@ class EntitySeeder extends Seeder
      */
     public function run($entityName, $json, $hash): void
     {
-        Entity::create([
-            'name' => $entityName,
-            'is_sub_entity' => $json['isSubEntity'],
-            'is_kanban' => $json['isKanban'],
-            'hash' => $hash,
-        ]);
+        $entity = EntityData::from($json+['name' => $entityName, 'hash' => $hash]);
+        $entity = Entity::create($entity->toArray());
 
         $this->call(
             [
@@ -26,9 +23,48 @@ class EntitySeeder extends Seeder
             ],
             false,
             [
-                'entityName' => $entityName,
+                'entity' => $entity,
                 'json' => $json['fields'],
             ]
         );
+        $dirName = env('IMPORT_DIR');
+        $filterPath = $dirName . '/filters/'.$hash.'.json';
+        $chapterPath = $dirName . '/chapters/'.$hash.'.json';
+        if (File::exists($filterPath)) {
+            dump('Обработка файла ' . $filterPath . '.' );
+            $entityFilter = File::json($filterPath);
+            foreach ($entityFilter as $filterName => $filterValue) {
+                $this->call(
+                    [
+                        FieldFilterSeeder::class,
+                    ],
+                    false,
+                    [
+                        'entity_id' => $entity->id,
+                        'filterName' => $filterName,
+                        'json' => $filterValue,
+                    ]
+                );
+            }
+        }
+        if (File::exists($chapterPath)) {
+            $chapters = File::json($chapterPath);
+            $order = 0;
+            foreach ($chapters as $chapterName => $chapterValue) {
+                $this->call(
+                    [
+                        ChapterSeeder::class,
+                    ],
+                    false,
+                    [
+                        'entity_id' => $entity->id,
+                        'chapterName' => $chapterName,
+                        'json' => $chapterValue,
+                        'order' => $order
+                    ]
+                );
+                $order++;
+            }
+        }
     }
 }

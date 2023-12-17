@@ -1,17 +1,11 @@
 {
   "order": [
-      "appealNumber",
-      "questionNumber",
-      "address",
-      "contact",
-      "helpPlan",
-      "aboutAppeal",
-      "approval",
-      "citizensQuestions",
-      "questionForArchived",
-      "appeals",
-      "rop_common",
-      "rop_unic",
-      "document"
+    "contact",
+    "helpPlan",
+    "appeals",
+    "citizensQuestions",
+    "rop_common",
+    "rop_unic",
+    "document"
   ]
 }

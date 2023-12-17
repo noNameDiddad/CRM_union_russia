@@ -13,4 +13,13 @@ class Entity extends Model
     protected $keyType = 'string';
 
     protected $fillable = ['id', 'name', 'hash'];
+
+    public function field_filter()
+    {
+        return $this->hasOne(FieldFilter::class);
+    }
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class);
+    }
 }

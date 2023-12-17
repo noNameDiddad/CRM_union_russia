@@ -2,20 +2,17 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
+use App\Data\EntityValueFieldGetData;
+
 class StringField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?string
+    public function get(EntityValueFieldGetData $data): ?string
     {
-        return $value;
+        return $data->value;
     }
 }

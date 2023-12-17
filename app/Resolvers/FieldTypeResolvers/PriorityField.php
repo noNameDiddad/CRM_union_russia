@@ -2,22 +2,17 @@
 
 namespace App\Resolvers\FieldTypeResolvers;
 
-use App\Models\EntityFieldFixedValue;
+use App\Data\EntityValueFieldGetData;
 
 class PriorityField implements FieldResolverInterface
 {
-    public function validate()
-    {
-        // TODO: Implement validate() method.
-    }
-
-    public function set($value): ?string
+    public function set($value, $field = null): ?string
     {
         return $value;
     }
 
-    public function get($value, $field = null): ?string
+    public function get(EntityValueFieldGetData $data): ?bool
     {
-        return $value;
+        return $data->value;
     }
 }
