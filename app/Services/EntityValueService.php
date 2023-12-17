@@ -53,4 +53,12 @@ class EntityValueService
     {
         return $this->repository->find($id);
     }
+    public function getAllByParent($parent_entity_hash, $id)
+    {
+        $fields = app(EntityFieldHelper::class)->getFields($this->entity->id);
+        $needleField =collect($fields)
+            ->where("type", "belongs_to")
+            ->where("relateTo", $parent_entity_hash)->keys()->first();
+        return $this->repository->getWhere($needleField, $id);
+    }
 }
