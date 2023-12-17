@@ -40,7 +40,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
 
-    Route::get('{entity}/get_statistics', [StatisticController::class, 'getStatistics']);
+    Route::get('{action}/get_statistics', [StatisticController::class, 'getStatistics']);
 
     Route::get('field_filters/{entity_id}/show', [FieldFilterController::class, 'show']);
     Route::put('field_filters/{entity_id}/update', [FieldFilterController::class, 'update']);

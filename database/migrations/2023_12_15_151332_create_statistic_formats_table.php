@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('statistic_formats', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('action');
-            $table->string('hash');
+            $table->foreignUuid('entity_id')->references('id')->on('entities');
             $table->json('format');
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class StatisticController extends Controller
 
         $queryHelper = new FormatterHelper();
         $query = $queryHelper->getFormatted($format);
-
+dd($query);
         // $format = StatisticFormat::where('action', $action)->first();
         // $entity = Entity::where('hash', $format->hash)->first();
         // $entity_table = "table_" . $format->hash;
