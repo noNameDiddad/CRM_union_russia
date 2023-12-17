@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Data\EntityValueFieldGetData;
+use App\Enums\FieldTypeEnum;
 use App\Helpers\EntityFieldHelper;
 use App\Helpers\EntityValueHelper;
 use App\Models\Entity;
@@ -47,7 +48,7 @@ class EntityValueWithChapters extends JsonResource
                                 )
                             );
                         } elseif ($params[0] == "parent") {
-                            $fieldKey = collect($fields)->where("type", "belongs_to")->keys()->first();
+                            $fieldKey = collect($fields)->where("type", FieldTypeEnum::BelongsTo->value)->keys()->first();
                             $field = $fields[$fieldKey];
                             $response = EntityValueHelper::getValueByField(
                                 new EntityValueFieldGetData(
