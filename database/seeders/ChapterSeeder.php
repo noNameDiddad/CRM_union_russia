@@ -28,19 +28,13 @@ class ChapterSeeder extends Seeder
         $result['isSubEntity'] = $json['isSubEntity'] ?? false;
         foreach ($json['fields'] as $item) {
             if (in_array($item, array_keys($specialFields))) {
-                $field = "";
                 foreach ($specialFields[$item] as $key =>$specialField) {
                     $str = explode('.', $specialField);
-                    if ($key == 0) {
-                        $field = $str[0].'.'.Str::slug($str[1]);
-                    } else {
-                        $field .= ';'.$str[0].'.'.Str::slug($str[1]);
-                    }
+                    $result['specialFields'][Str::slug($item)][] = $str[0].'.'.Str::slug($str[1]);
                 }
-                $result['fields'][] = $field;
-            } else {
-                $result['fields'][] = $json['entity'].'.'.Str::slug($item);
             }
+            $result['fields'][] = $json['entity'].'.'.Str::slug($item);
+
         }
         return $result;
     }

@@ -1,6 +1,6 @@
 {
   "Карточка гражданина": {
-    "hash": "contact",
+    "entity": "contact",
     "isSubEntity": true,
     "specialFields": {
       "Контакт (Гражданин)": [

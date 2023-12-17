@@ -12,9 +12,10 @@ class Chapter extends Model
 
     protected $keyType = 'string';
 
-    protected $fillable = ['id', 'name', 'fields', 'is_sub_entity', 'entity_id', 'order'];
+    protected $fillable = ['id', 'name', 'special_fields','fields', 'is_sub_entity', 'entity_id', 'order'];
 
     protected $casts = [
+        "special_fields" => "array",
         "fields" => "array",
     ];
 }

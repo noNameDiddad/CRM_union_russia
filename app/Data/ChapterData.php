@@ -12,6 +12,7 @@ class ChapterData extends Data
         public ?string $id,
         public string $entityId,
         public string $name,
+        public ?array $specialFields,
         public array $fields,
         public int $order,
         public ?bool $isSubEntity = false,
