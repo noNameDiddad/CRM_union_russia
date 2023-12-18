@@ -46,4 +46,14 @@ class EntityValueService
     {
         $this->repository->truncate();
     }
+
+    public function getRecord($entity, $recordId): ?array
+    {
+        return $this->repository->allByEntity($entity)->where('_id', $recordId)->toArray();
+    }
+
+    public function updateFile($data, $entity_value): EntityValue
+    {
+        return $this->repository->update($data, $entity_value);
+    }
 }

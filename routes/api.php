@@ -38,6 +38,13 @@ Route::group(['middleware' => 'api'], function () {
     Route::resource('role', RoleController::class);
 
     Route::get('{entity}/get_statistics', [StatisticController::class, 'getStatistics']);
+
+    Route::get('{entity}/{record}/{field}/get_files_list', [\App\Http\Controllers\FileController::class, 'index']);
+    Route::get('{entity}/{record}/{field}/get_file', [\App\Http\Controllers\FileController::class, 'show']);
+    Route::post('{entity}/{record}/{field}/add_file', [\App\Http\Controllers\FileController::class, 'store']);
+    Route::put('{entity}/{record}/{field}/update_file', [\App\Http\Controllers\FileController::class, 'update']);
+    Route::delete('{entity}/{record}/{field}/delete_file', [\App\Http\Controllers\FileController::class, 'destroy']);
+    Route::get('/{dir}/list_files', [\App\Http\Controllers\FileController::class, 'list'])->where('dir', '.*');
 });
 
 

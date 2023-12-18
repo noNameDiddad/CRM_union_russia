@@ -15,14 +15,13 @@ class FileField implements FieldResolverInterface
 
     public function set($value): ?array
     {
-
         $paths = [];
         if(is_array($value)) {
             foreach ($value as $file) {
-                $paths[] = EntityValueFileHelper::addFile($file);
+                $paths[] = EntityValueFileHelper::addFileToStorage($file);
             }
         } else {
-            $paths[] = EntityValueFileHelper::addFile($value);
+            $paths[] = EntityValueFileHelper::addFileToStorage($value);
         }
 
         return $paths;
